@@ -1,9 +1,7 @@
 package org.owasp.esapi.reference.validation;
 
 import junit.framework.Assert;
-
 import org.junit.Test;
-import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.ValidationErrorList;

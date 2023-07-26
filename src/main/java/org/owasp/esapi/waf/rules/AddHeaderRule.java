@@ -15,6 +15,7 @@
  */
 package org.owasp.esapi.waf.rules;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.util.List;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
@@ -30,12 +31,12 @@ import org.owasp.esapi.waf.internal.InterceptingHTTPServletResponse;
  */
 public class AddHeaderRule extends Rule {
 
-    private String header;
+    private @RUntainted String header;
     private String value;
     private Pattern path;
     private List<Object> exceptions;
 
-    public AddHeaderRule(String id, String header, String value, Pattern path, List<Object> exceptions) {
+    public AddHeaderRule(String id, @RUntainted String header, String value, Pattern path, List<Object> exceptions) {
         setId(id);
         this.header = header;
         this.value = value;

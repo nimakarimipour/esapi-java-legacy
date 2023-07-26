@@ -15,9 +15,9 @@
  */
 package org.owasp.esapi.http;
 
+import java.io.IOException;
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
-import java.io.IOException;
 
 /**
  *

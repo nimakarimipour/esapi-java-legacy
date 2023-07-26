@@ -1,11 +1,10 @@
 package org.owasp.esapi.crypto;
 
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

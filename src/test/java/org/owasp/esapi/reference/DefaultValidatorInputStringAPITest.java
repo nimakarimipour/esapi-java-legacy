@@ -13,9 +13,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.powermock.api.mockito.PowerMockito.whenNew;
-
 import java.util.regex.Pattern;
-
 import org.hamcrest.core.Is;
 import org.junit.After;
 import org.junit.Before;

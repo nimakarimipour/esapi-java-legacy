@@ -17,7 +17,6 @@
 package org.owasp.esapi;
 
 import junit.framework.TestCase;
-
 import org.owasp.esapi.codecs.Codec;
 import org.owasp.esapi.codecs.HTMLEntityCodec;
 

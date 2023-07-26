@@ -18,7 +18,6 @@ package org.owasp.esapi.waf.internal;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
 import org.owasp.esapi.http.MockHttpServletRequest;
 
 /**

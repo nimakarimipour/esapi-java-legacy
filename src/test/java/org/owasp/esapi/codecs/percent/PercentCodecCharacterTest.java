@@ -17,10 +17,8 @@ package org.owasp.esapi.codecs.percent;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.owasp.esapi.codecs.percent.PercentCodecStringTest.PERCENT_CODEC_IMMUNE;
-
 import java.util.ArrayList;
 import java.util.Collection;
-
 import org.junit.Test;
 import org.junit.runners.Parameterized.Parameters;
 import org.owasp.esapi.codecs.PercentCodec;

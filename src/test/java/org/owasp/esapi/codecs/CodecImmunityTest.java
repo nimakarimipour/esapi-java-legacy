@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +11,6 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.StringUtilities;
-import org.owasp.esapi.codecs.*;
 
 /**
  * Parameterized test to verify that the Immunity parameter for a codec

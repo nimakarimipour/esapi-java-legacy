@@ -17,7 +17,6 @@ package org.owasp.esapi.logging.slf4j;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;

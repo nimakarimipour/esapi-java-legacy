@@ -2,7 +2,6 @@ package org.owasp.esapi.codecs;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.hamcrest.Matcher;
 import org.hamcrest.core.IsEqual;
 import org.junit.Assert;

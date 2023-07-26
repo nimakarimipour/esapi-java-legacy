@@ -18,15 +18,12 @@ package org.owasp.esapi.reference;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.Randomizer;
-import org.owasp.esapi.codecs.AbstractCodec;
 import org.owasp.esapi.errors.EncryptionException;
 
 /**

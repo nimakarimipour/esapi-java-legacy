@@ -1,8 +1,11 @@
 package org.owasp.esapi.reference.crypto;
 
-import java.security.*;
-import javax.crypto.*;
-import javax.crypto.spec.*;
+import java.security.InvalidKeyException;
+import javax.crypto.Cipher;
+import javax.crypto.ExemptionMechanism;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 /**
  * Helper class to see if unlimited strength crypto is available. If it is

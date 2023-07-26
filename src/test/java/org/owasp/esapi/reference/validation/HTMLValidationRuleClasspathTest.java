@@ -19,7 +19,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
+import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_ACTION;
+import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_CONFIGURATION_FILE;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -32,8 +33,6 @@ import org.owasp.esapi.ValidationErrorList;
 import org.owasp.esapi.Validator;
 import org.owasp.esapi.errors.ValidationException;
 import org.owasp.validator.html.PolicyException;
-import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_ACTION;
-import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_CONFIGURATION_FILE;
 
 /**
  * The Class HTMLValidationRuleThrowsTest.

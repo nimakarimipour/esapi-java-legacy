@@ -16,7 +16,6 @@ package org.owasp.esapi.reference.regex;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import org.junit.Assume;
 import org.junit.runners.Parameterized.Parameters;
 import org.owasp.esapi.reference.DefaultSecurityConfiguration;

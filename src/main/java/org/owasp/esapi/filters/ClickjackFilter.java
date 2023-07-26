@@ -16,6 +16,7 @@
 
 package org.owasp.esapi.filters;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -69,7 +70,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ClickjackFilter implements Filter
 {
 
-    private String mode = "DENY";
+    private @RUntainted String mode = "DENY";
 
     /**
      * Initialize "mode" parameter from web.xml. Valid values are "DENY" and "SAMEORIGIN".
@@ -78,8 +79,8 @@ public class ClickjackFilter implements Filter
      * @param filterConfig A filter configuration object used by a servlet container
      *                     to pass information to a filter during initialization.
      */
-    public void init(FilterConfig filterConfig) {
-        String configMode = filterConfig.getInitParameter("mode");
+    public void init(@RUntainted FilterConfig filterConfig) {
+        @RUntainted String configMode = filterConfig.getInitParameter("mode");
         if ( configMode != null && ( configMode.equals( "DENY" ) || configMode.equals( "SAMEORIGIN" ) ) ) {
             mode = configMode;
         }

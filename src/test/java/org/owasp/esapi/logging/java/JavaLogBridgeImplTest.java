@@ -17,7 +17,6 @@ package org.owasp.esapi.logging.java;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

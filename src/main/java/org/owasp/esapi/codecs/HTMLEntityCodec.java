@@ -19,6 +19,7 @@
  */
 package org.owasp.esapi.codecs;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -60,7 +61,7 @@ public class HTMLEntityCodec extends AbstractIntegerCodec
      * {@inheritDoc}
      */
     @Override
-    public String encode(char[] immune, String input) {
+    public @RUntainted String encode(char[] immune, String input) {
         StringBuilder sb = new StringBuilder();
         for(int offset  = 0; offset < input.length(); ){
             final int point = input.codePointAt(offset);

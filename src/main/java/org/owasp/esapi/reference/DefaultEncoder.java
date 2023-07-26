@@ -15,6 +15,7 @@
  */
 package org.owasp.esapi.reference;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
@@ -210,7 +211,7 @@ public class DefaultEncoder implements Encoder {
     /**
      * {@inheritDoc}
      */
-    public String encodeForHTML(String input) {
+    public @RUntainted String encodeForHTML(String input) {
         if( input == null ) {
             return null;
         }

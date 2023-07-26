@@ -16,7 +16,6 @@
 package org.owasp.esapi.waf;
 
 import javax.servlet.http.HttpServletResponse;
-
 import junit.framework.TestSuite;
 
 public class RestrictUserAgentTest extends WAFTestCase {

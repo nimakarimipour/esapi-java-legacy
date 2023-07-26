@@ -3,7 +3,6 @@ package org.owasp.esapi.reference;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;

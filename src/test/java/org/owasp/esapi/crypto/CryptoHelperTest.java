@@ -1,16 +1,12 @@
 package org.owasp.esapi.crypto;
 
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import java.util.Random;
-
-import org.junit.Test;
-
 import javax.crypto.SecretKey;
-
 import junit.framework.JUnit4TestAdapter;
-
-import org.owasp.esapi.crypto.CryptoHelper;
+import org.junit.Test;
 import org.owasp.esapi.errors.EncryptionException;
 
 public class CryptoHelperTest {

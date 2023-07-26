@@ -17,7 +17,6 @@ package org.owasp.esapi.codecs.percent;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import org.junit.runners.Parameterized.Parameters;
 import org.owasp.esapi.codecs.PercentCodec;
 import org.owasp.esapi.codecs.abstraction.AbstractCodecStringTest;

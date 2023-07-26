@@ -15,19 +15,10 @@
  */
 package org.owasp.esapi.waf;
 
-import java.io.IOException;
 import java.net.URL;
-
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-
-import org.owasp.esapi.http.MockFilterChain;
-import org.owasp.esapi.http.MockHttpServletRequest;
-
 import junit.framework.TestSuite;
+import org.owasp.esapi.http.MockHttpServletRequest;
 
 public class DynamicInsertionTest extends WAFTestCase {
 

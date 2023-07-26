@@ -2,7 +2,6 @@ package org.owasp.esapi.reference.validation;
 
 import java.text.DateFormat;
 import java.util.Locale;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;

@@ -18,11 +18,9 @@ package org.owasp.esapi.reference;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
 import org.owasp.esapi.Authenticator;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.User;

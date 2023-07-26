@@ -15,6 +15,7 @@
  */
 package org.owasp.esapi.reference;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -269,8 +270,8 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
         try {
             String strippedName = StringUtilities.replaceLinearWhiteSpace(name);
             String strippedValue = StringUtilities.replaceLinearWhiteSpace(value);
-            String safeName = ESAPI.validator().getValidInput("addHeader", strippedName, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
-            String safeValue = ESAPI.validator().getValidInput("addHeader", strippedValue, "HTTPHeaderValue", sc.getIntProp("HttpUtilities.MaxHeaderValueSize"), false);
+            @RUntainted String safeName = ESAPI.validator().getValidInput("addHeader", strippedName, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
+            @RUntainted String safeValue = ESAPI.validator().getValidInput("addHeader", strippedValue, "HTTPHeaderValue", sc.getIntProp("HttpUtilities.MaxHeaderValueSize"), false);
             response.addHeader(safeName, safeValue);
         } catch (ValidationException e) {
             logger.warning(Logger.SECURITY_FAILURE, "Attempt to add invalid header denied", e);
@@ -357,7 +358,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
         user.removeSession( oldSession );
 
         // copy back the session content
-      for (Map.Entry<String, Object> stringObjectEntry : temp.entrySet())
+      for (Map.Entry<@RUntainted String, @RUntainted Object> stringObjectEntry : temp.entrySet())
       {
          newSession.setAttribute(stringObjectEntry.getKey(), stringObjectEntry.getValue());
         }
@@ -604,7 +605,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
             // Create a progress listener
             ProgressListener progressListener = new ProgressListener() {
                 private long megaBytes = -1;
-                private long progress = 0;
+                private @RUntainted long progress = 0;
 
                 public void update(long pBytesRead, long pContentLength, int pItems) {
                     if (pItems == 0)
@@ -760,8 +761,8 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      * @param name
      */
     public void killCookie(HttpServletRequest request, HttpServletResponse response, String name) {
-        String path = "/";
-        String domain="";
+        @RUntainted String path = "/";
+        @RUntainted String domain="";
         Cookie cookie = getFirstCookie(request, name);
         if ( cookie != null ) {
             path = cookie.getPath();
@@ -886,7 +887,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      *
      * This implementation checks against the list of safe redirect locations defined in ESAPI.properties.
      */
-    public void sendRedirect(HttpServletResponse response, String location) throws AccessControlException, IOException {
+    public void sendRedirect(HttpServletResponse response, @RUntainted String location) throws AccessControlException, IOException {
         if (!ESAPI.validator().isValidRedirectLocation("Redirect", location, false)) {
             logger.fatal(Logger.SECURITY_FAILURE, "Bad redirect location: " + location);
             throw new AccessControlException("Redirect failed", "Bad redirect location: " + location);
@@ -897,7 +898,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /**
      * {@inheritDoc}
      */
-    public void sendRedirect( String location )  throws AccessControlException,IOException {
+    public void sendRedirect( @RUntainted String location )  throws AccessControlException,IOException {
         sendRedirect( getCurrentResponse(), location);
     }
 
@@ -932,7 +933,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
             SecurityConfiguration sc = ESAPI.securityConfiguration();
             String strippedName = StringUtilities.replaceLinearWhiteSpace(name);
             String strippedValue = StringUtilities.replaceLinearWhiteSpace(value);
-            String safeName = ESAPI.validator().getValidInput("setHeader", strippedName, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
+            @RUntainted String safeName = ESAPI.validator().getValidInput("setHeader", strippedName, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
             String safeValue = ESAPI.validator().getValidInput("setHeader", strippedValue, "HTTPHeaderValue", sc.getIntProp("HttpUtilities.MaxHeaderValueSize"), false);
             response.setHeader(safeName, safeValue);
         } catch (ValidationException e) {
@@ -982,7 +983,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      * @param request
      * @param response
      */
-    public String setRememberToken( HttpServletRequest request, HttpServletResponse response, String password, int maxAge, String domain, String path ) {
+    public String setRememberToken( HttpServletRequest request, HttpServletResponse response, String password, int maxAge, @RUntainted String domain, @RUntainted String path ) {
         User user = ESAPI.authenticator().getCurrentUser();
         try {
             killCookie(request, response, REMEMBER_TOKEN_COOKIE_NAME );
@@ -1013,7 +1014,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     }
 
 
-    public String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, String domain, String path){
+    public String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, @RUntainted String domain, @RUntainted String path){
         String rval = "";
         User user = ESAPI.authenticator().getCurrentUser();
 
@@ -1049,7 +1050,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /**
      * {@inheritDoc}
      */
-    public String setRememberToken( String password, int maxAge, String domain, String path ) {
+    public String setRememberToken( String password, int maxAge, @RUntainted String domain, @RUntainted String path ) {
         return setRememberToken( getCurrentRequest(), getCurrentResponse(), password, maxAge, domain, path );
     }
 

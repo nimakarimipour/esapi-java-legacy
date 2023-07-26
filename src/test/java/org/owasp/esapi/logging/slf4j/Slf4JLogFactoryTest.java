@@ -15,7 +15,6 @@
 package org.owasp.esapi.logging.slf4j;
 
 import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

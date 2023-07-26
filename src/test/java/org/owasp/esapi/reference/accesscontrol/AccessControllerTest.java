@@ -1,17 +1,12 @@
 package org.owasp.esapi.reference.accesscontrol;
 
 import static org.junit.Assert.assertEquals;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.owasp.esapi.AccessController;
 import org.owasp.esapi.errors.AccessControlException;
-import org.owasp.esapi.reference.accesscontrol.AlwaysFalseACR;
-import org.owasp.esapi.reference.accesscontrol.AlwaysTrueACR;
-import org.owasp.esapi.reference.accesscontrol.ExperimentalAccessController;
 
 /**
  * Answers the question: is the AccessController itself working properly?

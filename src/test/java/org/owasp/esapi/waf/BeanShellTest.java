@@ -16,14 +16,11 @@
 package org.owasp.esapi.waf;
 
 import java.net.URL;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import junit.framework.TestSuite;
 import org.owasp.esapi.http.MockFilterChain;
 import org.owasp.esapi.http.MockHttpServletRequest;
-
-import junit.framework.TestSuite;
 
 public class BeanShellTest extends WAFTestCase {
 

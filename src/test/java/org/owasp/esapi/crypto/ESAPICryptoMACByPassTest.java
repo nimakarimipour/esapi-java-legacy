@@ -24,25 +24,22 @@
 
 package org.owasp.esapi.crypto;
 
-import org.apache.commons.codec.binary.Hex;
-import org.owasp.esapi.ESAPI;
-import org.owasp.esapi.crypto.CipherText;
-import org.owasp.esapi.crypto.PlainText;
-import org.owasp.esapi.errors.EncryptionException;
-import org.owasp.esapi.util.ByteConversionUtil;
-
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Date;
-
-import static org.junit.Assert.*;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import org.apache.commons.codec.binary.Hex;
 import org.junit.Before;
 import org.junit.Test;
+import org.owasp.esapi.ESAPI;
+import org.owasp.esapi.errors.EncryptionException;
+import org.owasp.esapi.util.ByteConversionUtil;
 
 
 public class ESAPICryptoMACByPassTest {

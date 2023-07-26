@@ -1,5 +1,10 @@
 package org.owasp.esapi.configuration;
 
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.fail;
+import java.io.File;
+import java.io.IOException;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -7,11 +12,6 @@ import org.junit.Test;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.configuration.consts.EsapiConfiguration;
 import org.owasp.esapi.errors.ConfigurationException;
-
-import java.io.File;
-import java.io.IOException;
-
-import static junit.framework.Assert.*;
 
 public class XmlEsapiPropertyLoaderTest {
 

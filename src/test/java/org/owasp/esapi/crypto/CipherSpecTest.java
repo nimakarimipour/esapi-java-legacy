@@ -6,18 +6,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
+import javax.crypto.Cipher;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
-import javax.crypto.Cipher;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.codecs.Hex;
-import org.owasp.esapi.crypto.CipherSpec;
 
 /** JUnit test to test CipherSpec class. */
 public class CipherSpecTest extends TestCase {

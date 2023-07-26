@@ -1,13 +1,10 @@
 package org.owasp.esapi.util;
 
+import java.security.Key;
+import javax.crypto.spec.SecretKeySpec;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
-import java.security.Key;
-
-import javax.crypto.spec.SecretKeySpec;
-
 import org.owasp.esapi.errors.ConfigurationException;
 
 public class ObjFactoryTest extends TestCase {

@@ -2,9 +2,7 @@ package org.owasp.esapi.reference.accesscontrol.policyloader;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 import java.util.Map;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.owasp.esapi.AccessController;

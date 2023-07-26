@@ -15,6 +15,7 @@
  */
 package org.owasp.esapi;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
@@ -38,7 +39,7 @@ public class StringUtilities {
      * @param input
      * @return the stripped value
      */
-    public static String stripControls( String input ) {
+    public static @RUntainted String stripControls( String input ) {
         StringBuilder sb = new StringBuilder();
         for ( int i=0; i<input.length(); i++ ) {
             char c = input.charAt( i );

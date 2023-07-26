@@ -18,15 +18,13 @@ package org.owasp.esapi.reference;
 import java.io.File;
 import java.util.Iterator;
 import java.util.Set;
-
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 import org.owasp.esapi.SafeFile;
 import org.owasp.esapi.errors.ValidationException;
 import org.owasp.esapi.util.CollectionsUtil;
 import org.owasp.esapi.util.FileTestUtils;
-
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 /**
  * @author Jeff Williams (jeff.williams@aspectsecurity.com)

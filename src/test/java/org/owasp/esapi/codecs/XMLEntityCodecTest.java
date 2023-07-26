@@ -13,15 +13,9 @@
  */
 package org.owasp.esapi.codecs;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
-
-import org.owasp.esapi.util.CollectionsUtil;
-
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.owasp.esapi.util.CollectionsUtil;
 
 public class XMLEntityCodecTest extends TestCase
 {

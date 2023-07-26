@@ -1,19 +1,16 @@
 package org.owasp.esapi.crypto;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.security.NoSuchAlgorithmException;
-import java.security.InvalidKeyException;
-
-import static org.junit.Assert.*;
-import org.junit.BeforeClass;
-import org.junit.Before;
-import org.junit.Test;
-
 import junit.framework.JUnit4TestAdapter;
-
-import org.owasp.esapi.crypto.KeyDerivationFunction;
-import org.owasp.esapi.crypto.CryptoHelper;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.owasp.esapi.errors.EncryptionException;
 
 public class KeyDerivationFunctionTest {

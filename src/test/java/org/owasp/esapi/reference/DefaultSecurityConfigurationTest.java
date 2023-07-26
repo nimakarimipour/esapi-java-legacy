@@ -6,19 +6,48 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
-import java.util.regex.Pattern;
+import static org.owasp.esapi.PropNames.ACCESS_CONTROL_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.ALLOW_MULTIPLE_ENCODING;
+import static org.owasp.esapi.PropNames.APPLICATION_NAME;
+import static org.owasp.esapi.PropNames.APPROVED_EXECUTABLES;
+import static org.owasp.esapi.PropNames.APPROVED_UPLOAD_EXTENSIONS;
+import static org.owasp.esapi.PropNames.AUTHENTICATION_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.CANONICALIZATION_CODECS;
+import static org.owasp.esapi.PropNames.CIPHER_TRANSFORMATION_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_ACCESS_CONTROL_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_AUTHENTICATION_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_ENCODER_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_ENCRYPTION_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_EXECUTOR_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_HTTP_UTILITIES_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_INTRUSION_DETECTION_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_LOG_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_RANDOMIZER_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DEFAULT_VALIDATOR_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.DISABLE_INTRUSION_DETECTION;
+import static org.owasp.esapi.PropNames.ENCODER_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.ENCRYPTION_ALGORITHM;
+import static org.owasp.esapi.PropNames.ENCRYPTION_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.EXECUTOR_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.HTTP_UTILITIES_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.INTRUSION_DETECTION_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.IV_TYPE;
+import static org.owasp.esapi.PropNames.KDF_PRF_ALG;
+import static org.owasp.esapi.PropNames.KEY_LENGTH;
+import static org.owasp.esapi.PropNames.LOG_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.MASTER_SALT;
+import static org.owasp.esapi.PropNames.MAX_UPLOAD_FILE_BYTES;
+import static org.owasp.esapi.PropNames.PASSWORD_PARAMETER_NAME;
+import static org.owasp.esapi.PropNames.RANDOMIZER_IMPLEMENTATION;
+import static org.owasp.esapi.PropNames.USERNAME_PARAMETER_NAME;
+import static org.owasp.esapi.PropNames.VALIDATOR_IMPLEMENTATION;
 import java.util.Properties;
-
+import java.util.regex.Pattern;
 import org.junit.Test;
-
 import org.owasp.esapi.ESAPI;
-import org.owasp.esapi.Logger;
+import org.owasp.esapi.PropNames.DefaultSearchPath;
 import org.owasp.esapi.SecurityConfiguration;
 import org.owasp.esapi.errors.ConfigurationException;
-import org.owasp.esapi.PropNames.DefaultSearchPath;
-
-import static org.owasp.esapi.PropNames.*;
 
 public class DefaultSecurityConfigurationTest {
 

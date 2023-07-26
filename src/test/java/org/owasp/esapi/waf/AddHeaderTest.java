@@ -16,10 +16,8 @@
 package org.owasp.esapi.waf;
 
 import java.net.URL;
-
-import org.owasp.esapi.http.MockHttpServletRequest;
-
 import junit.framework.TestSuite;
+import org.owasp.esapi.http.MockHttpServletRequest;
 
 public class AddHeaderTest extends WAFTestCase {
 

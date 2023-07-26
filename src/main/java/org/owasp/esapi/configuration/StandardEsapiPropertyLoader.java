@@ -1,5 +1,6 @@
 package org.owasp.esapi.configuration;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -76,8 +77,8 @@ public class StandardEsapiPropertyLoader extends AbstractPrioritizedPropertyLoad
      * {@inheritDoc}
      */
     @Override
-    public String getStringProp(String propertyName) throws ConfigurationException {
-        String property = properties.getProperty(propertyName);
+    public @RUntainted String getStringProp(@RUntainted String propertyName) throws ConfigurationException {
+        @RUntainted String property = properties.getProperty(propertyName);
         if (property == null) {
             throw new ConfigurationException("Property : " + propertyName + "not found in default configuration");
         }

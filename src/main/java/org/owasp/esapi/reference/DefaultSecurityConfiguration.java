@@ -15,6 +15,7 @@
  */
 package org.owasp.esapi.reference;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -90,7 +91,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
         return instance;
     }
 
-    private Properties properties = null;
+    private @RUntainted Properties properties = null;
     private String cipherXformFromESAPIProp = null;    // New in ESAPI 2.0
     private String cipherXformCurrent = null;          // New in ESAPI 2.0
 
@@ -398,7 +399,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      *
      * @param properties
      */
-    public DefaultSecurityConfiguration(Properties properties) {
+    public DefaultSecurityConfiguration(@RUntainted Properties properties) {
         resourceFile = DEFAULT_RESOURCE_FILE;
         try {
             this.esapiPropertyManager = new EsapiPropertyManager();
@@ -575,7 +576,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     }
 
 
-    private Properties loadPropertiesFromStream( InputStream is, String name ) throws IOException {
+    private @RUntainted Properties loadPropertiesFromStream( InputStream is, String name ) throws IOException {
         Properties config = new Properties();
         try {
             config.load(is);
@@ -780,7 +781,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      *
      * @param fileName The properties file filename.
      */
-    private Properties loadConfigurationFromClasspath(String fileName) throws IllegalArgumentException {
+    private @RUntainted Properties loadConfigurationFromClasspath(String fileName) throws IllegalArgumentException {
         Properties result = null;
         InputStream in = null;
 
@@ -1204,7 +1205,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public String getResponseContentType() {
+    public @RUntainted String getResponseContentType() {
         return getESAPIProperty( RESPONSE_CONTENT_TYPE, "text/html; charset=UTF-8" );
     }
 
@@ -1462,11 +1463,11 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * 3.) In ESAPI.properties
      */
     @Override
-    public String getStringProp(String propertyName) throws ConfigurationException {
+    public @RUntainted String getStringProp(@RUntainted String propertyName) throws ConfigurationException {
         try {
             return esapiPropertyManager.getStringProp(propertyName);
         } catch (ConfigurationException ex) {
-            String property = properties.getProperty( propertyName );
+            @RUntainted String property = properties.getProperty( propertyName );
             if ( property == null ) {
                 throw new ConfigurationException( "SecurityConfiguration for " + propertyName + " not found in ESAPI.properties");
             }

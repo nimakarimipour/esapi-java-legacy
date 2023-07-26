@@ -15,6 +15,7 @@
  */
 package org.owasp.esapi;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.io.IOException;
 import java.net.URI;
 import org.owasp.esapi.codecs.Codec;
@@ -336,7 +337,7 @@ public interface Encoder {
      *
      * @return the untrusted data safely output encoded for use in a HTML
      */
-    String encodeForHTML(String untrustedData);
+    @RUntainted String encodeForHTML(String untrustedData);
 
     /**
      * Decodes HTML entities.

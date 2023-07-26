@@ -18,7 +18,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.logging.LogManager;
-
 import org.hamcrest.CustomMatcher;
 import org.junit.Assert;
 import org.junit.Rule;

@@ -1,11 +1,9 @@
 package org.owasp.esapi;
 
 import java.util.Arrays;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.owasp.esapi.StringUtilities;
 
 public class StringUtilitiesTest extends TestCase {
 

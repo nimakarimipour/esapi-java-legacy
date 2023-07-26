@@ -1,5 +1,6 @@
 package org.owasp.esapi.reference.validation;
 
+import static org.owasp.esapi.PropNames.ACCEPT_LENIENT_DATES;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +9,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
-
 import org.hamcrest.CustomMatcher;
 import org.junit.Assert;
 import org.junit.Before;
@@ -22,8 +22,6 @@ import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.ValidationErrorList;
 import org.owasp.esapi.errors.ValidationException;
-import org.owasp.esapi.reference.DefaultSecurityConfiguration;
-import static org.owasp.esapi.PropNames.ACCEPT_LENIENT_DATES;
 import org.powermock.reflect.Whitebox;
 
 public class DateValidationRuleTest {

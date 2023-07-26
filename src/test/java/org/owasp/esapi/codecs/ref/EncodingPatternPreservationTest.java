@@ -1,10 +1,8 @@
 package org.owasp.esapi.codecs.ref;
 
+import static org.junit.Assert.assertEquals;
 import java.util.regex.Pattern;
-
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class EncodingPatternPreservationTest {
 

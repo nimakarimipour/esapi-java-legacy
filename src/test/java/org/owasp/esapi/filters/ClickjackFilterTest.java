@@ -18,13 +18,10 @@ package org.owasp.esapi.filters;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.FilterConfig;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
 import org.owasp.esapi.http.MockFilterChain;
 import org.owasp.esapi.http.MockFilterConfig;
 import org.owasp.esapi.http.MockHttpServletRequest;

@@ -17,15 +17,13 @@
 package org.owasp.esapi.waf;
 
 import java.net.URL;
-
+import junit.framework.TestCase;
 import org.owasp.esapi.Authenticator;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.User;
 import org.owasp.esapi.http.MockHttpServletRequest;
 import org.owasp.esapi.http.MockHttpServletResponse;
-
-import junit.framework.TestCase;
 
 public abstract class WAFTestCase extends TestCase {
 

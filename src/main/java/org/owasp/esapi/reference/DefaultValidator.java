@@ -17,6 +17,7 @@
  */
 package org.owasp.esapi.reference;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -252,7 +253,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * for additional details.
      */
     @Override
-    public String getValidInput(String context, String input, String type, int maxLength, boolean allowNull) throws ValidationException {
+    public @RUntainted String getValidInput(String context, String input, String type, int maxLength, boolean allowNull) throws ValidationException {
         return getValidInput(context, input, type, maxLength, allowNull, true);
     }
 
@@ -267,7 +268,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * for additional details.
      */
     @Override
-    public String getValidInput(String context, String input, String type, int maxLength, boolean allowNull, boolean canonicalize) throws ValidationException {
+    public @RUntainted String getValidInput(String context, String input, String type, int maxLength, boolean allowNull, boolean canonicalize) throws ValidationException {
         StringValidationRule rvr = new StringValidationRule( type, encoder );
         Pattern p = ESAPI.securityConfiguration().getValidationPattern( type );
         if ( p != null ) {

@@ -15,22 +15,22 @@
  */
 package org.owasp.esapi.reference.validation;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_ACTION;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.SecurityConfiguration;
 import org.owasp.esapi.SecurityConfigurationWrapper;
 import org.owasp.esapi.ValidationErrorList;
-import org.owasp.esapi.ValidationRule;
 import org.owasp.esapi.Validator;
 import org.owasp.esapi.errors.ValidationException;
-import org.owasp.esapi.reference.validation.HTMLValidationRule;
-import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_ACTION;
-
-import org.junit.Test;
-import org.junit.Before;
-import org.junit.After;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
-import static org.junit.Assert.*;
 
 /**
  * The Class HTMLValidationRuleThrowsTest.

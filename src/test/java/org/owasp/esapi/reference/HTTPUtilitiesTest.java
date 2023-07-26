@@ -15,6 +15,8 @@
  */
 package org.owasp.esapi.reference;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -23,12 +25,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 import org.owasp.esapi.Authenticator;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
@@ -47,15 +52,6 @@ import org.owasp.esapi.http.MockHttpServletResponse;
 import org.owasp.esapi.http.MockHttpSession;
 import org.owasp.esapi.util.FileTestUtils;
 import org.owasp.esapi.util.TestUtils;
-
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-// import org.junit.Ignore;     // Doesn't seem to work with TestSuite.
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
 /**
  * The Class HTTPUtilitiesTest.
  *

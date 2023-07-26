@@ -16,13 +16,10 @@
 package org.owasp.esapi.reference.crypto;
 
 import java.io.UnsupportedEncodingException;
-
 import javax.crypto.SecretKey;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.Encryptor;
@@ -32,7 +29,6 @@ import org.owasp.esapi.crypto.PlainText;
 import org.owasp.esapi.errors.EncryptionException;
 import org.owasp.esapi.errors.EnterpriseSecurityException;
 import org.owasp.esapi.errors.IntegrityException;
-import org.owasp.esapi.reference.crypto.JavaEncryptor;
 
 /**
  * The Class EncryptorTest.

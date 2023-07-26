@@ -16,16 +16,13 @@
 package org.owasp.esapi.waf;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-
-import org.owasp.esapi.http.MockFilterChain;
-
 import junit.framework.TestSuite;
+import org.owasp.esapi.http.MockFilterChain;
 
 public class HttpOnlyTest extends WAFTestCase {
 

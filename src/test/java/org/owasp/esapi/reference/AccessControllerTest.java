@@ -18,10 +18,9 @@ package org.owasp.esapi.reference;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
-import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.AccessController;
 import org.owasp.esapi.Authenticator;
+import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.User;
 import org.owasp.esapi.errors.AccessControlException;
 

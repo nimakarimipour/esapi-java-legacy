@@ -16,6 +16,7 @@
  */
 package org.owasp.esapi;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -642,7 +643,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @deprecated Use SecurityConfiguration.getStringProp("appropriate_esapi_prop_name") instead.
      */
     @Deprecated
-    String getResponseContentType();
+    @RUntainted String getResponseContentType();
 
     /**
      * This method returns the configured name of the session identifier,

@@ -1,8 +1,7 @@
 package org.owasp.esapi.util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import junit.framework.JUnit4TestAdapter;
-
 import org.junit.Test;
 import org.owasp.esapi.codecs.Hex;
 
