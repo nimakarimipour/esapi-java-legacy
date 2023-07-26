@@ -17,7 +17,6 @@ package org.owasp.esapi;
 
 import java.io.IOException;
 import java.net.URI;
-
 import org.owasp.esapi.codecs.Codec;
 import org.owasp.esapi.errors.EncodingException;
 

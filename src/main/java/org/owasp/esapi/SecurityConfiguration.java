@@ -16,13 +16,12 @@
  */
 package org.owasp.esapi;
 
-import org.owasp.esapi.configuration.EsapiPropertyLoader;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.regex.Pattern;
+import org.owasp.esapi.configuration.EsapiPropertyLoader;
 
 /**
  * The {@code SecurityConfiguration} interface stores all configuration information

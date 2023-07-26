@@ -1,7 +1,6 @@
 package org.owasp.esapi.tags;
 
 import java.io.UnsupportedEncodingException;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.errors.EncodingException;

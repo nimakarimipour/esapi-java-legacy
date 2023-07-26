@@ -9,19 +9,17 @@
  */
 package org.owasp.esapi.crypto;
 
+import static org.owasp.esapi.PropNames.KDF_PRF_ALG;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.errors.ConfigurationException;
 import org.owasp.esapi.errors.EncryptionException;
-import static org.owasp.esapi.PropNames.KDF_PRF_ALG;
 import org.owasp.esapi.util.ByteConversionUtil;
 
 /**

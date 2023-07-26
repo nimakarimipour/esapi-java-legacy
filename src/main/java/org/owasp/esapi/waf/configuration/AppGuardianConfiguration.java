@@ -17,7 +17,6 @@ package org.owasp.esapi.waf.configuration;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.owasp.esapi.waf.rules.Rule;
 
 /**

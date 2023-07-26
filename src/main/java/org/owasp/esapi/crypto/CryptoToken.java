@@ -19,22 +19,20 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encryptor;
 import org.owasp.esapi.Logger;
+import org.owasp.esapi.errors.ConfigurationException;
 import org.owasp.esapi.errors.EncodingException;
 import org.owasp.esapi.errors.EncryptionException;
 import org.owasp.esapi.errors.EncryptionRuntimeException;
-import org.owasp.esapi.errors.ConfigurationException;
 import org.owasp.esapi.errors.ValidationException;
 
 ///// IMPORTANT NOTE: Never print / log attribute *values* as they

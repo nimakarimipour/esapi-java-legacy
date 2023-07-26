@@ -19,11 +19,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Stack;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
-import org.owasp.esapi.User;
 import org.owasp.esapi.SecurityConfiguration.Threshold;
+import org.owasp.esapi.User;
 import org.owasp.esapi.errors.EnterpriseSecurityException;
 import org.owasp.esapi.errors.IntrusionException;
 

@@ -2,7 +2,6 @@ package org.owasp.esapi.crypto;
 
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 

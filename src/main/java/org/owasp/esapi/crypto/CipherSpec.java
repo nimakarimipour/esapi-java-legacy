@@ -13,7 +13,6 @@ package org.owasp.esapi.crypto;
 
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
-
 import javax.crypto.Cipher;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.StringUtilities;

@@ -16,13 +16,10 @@
 package org.owasp.esapi.waf.rules;
 
 import javax.servlet.http.HttpServletRequest;
-
 import javax.servlet.http.HttpServletResponse;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.waf.actions.Action;
-import org.owasp.esapi.waf.configuration.AppGuardianConfiguration;
 import org.owasp.esapi.waf.internal.InterceptingHTTPServletResponse;
 
 /**

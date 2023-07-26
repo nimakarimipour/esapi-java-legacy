@@ -16,24 +16,21 @@
 package org.owasp.esapi.reference.validation;
 
 
-
+import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_ACTION;
+import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_CONFIGURATION_FILE;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.Logger;
+import org.owasp.esapi.PropNames.DefaultSearchPath;
 import org.owasp.esapi.SecurityConfiguration;
 import org.owasp.esapi.StringUtilities;
 import org.owasp.esapi.errors.ConfigurationException;
 import org.owasp.esapi.errors.ValidationException;
-import org.owasp.esapi.PropNames.DefaultSearchPath;
-import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_ACTION;
-import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_CONFIGURATION_FILE;
-
 import org.owasp.validator.html.AntiSamy;
 import org.owasp.validator.html.CleanResults;
 import org.owasp.validator.html.Policy;

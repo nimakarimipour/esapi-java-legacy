@@ -23,8 +23,8 @@ import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.DateFormat;
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -33,9 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.Logger;

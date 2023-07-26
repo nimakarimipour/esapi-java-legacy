@@ -1,9 +1,11 @@
 package org.owasp.esapi.configuration;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.errors.ConfigurationException;
-
-import java.io.*;
 
 /**
  * Loader capable of loading single security configuration property from standard java properties configuration file.

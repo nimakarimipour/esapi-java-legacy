@@ -15,14 +15,17 @@
  */
 package org.owasp.esapi;
 
+import java.io.Serializable;
+import java.security.Principal;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
+import javax.servlet.http.HttpSession;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.AuthenticationHostException;
 import org.owasp.esapi.errors.EncryptionException;
-
-import javax.servlet.http.HttpSession;
-import java.io.Serializable;
-import java.security.Principal;
-import java.util.*;
 
 /**
  * The User interface represents an application user or user account. There is quite a lot of information that an

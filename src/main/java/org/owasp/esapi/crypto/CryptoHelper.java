@@ -9,18 +9,13 @@
  */
 package org.owasp.esapi.crypto;
 
-import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.InvalidParameterException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.List;
-
 import javax.crypto.KeyGenerator;
-import javax.crypto.Mac;
 import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.errors.EncryptionException;

@@ -17,11 +17,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.EnumSet;
 import java.util.Iterator;
-
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encryptor;
 import org.owasp.esapi.Logger;

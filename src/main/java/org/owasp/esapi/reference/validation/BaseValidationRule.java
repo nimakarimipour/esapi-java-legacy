@@ -18,7 +18,6 @@ package org.owasp.esapi.reference.validation;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.ValidationErrorList;

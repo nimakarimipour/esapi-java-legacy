@@ -15,8 +15,8 @@
  */
 package org.owasp.esapi.codecs;
 
-import java.util.HashMap;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**

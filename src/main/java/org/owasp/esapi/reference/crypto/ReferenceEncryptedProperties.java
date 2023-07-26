@@ -26,7 +26,6 @@ import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Set;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncryptedProperties;
 import org.owasp.esapi.Logger;

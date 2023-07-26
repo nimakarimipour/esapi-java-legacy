@@ -20,7 +20,6 @@ package org.owasp.esapi.logging.appender;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.User;
 

@@ -14,6 +14,12 @@
  */
 package org.owasp.esapi.logging.java;
 
+import static org.owasp.esapi.PropNames.APPLICATION_NAME;
+import static org.owasp.esapi.PropNames.LOG_APPLICATION_NAME;
+import static org.owasp.esapi.PropNames.LOG_CLIENT_INFO;
+import static org.owasp.esapi.PropNames.LOG_ENCODING_REQUIRED;
+import static org.owasp.esapi.PropNames.LOG_SERVER_IP;
+import static org.owasp.esapi.PropNames.LOG_USER_INFO;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -21,7 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.LogManager;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.LogFactory;
 import org.owasp.esapi.Logger;
@@ -34,13 +39,6 @@ import org.owasp.esapi.logging.cleaning.CodecLogScrubber;
 import org.owasp.esapi.logging.cleaning.CompositeLogScrubber;
 import org.owasp.esapi.logging.cleaning.LogScrubber;
 import org.owasp.esapi.logging.cleaning.NewlineLogScrubber;
-
-import static org.owasp.esapi.PropNames.LOG_ENCODING_REQUIRED;
-import static org.owasp.esapi.PropNames.LOG_USER_INFO;
-import static org.owasp.esapi.PropNames.LOG_CLIENT_INFO;
-import static org.owasp.esapi.PropNames.LOG_APPLICATION_NAME;
-import static org.owasp.esapi.PropNames.APPLICATION_NAME;
-import static org.owasp.esapi.PropNames.LOG_SERVER_IP;
 
 /**
  * LogFactory implementation which creates JAVA supporting Loggers.

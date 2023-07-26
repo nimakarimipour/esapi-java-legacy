@@ -15,11 +15,34 @@
  */
 package org.owasp.esapi.reference;
 
-import org.owasp.esapi.*;
-import org.owasp.esapi.errors.*;
-
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import org.owasp.esapi.Authenticator;
+import org.owasp.esapi.ESAPI;
+import org.owasp.esapi.EncoderConstants;
+import org.owasp.esapi.Logger;
+import org.owasp.esapi.Randomizer;
+import org.owasp.esapi.StringUtilities;
+import org.owasp.esapi.User;
+import org.owasp.esapi.errors.AuthenticationAccountsException;
+import org.owasp.esapi.errors.AuthenticationCredentialsException;
+import org.owasp.esapi.errors.AuthenticationException;
+import org.owasp.esapi.errors.EncryptionException;
 
 /**
  * Reference implementation of the Authenticator interface. This reference implementation is intended to be

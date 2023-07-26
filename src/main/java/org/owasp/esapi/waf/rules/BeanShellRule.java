@@ -15,22 +15,19 @@
  */
 package org.owasp.esapi.waf.rules;
 
+import bsh.EvalError;
+import bsh.Interpreter;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.regex.Pattern;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.waf.actions.Action;
 import org.owasp.esapi.waf.actions.DoNothingAction;
 import org.owasp.esapi.waf.internal.InterceptingHTTPServletResponse;
-
-import bsh.EvalError;
-import bsh.Interpreter;
 
 /**
  * This is the Rule subclass executed for &lt;bean-shell-script&gt; rules.

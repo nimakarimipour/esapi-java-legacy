@@ -15,8 +15,6 @@
  */
 package org.owasp.esapi.waf;
 
-import nu.xom.ValidityException;
-
 import org.owasp.esapi.errors.EnterpriseSecurityException;
 
 /**

@@ -15,10 +15,9 @@
  */
 package org.owasp.esapi.errors;
 
+import static org.owasp.esapi.PropNames.DISABLE_INTRUSION_DETECTION;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
-
-import static org.owasp.esapi.PropNames.DISABLE_INTRUSION_DETECTION;
 
 
 /**

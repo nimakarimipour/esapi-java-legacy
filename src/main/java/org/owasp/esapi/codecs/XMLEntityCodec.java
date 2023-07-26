@@ -15,7 +15,6 @@ package org.owasp.esapi.codecs;
 
 import java.util.Map;
 import java.util.Set;
-
 import org.owasp.esapi.util.CollectionsUtil;
 
 /**

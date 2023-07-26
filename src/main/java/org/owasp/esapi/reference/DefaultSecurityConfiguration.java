@@ -32,11 +32,9 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-
 import org.apache.commons.lang.text.StrTokenizer;
 import org.owasp.esapi.ESAPI;
-import org.owasp.esapi.Logger;
-import org.owasp.esapi.PropNames;   // <== Actual property names moved to here. Eventually we'll do static import.
+import org.owasp.esapi.PropNames;
 import org.owasp.esapi.PropNames.DefaultSearchPath;
 import org.owasp.esapi.SecurityConfiguration;
 import org.owasp.esapi.configuration.EsapiPropertyManager;

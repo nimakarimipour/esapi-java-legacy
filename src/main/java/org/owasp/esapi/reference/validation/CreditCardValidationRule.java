@@ -16,7 +16,6 @@
 package org.owasp.esapi.reference.validation;
 
 import java.util.regex.Pattern;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.EncoderConstants;

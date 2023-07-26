@@ -21,7 +21,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
 import org.owasp.esapi.AccessReferenceMap;
 import org.owasp.esapi.errors.AccessControlException;
 

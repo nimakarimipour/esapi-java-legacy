@@ -15,21 +15,24 @@
  */
 package org.owasp.esapi.reference;
 
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
+import javax.servlet.http.HttpSession;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.HTTPUtilities;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.User;
-import org.owasp.esapi.errors.*;
-
-import javax.servlet.http.HttpSession;
-import java.io.Serializable;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Date;
-import java.util.Locale;
-import java.util.Collections;
-import java.util.HashMap;
+import org.owasp.esapi.errors.AuthenticationAccountsException;
+import org.owasp.esapi.errors.AuthenticationException;
+import org.owasp.esapi.errors.AuthenticationHostException;
+import org.owasp.esapi.errors.AuthenticationLoginException;
+import org.owasp.esapi.errors.EncryptionException;
 /**
  * Reference implementation of the User interface. This implementation is serialized into a flat file in a simple format.
  *

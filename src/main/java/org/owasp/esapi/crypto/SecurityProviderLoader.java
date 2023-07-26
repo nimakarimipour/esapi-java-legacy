@@ -4,7 +4,6 @@ import java.security.NoSuchProviderException;
 import java.security.Provider;
 import java.security.Security;
 import java.util.Hashtable;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 

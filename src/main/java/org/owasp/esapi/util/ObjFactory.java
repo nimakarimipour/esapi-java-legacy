@@ -9,11 +9,10 @@
  */
 package org.owasp.esapi.util;
 
-import org.owasp.esapi.errors.ConfigurationException;
-
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.concurrent.ConcurrentHashMap;
+import org.owasp.esapi.errors.ConfigurationException;
 
 /**
  * A generic object factory to create an object of class T. T must be a concrete

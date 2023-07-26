@@ -3,7 +3,6 @@ package org.owasp.esapi.reference.accesscontrol.policyloader;
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.owasp.esapi.AccessControlRule;
 import org.owasp.esapi.errors.AccessControlException;
 

@@ -15,17 +15,20 @@
  */
 package org.owasp.esapi;
 
-import org.owasp.esapi.errors.*;
-
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+import org.owasp.esapi.errors.AccessControlException;
+import org.owasp.esapi.errors.AuthenticationException;
+import org.owasp.esapi.errors.EncryptionException;
+import org.owasp.esapi.errors.IntrusionException;
+import org.owasp.esapi.errors.ValidationException;
 
 /**
  * The HTTPUtilities interface is a collection of methods that provide additional security related to HTTP requests,

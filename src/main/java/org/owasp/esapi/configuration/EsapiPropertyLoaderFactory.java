@@ -1,12 +1,10 @@
 package org.owasp.esapi.configuration;
 
-import org.owasp.esapi.configuration.consts.EsapiConfiguration;
-import org.owasp.esapi.errors.ConfigurationException;
-
-import java.io.IOException;
-
 import static org.owasp.esapi.configuration.consts.EsapiConfigurationType.PROPERTIES;
 import static org.owasp.esapi.configuration.consts.EsapiConfigurationType.XML;
+import java.io.IOException;
+import org.owasp.esapi.configuration.consts.EsapiConfiguration;
+import org.owasp.esapi.errors.ConfigurationException;
 
 /**
  * Factory class that takes care of initialization of proper instance of EsapiPropertyLoader

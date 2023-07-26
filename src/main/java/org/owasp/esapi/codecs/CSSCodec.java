@@ -16,7 +16,6 @@
 package org.owasp.esapi.codecs;
 
 import java.util.regex.Pattern;
-
 import org.owasp.esapi.codecs.ref.EncodingPatternPreservation;
 
 /**

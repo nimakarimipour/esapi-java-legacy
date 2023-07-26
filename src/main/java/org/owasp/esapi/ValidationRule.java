@@ -1,7 +1,6 @@
 package org.owasp.esapi;
 
 import java.util.Set;
-
 import org.owasp.esapi.errors.ValidationException;
 
 /**

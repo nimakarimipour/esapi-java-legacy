@@ -16,7 +16,6 @@
  */
 package org.owasp.esapi.reference.crypto;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -34,24 +33,20 @@ import java.security.Signature;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.Map.Entry;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
-// import javax.crypto.Mac;         // Uncomment if computeHMAC() is included.
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
 import javax.crypto.spec.IvParameterSpec;
-
+import javax.crypto.spec.SecretKeySpec;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.Encryptor;
 import org.owasp.esapi.Logger;
-import org.owasp.esapi.codecs.Hex;
 import org.owasp.esapi.crypto.CipherSpec;
 import org.owasp.esapi.crypto.CipherText;
 import org.owasp.esapi.crypto.CryptoHelper;
@@ -61,7 +56,6 @@ import org.owasp.esapi.crypto.SecurityProviderLoader;
 import org.owasp.esapi.errors.ConfigurationException;
 import org.owasp.esapi.errors.EncryptionException;
 import org.owasp.esapi.errors.IntegrityException;
-import org.owasp.esapi.reference.DefaultSecurityConfiguration;
 
 /**
  * Reference implementation of the {@code Encryptor} interface. This implementation

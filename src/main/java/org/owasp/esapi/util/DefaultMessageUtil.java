@@ -18,7 +18,6 @@ package org.owasp.esapi.util;
 import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
 import org.owasp.esapi.ESAPI;
 
 /**

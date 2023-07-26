@@ -16,12 +16,10 @@ package org.owasp.esapi.filters;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Locale;
-
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.SecurityConfiguration;

@@ -1,7 +1,6 @@
 package org.owasp.esapi.reference.accesscontrol;
 
 import java.util.Map;
-
 import org.owasp.esapi.AccessControlRule;
 import org.owasp.esapi.AccessController;
 import org.owasp.esapi.ESAPI;

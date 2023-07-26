@@ -1,11 +1,10 @@
 package org.owasp.esapi.reference.accesscontrol.policyloader;
 
+import static org.owasp.esapi.reference.accesscontrol.policyloader.ACRParameterLoaderHelper.getParameterValue;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.reference.accesscontrol.DynaBeanACRParameter;
-
-import static org.owasp.esapi.reference.accesscontrol.policyloader.ACRParameterLoaderHelper.getParameterValue;
 
 final public class DynaBeanACRParameterLoader
     implements ACRParameterLoader<DynaBeanACRParameter> {

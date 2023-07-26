@@ -15,10 +15,9 @@
  */
 package org.owasp.esapi.reference;
 
+import java.util.Set;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
-
-import java.util.Set;
 
 /**
  * Reference implementation of the AccessReferenceMap interface. This

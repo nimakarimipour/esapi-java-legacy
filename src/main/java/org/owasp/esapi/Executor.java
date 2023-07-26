@@ -17,7 +17,6 @@ package org.owasp.esapi;
 
 import java.io.File;
 import java.util.List;
-
 import org.owasp.esapi.codecs.Codec;
 import org.owasp.esapi.errors.ExecutorException;
 

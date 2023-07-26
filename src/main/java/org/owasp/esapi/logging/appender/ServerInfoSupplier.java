@@ -19,7 +19,6 @@ package org.owasp.esapi.logging.appender;
 // import java.util.function.Supplier;
 
 import javax.servlet.http.HttpServletRequest;
-
 import org.owasp.esapi.ESAPI;
 
 /**

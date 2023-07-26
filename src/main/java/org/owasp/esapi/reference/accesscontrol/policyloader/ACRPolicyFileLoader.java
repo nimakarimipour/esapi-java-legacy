@@ -2,7 +2,6 @@ package org.owasp.esapi.reference.accesscontrol.policyloader;
 
 import java.io.File;
 import java.util.Collection;
-
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.owasp.esapi.ESAPI;

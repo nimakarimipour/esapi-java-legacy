@@ -2,10 +2,9 @@ package org.owasp.esapi.reference.accesscontrol;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Vector;
-import java.util.Arrays;
-
 import org.apache.commons.collections4.iterators.ArrayListIterator;
 
 public class DelegatingACR extends BaseACR<DynaBeanACRParameter, Object[]> {

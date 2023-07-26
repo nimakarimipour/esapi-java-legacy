@@ -15,21 +15,19 @@
  */
 package org.owasp.esapi.waf.configuration;
 
+import bsh.EvalError;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.Elements;
 import nu.xom.ParsingException;
 import nu.xom.ValidityException;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.waf.ConfigurationException;
 import org.owasp.esapi.waf.rules.AddHTTPOnlyFlagRule;
@@ -47,8 +45,6 @@ import org.owasp.esapi.waf.rules.ReplaceContentRule;
 import org.owasp.esapi.waf.rules.RestrictContentTypeRule;
 import org.owasp.esapi.waf.rules.RestrictUserAgentRule;
 import org.owasp.esapi.waf.rules.SimpleVirtualPatchRule;
-
-import bsh.EvalError;
 
 /**
  *

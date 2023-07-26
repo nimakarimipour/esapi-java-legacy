@@ -19,7 +19,6 @@ package org.owasp.esapi;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import org.owasp.esapi.errors.ValidationException;
 
 /**

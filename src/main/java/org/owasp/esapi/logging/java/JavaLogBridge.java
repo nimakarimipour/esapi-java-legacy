@@ -15,7 +15,6 @@
 package org.owasp.esapi.logging.java;
 
 import java.util.logging.Logger;
-
 import org.owasp.esapi.Logger.EventType;
 
 /**

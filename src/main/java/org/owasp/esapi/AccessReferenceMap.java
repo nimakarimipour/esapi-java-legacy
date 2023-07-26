@@ -15,11 +15,10 @@
  */
 package org.owasp.esapi;
 
-import org.owasp.esapi.errors.AccessControlException;
-
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Set;
+import org.owasp.esapi.errors.AccessControlException;
 
 
 /**

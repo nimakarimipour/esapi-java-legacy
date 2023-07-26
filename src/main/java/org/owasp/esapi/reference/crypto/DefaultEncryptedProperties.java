@@ -26,7 +26,6 @@ import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.crypto.CipherText;

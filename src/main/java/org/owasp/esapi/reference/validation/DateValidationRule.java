@@ -17,7 +17,6 @@ package org.owasp.esapi.reference.validation;
 
 import java.text.DateFormat;
 import java.util.Date;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.StringUtilities;

@@ -17,7 +17,6 @@ package org.owasp.esapi.codecs;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Set;
-
 import org.owasp.esapi.util.CollectionsUtil;
 
 /**

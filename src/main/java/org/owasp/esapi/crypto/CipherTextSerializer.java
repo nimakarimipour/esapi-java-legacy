@@ -3,14 +3,12 @@ package org.owasp.esapi.crypto;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InvalidClassException;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
-import org.owasp.esapi.util.ByteConversionUtil;
 import org.owasp.esapi.errors.EncryptionException;
+import org.owasp.esapi.util.ByteConversionUtil;
 
 /**
  * Helper class to assist with programming language and platform independent

@@ -10,8 +10,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.Properties;
 
-import org.owasp.esapi.EncryptedProperties;
-
 /**
  * Command line utilities for reading, writing and creating encrypted properties files.
  * <p>

@@ -16,7 +16,6 @@
 package org.owasp.esapi.reference.validation;
 
 import java.math.BigDecimal;
-
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.StringUtilities;
 import org.owasp.esapi.errors.ValidationException;

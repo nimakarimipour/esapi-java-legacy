@@ -18,7 +18,6 @@ package org.owasp.esapi.logging.java;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
-
 import org.owasp.esapi.Logger.EventType;
 import org.owasp.esapi.logging.appender.LogAppender;
 import org.owasp.esapi.logging.cleaning.LogScrubber;

@@ -15,12 +15,11 @@
  */
 package org.owasp.esapi;
 
-import org.owasp.esapi.errors.AuthenticationException;
-import org.owasp.esapi.errors.EncryptionException;
-
+import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Set;
+import org.owasp.esapi.errors.AuthenticationException;
+import org.owasp.esapi.errors.EncryptionException;
 
 
 /**

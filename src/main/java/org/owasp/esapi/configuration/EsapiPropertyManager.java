@@ -1,17 +1,11 @@
 package org.owasp.esapi.configuration;
 
+import static org.owasp.esapi.configuration.EsapiPropertyLoaderFactory.createPropertyLoader;
+import static org.owasp.esapi.reference.DefaultSecurityConfiguration.logToStdout;
+import java.io.IOException;
+import java.util.TreeSet;
 import org.owasp.esapi.configuration.consts.EsapiConfiguration;
 import org.owasp.esapi.errors.ConfigurationException;
-
-import java.util.TreeSet;
-import java.io.IOException;
-
-import static org.owasp.esapi.configuration.EsapiPropertyLoaderFactory.createPropertyLoader;
-
-// Have dependency like this on a reference implmentation is majorly ugly, I know, but I
-// don't want to refactor code and delay the 2.2.0.0 release further and this class
-// is WAY too noisy. - kwwall
-import static org.owasp.esapi.reference.DefaultSecurityConfiguration.logToStdout;
 
 /**
  * Manager used for loading security configuration properties. Does all the logic to obtain the correct property from

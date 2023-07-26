@@ -18,7 +18,6 @@ package org.owasp.esapi.reference;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.UUID;
-
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.Logger;
