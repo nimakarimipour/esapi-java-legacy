@@ -1012,12 +1012,12 @@
                                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
                                 <arg>-Awarns</arg>
                                 <arg>-AannotatedPackages=org.owasp.esapi</arg>
-                                <arg>-AenableCustomCheck</arg>
-                                <arg>-AenableSerialization</arg>
+                                <arg>-AenableLibraryCheck</arg>
+                                <!-- <arg>-AenableSerialization</arg> -->
                                 <arg>-AserializationConfigPath=/tmp/ucr-tainting/esapi/taint.xml</arg>
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>-parameters</arg>
-                                <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/tmp/ucr-tainting/esapi/scanner.xml</arg>
+                                <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:OFF -XepOpt:AnnotatorScanner:ConfigPath=/tmp/ucr-tainting/esapi/scanner.xml</arg>
                             </compilerArgs>
                         </configuration>
                     </plugin>
