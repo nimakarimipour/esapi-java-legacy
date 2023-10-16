@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.User;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Supplier which can provide a String representing the client-side connection

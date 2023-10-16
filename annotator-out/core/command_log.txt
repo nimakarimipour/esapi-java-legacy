@@ -1,0 +1,138 @@
+2023-10-16T11:57:02.932377457:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:57:14.824148958:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:57:27.421180752:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:57:39.206749130:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:57:51.128631107:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:58:03.074554785:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:58:15.334703032:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:58:28.464684859:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:58:41.466904905:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:58:54.396779734:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:59:07.211113489:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:59:20.188406844:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:59:33.226512138:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:59:46.264568878:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T11:59:59.434108642:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:00:12.233604259:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:00:25.196930517:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:00:38.119125590:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:00:50.856449893:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:01:03.660024248:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:01:16.664885290:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:01:29.599634528:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:01:42.731627141:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:01:55.794787166:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:02:08.818301741:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:02:21.828283024:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:02:35.047135249:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:02:47.897531809:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:03:00.943321084:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:03:13.974056041:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:03:26.891807817:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:03:39.859739470:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:03:53.013018718:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:04:06.101961704:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:04:19.241715944:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:04:32.315575389:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:04:45.641137568:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:04:58.616352921:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:05:11.571797888:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:05:24.498538686:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:05:37.490131461:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:05:50.231381132:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:06:03.168868686:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:06:16.179908701:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:06:29.168664185:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:06:41.998402570:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:06:55.013415236:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:07:07.942436844:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:07:21.161540291:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:07:34.021589580:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:07:47.065707664:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:08:00.026501365:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:08:13.089438510:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:08:25.983256322:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:08:38.939071443:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:08:52.011204041:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:09:05.035419173:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:09:17.987353674:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:09:30.905949311:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:09:44.040301549:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:09:57.095996529:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:10:10.210650591:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:10:23.394355025:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:10:36.596848398:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:10:49.998013581:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:11:02.911200126:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:11:16.171878471:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:11:29.425152301:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+
+2023-10-16T12:11:42.593908846:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && mvn clean compile
+

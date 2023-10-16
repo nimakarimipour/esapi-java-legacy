@@ -16,6 +16,7 @@
 package org.owasp.esapi;
 
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The Randomizer interface defines a set of methods for creating

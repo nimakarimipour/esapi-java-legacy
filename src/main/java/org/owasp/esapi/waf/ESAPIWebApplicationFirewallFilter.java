@@ -40,6 +40,7 @@ import org.owasp.esapi.waf.configuration.ConfigurationParser;
 import org.owasp.esapi.waf.internal.InterceptingHTTPServletRequest;
 import org.owasp.esapi.waf.internal.InterceptingHTTPServletResponse;
 import org.owasp.esapi.waf.rules.Rule;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This is the main class for the ESAPI Web Application Firewall (WAF). It is a
@@ -64,7 +65,7 @@ public class ESAPIWebApplicationFirewallFilter implements Filter {
 
 	private static final int DEFAULT_POLLING_TIME = 30000;
 
-	private String configurationFilename = null;
+	private @RUntainted String configurationFilename = null;
 
 	private long pollingTime;
 
@@ -74,7 +75,7 @@ public class ESAPIWebApplicationFirewallFilter implements Filter {
 	// private static final String SESSION_COOKIE_CANARY =
 	// "org.owasp.esapi.waf.canary";
 
-	private FilterConfig fc;
+	private @RUntainted FilterConfig fc;
 
 	private final Logger logger = ESAPI.getLogger(ESAPIWebApplicationFirewallFilter.class);
 
@@ -88,9 +89,9 @@ public class ESAPIWebApplicationFirewallFilter implements Filter {
 	 * @throws FileNotFoundException
 	 *             if the policy file cannot be located
 	 */
-	public void setConfiguration(String policyFilePath, String webRootDir) throws FileNotFoundException {
+	public void setConfiguration(@RUntainted String policyFilePath, String webRootDir) throws FileNotFoundException {
 
-		FileInputStream inputStream = null;
+		@RUntainted FileInputStream inputStream = null;
 
 		try {
 			inputStream = new FileInputStream(new File(policyFilePath));
@@ -127,7 +128,7 @@ public class ESAPIWebApplicationFirewallFilter implements Filter {
 	 * configuration object model for use at runtime during the
 	 * <code>doFilter()</code> method.
 	 */
-	public void init(FilterConfig fc) throws ServletException {
+	public void init(@RUntainted FilterConfig fc) throws ServletException {
 
 		/*
 		 * This variable is saved so that we can retrieve it later to re-invoke
@@ -181,7 +182,7 @@ public class ESAPIWebApplicationFirewallFilter implements Filter {
 		 * object.
 		 */
 
-		FileInputStream inputStream = null;
+		@RUntainted FileInputStream inputStream = null;
 
 		try {
 			String webRootDir = fc.getServletContext().getRealPath("/");
@@ -445,7 +446,7 @@ public class ESAPIWebApplicationFirewallFilter implements Filter {
 	 * response class to use.
 	 */
 	private void sendRedirect(InterceptingHTTPServletResponse response, HttpServletResponse httpResponse,
-			String redirectURL) throws IOException {
+			@RUntainted String redirectURL) throws IOException {
 
 		if (response != null) { // if we've been buffering everything we clean
 								// it all out before sending back.

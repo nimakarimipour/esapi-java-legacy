@@ -36,6 +36,7 @@ import org.owasp.esapi.Logger;
 import org.owasp.esapi.SecurityConfiguration;
 import org.owasp.esapi.errors.AccessControlException;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 // TODO: Parameterize these various lengths in calls to ESAPI.validator().getValidInput()
 // so that they can be placed in ESAPI.properties file (or other property file,
