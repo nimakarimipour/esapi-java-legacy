@@ -153,11 +153,11 @@
     </properties>
 
     <dependencies>
-        <!-- <dependency>
+        <dependency>
             <groupId>org.checkerframework</groupId>
             <artifactId>checker-qual</artifactId>
             <version>3.40.0</version>
-        </dependency> -->
+        </dependency>
         <!-- <dependency>
             <groupId>com.google.errorprone</groupId>
             <artifactId>javac</artifactId>
