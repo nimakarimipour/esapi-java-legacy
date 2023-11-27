@@ -1013,7 +1013,7 @@
                                 <arg>-AannotatedPackages=org.owasp.esapi</arg>
                                 <arg>-AenableLibraryCheck</arg>
                                 <arg>-AenableSerialization</arg>
-                                <arg>-AserializationConfigPath=/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/core/checker.xml</arg>
+                                <arg>-AserializationConfigPath=/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/checker.xml</arg>
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>-parameters</arg>
                                 <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/core/scanner.xml</arg> -->
