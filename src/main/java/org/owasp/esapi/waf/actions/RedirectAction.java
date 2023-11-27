@@ -14,6 +14,7 @@
  * @created 2009
  */
 package org.owasp.esapi.waf.actions;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The class that indicates the user should be redirected to another location.
@@ -31,7 +32,7 @@ public class RedirectAction extends Action {
         this.url = s;
     }
 
-    public String getRedirectURL() {
+    public @RUntainted String getRedirectURL() {
         return this.url;
     }
 

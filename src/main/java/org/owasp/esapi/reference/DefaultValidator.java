@@ -50,6 +50,8 @@ import org.owasp.esapi.reference.validation.HTMLValidationRule;
 import org.owasp.esapi.reference.validation.IntegerValidationRule;
 import org.owasp.esapi.reference.validation.NumberValidationRule;
 import org.owasp.esapi.reference.validation.StringValidationRule;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
 
 /**
  * Reference implementation of the {@code Validator} interface. This implementation
@@ -252,7 +254,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * for additional details.
      */
     @Override
-    public String getValidInput(String context, String input, String type, int maxLength, boolean allowNull) throws ValidationException {
+    public @RUntainted String getValidInput(String context, String input, String type, int maxLength, boolean allowNull) throws ValidationException {
         return getValidInput(context, input, type, maxLength, allowNull, true);
     }
 

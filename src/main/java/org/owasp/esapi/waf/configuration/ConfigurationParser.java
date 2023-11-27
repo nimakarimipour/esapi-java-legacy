@@ -45,6 +45,7 @@ import org.owasp.esapi.waf.rules.ReplaceContentRule;
 import org.owasp.esapi.waf.rules.RestrictContentTypeRule;
 import org.owasp.esapi.waf.rules.RestrictUserAgentRule;
 import org.owasp.esapi.waf.rules.SimpleVirtualPatchRule;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  *
@@ -76,13 +77,13 @@ public class ConfigurationParser {
         "before-response"
     };
 
-    public static AppGuardianConfiguration readConfigurationFile(InputStream stream, String webRootDir) throws ConfigurationException {
+    public static AppGuardianConfiguration readConfigurationFile(@RUntainted InputStream stream, String webRootDir) throws ConfigurationException {
 
         AppGuardianConfiguration config = new AppGuardianConfiguration();
 
         Builder parser = new Builder();
-        Document doc;
-        Element root;
+        @RUntainted Document doc;
+        @RUntainted Element root;
 
         try {
 
@@ -97,7 +98,7 @@ public class ConfigurationParser {
             Element customRulesRoot = root.getFirstChildElement("custom-rules");;
             Element virtualPatchesRoot = root.getFirstChildElement("virtual-patches");
             Element outboundRoot = root.getFirstChildElement("outbound-rules");
-            Element beanShellRoot = root.getFirstChildElement("bean-shell-rules");
+            @RUntainted Element beanShellRoot = root.getFirstChildElement("bean-shell-rules");
 
 
             /**
@@ -127,7 +128,7 @@ public class ConfigurationParser {
                     AppGuardianConfiguration.DEFAULT_FAIL_ACTION = AppGuardianConfiguration.LOG;
                 }
 
-                Element errorHandlingRoot = settingsRoot.getFirstChildElement("error-handling");
+                @RUntainted Element errorHandlingRoot = settingsRoot.getFirstChildElement("error-handling");
 
                 config.setDefaultErrorPage( errorHandlingRoot.getFirstChildElement("default-redirect-page").getValue() );
 
@@ -385,7 +386,7 @@ public class ConfigurationParser {
 
                 for(int i=0;i<addHeaderNodes.size();i++) {
                     Element e = addHeaderNodes.get(i);
-                    String name = e.getAttributeValue("name");
+                    @RUntainted String name = e.getAttributeValue("name");
                     String value = e.getAttributeValue("value");
                     String path = e.getAttributeValue("path");
                     String id = e.getAttributeValue("id");
@@ -517,11 +518,11 @@ public class ConfigurationParser {
 
             if ( beanShellRoot != null ) {
 
-                Elements beanShellRules = beanShellRoot.getChildElements("bean-shell-script");
+                @RUntainted Elements beanShellRules = beanShellRoot.getChildElements("bean-shell-script");
 
                 for (int i=0;i<beanShellRules.size(); i++) {
 
-                    Element e = beanShellRules.get(i);
+                    @RUntainted Element e = beanShellRules.get(i);
 
                     String id = e.getAttributeValue("id");
                     String fileName = e.getAttributeValue("file");

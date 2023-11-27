@@ -1,6 +1,7 @@
 package org.owasp.esapi.configuration;
 
 import org.owasp.esapi.errors.ConfigurationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Generic interface for loading security configuration properties.
@@ -40,6 +41,6 @@ public interface EsapiPropertyLoader {
      * @return property value.
      * @throws ConfigurationException when property does not exist in configuration.
      */
-    public String getStringProp(String propertyName) throws ConfigurationException;
+    public @RUntainted String getStringProp(@RUntainted String propertyName) throws ConfigurationException;
 
 }

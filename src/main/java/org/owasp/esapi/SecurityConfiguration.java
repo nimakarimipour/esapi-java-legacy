@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.regex.Pattern;
 import org.owasp.esapi.configuration.EsapiPropertyLoader;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The {@code SecurityConfiguration} interface stores all configuration information
@@ -532,7 +533,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @deprecated Use SecurityConfiguration.getStringProp("appropriate_esapi_prop_name") instead.
      */
     @Deprecated
-    String getRandomAlgorithm();
+    @RUntainted String getRandomAlgorithm();
 
     /**
      * Gets the number of login attempts allowed before the user's account is locked. If this
@@ -642,7 +643,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @deprecated Use SecurityConfiguration.getStringProp("appropriate_esapi_prop_name") instead.
      */
     @Deprecated
-    String getResponseContentType();
+    @RUntainted String getResponseContentType();
 
     /**
      * This method returns the configured name of the session identifier,

@@ -29,6 +29,7 @@ import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.EncryptionException;
 import org.owasp.esapi.errors.IntrusionException;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The HTTPUtilities interface is a collection of methods that provide additional security related to HTTP requests,
@@ -155,7 +156,7 @@ public interface HTTPUtilities
      * @return the new HttpSession with a changed id
      * @throws AuthenticationException the exception
      */
-    HttpSession changeSessionIdentifier(HttpServletRequest request) throws AuthenticationException;
+    HttpSession changeSessionIdentifier(@RUntainted HttpServletRequest request) throws AuthenticationException;
 
     /**
      * Clears the current HttpRequest and HttpResponse associated with the current thread.
@@ -272,7 +273,7 @@ public interface HTTPUtilities
      *
      * @return the current request
      */
-    HttpServletRequest getCurrentRequest();
+    @RUntainted HttpServletRequest getCurrentRequest();
 
     /**
      * Retrieves the current HttpServletResponse
@@ -532,7 +533,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void sendRedirect(String location) throws AccessControlException, IOException;
+    void sendRedirect(@RUntainted String location) throws AccessControlException, IOException;
 
 
     /**
@@ -546,7 +547,7 @@ public interface HTTPUtilities
      * @throws AccessControlException
      * @throws IOException
      */
-    void sendRedirect(HttpServletResponse response, String location) throws AccessControlException, IOException;
+    void sendRedirect(HttpServletResponse response, @RUntainted String location) throws AccessControlException, IOException;
 
     /**
      * Calls setContentType with the *current* request and response.
@@ -649,12 +650,12 @@ public interface HTTPUtilities
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
     @Deprecated
-    String setRememberToken(String password, int maxAge, String domain, String path);
+    String setRememberToken(String password, int maxAge, @RUntainted String domain, @RUntainted String path);
 
     /**
      *
      */
-    String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, String domain, String path);
+    String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, @RUntainted String domain, @RUntainted String path);
 
 
     /**
@@ -684,7 +685,7 @@ public interface HTTPUtilities
      * @return encrypted "Remember Me" token stored as a String
      */
     @Deprecated
-    String setRememberToken(HttpServletRequest request, HttpServletResponse response, String password, int maxAge, String domain, String path);
+    String setRememberToken(HttpServletRequest request, HttpServletResponse response, String password, int maxAge, @RUntainted String domain, @RUntainted String path);
 
 
     /**

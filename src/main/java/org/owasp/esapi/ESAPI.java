@@ -19,6 +19,7 @@ package org.owasp.esapi;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.owasp.esapi.util.ObjFactory;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * ESAPI locator class is provided to make it easy to gain access to the current ESAPI classes in use.
@@ -65,7 +66,7 @@ public final class ESAPI {
      * Get the current HTTP Servlet Request being processed.
      * @return the current HTTP Servlet Request.
      */
-    public static HttpServletRequest currentRequest() {
+    public static @RUntainted HttpServletRequest currentRequest() {
         return httpUtilities().getCurrentRequest();
     }
 
