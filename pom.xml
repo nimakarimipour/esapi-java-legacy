@@ -1010,7 +1010,6 @@
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
                                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
-                                <arg>-Awarns</arg>
                                 <arg>-AannotatedPackages=org.owasp.esapi</arg>
                                 <arg>-AenableLibraryCheck</arg>
                                 <arg>-AenableSerialization</arg>
@@ -1027,7 +1026,7 @@
                 <dependency>
                     <groupId>org.checkerframework</groupId>
                     <artifactId>checker</artifactId>
-                    <version>3.37.0</version>
+                    <version>3.40.0</version>
                 </dependency>
             </dependencies>
         </profile>
