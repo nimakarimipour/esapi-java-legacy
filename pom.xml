@@ -988,7 +988,7 @@
                                 <path>
                                     <groupId>edu.ucr.cs.riple.taint</groupId>
                                     <artifactId>ucrtainting-checker</artifactId>
-                                    <version>0.1</version>
+                                    <version>0.1-alpha-2</version>
                                 </path>
                                 <!-- <path>
                                     <groupId>edu.ucr.cs.riple.annotator</groupId>
@@ -1009,14 +1009,14 @@
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
                                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
-                                <arg>-nowarn</arg>
+					<!-- <arg>-nowarn</arg> -->
                                 <arg>-AannotatedPackages=org.owasp.esapi</arg>
                                 <arg>-AenableLibraryCheck</arg>
                                 <arg>-AenableSerialization</arg>
-                                <arg>-AserializationConfigPath=/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/checker.xml</arg>
+                                <arg>-AserializationConfigPath=/home/kdas006/annotation_dataset/esapi-java-legacy/annotator-out/checker.xml</arg>
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>-parameters</arg>
-                                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/core/scanner.xml</arg> -->
+                                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/kdas006/annotation_dataset/esapi-java-legacy/annotator-out/core/scanner.xml</arg> -->
                             </compilerArgs>
                         </configuration>
                     </plugin>
