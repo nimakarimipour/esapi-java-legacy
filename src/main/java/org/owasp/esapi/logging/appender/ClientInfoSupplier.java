@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.User;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Supplier which can provide a String representing the client-side connection
@@ -56,9 +57,9 @@ public class ClientInfoSupplier // implements Supplier<String>
             HttpServletRequest request = ESAPI.currentRequest();
             // create a random session number for the user to represent the user's
             // 'session', if it doesn't exist already
-            String sid = "";
+            @RUntainted String sid = "";
             if (request != null) {
-                HttpSession session = request.getSession(false);
+                @RUntainted HttpSession session = request.getSession(false);
                 if (session != null) {
                     sid = (String) session.getAttribute(ESAPI_SESSION_ATTR);
                     // if there is no session ID for the user yet, we create one and store it in the

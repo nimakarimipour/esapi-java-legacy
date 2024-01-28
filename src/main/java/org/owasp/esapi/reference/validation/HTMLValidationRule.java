@@ -36,6 +36,7 @@ import org.owasp.validator.html.CleanResults;
 import org.owasp.validator.html.Policy;
 import org.owasp.validator.html.PolicyException;
 import org.owasp.validator.html.ScanException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 /**
@@ -91,7 +92,7 @@ public class HTMLValidationRule extends StringValidationRule {
         return resourceStream;
     }
 
-    /*package */ static Policy loadAntisamyPolicy(String antisamyPolicyFilename) throws IOException, PolicyException {
+    /*package */ static Policy loadAntisamyPolicy(@RUntainted String antisamyPolicyFilename) throws IOException, PolicyException {
         InputStream resourceStream = null;
         SecurityConfiguration secCfg = ESAPI.securityConfiguration();
 
@@ -103,7 +104,7 @@ public class HTMLValidationRule extends StringValidationRule {
         return resourceStream == null ? null : Policy.getInstance(resourceStream);
     }
 
-    /*package */ static String resolveAntisamyFilename() {
+    /*package */ static @RUntainted String resolveAntisamyFilename() {
         String antisamyPolicyFilename = ANTISAMYPOLICY_FILENAME;
         try {
             antisamyPolicyFilename = ESAPI.securityConfiguration().getStringProp( VALIDATOR_HTML_VALIDATION_CONFIGURATION_FILE );
@@ -117,7 +118,7 @@ public class HTMLValidationRule extends StringValidationRule {
     }
 
     /*package */ static void configureInstance() {
-        String antisamyPolicyFilename = resolveAntisamyFilename();
+        @RUntainted String antisamyPolicyFilename = resolveAntisamyFilename();
 
         try {
             antiSamyPolicy = loadAntisamyPolicy(antisamyPolicyFilename);

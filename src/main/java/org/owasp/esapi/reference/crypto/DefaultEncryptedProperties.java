@@ -31,6 +31,7 @@ import org.owasp.esapi.Logger;
 import org.owasp.esapi.crypto.CipherText;
 import org.owasp.esapi.crypto.PlainText;
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reference implementation of the {@code EncryptedProperties} interface. This
@@ -171,7 +172,7 @@ public class DefaultEncryptedProperties implements org.owasp.esapi.EncryptedProp
      *               future release.
      */
     @Deprecated
-    public static void main(String[] args) throws Exception {
+    public static void main(@RUntainted String[] args) throws Exception {
         File f = new File(args[0]);
         ESAPI.getLogger( "EncryptedProperties.main" ).debug(Logger.SECURITY_SUCCESS, "Loading encrypted properties from " + f.getAbsolutePath() );
         if ( !f.exists() ) throw new IOException( "Properties file not found: " + f.getAbsolutePath() );

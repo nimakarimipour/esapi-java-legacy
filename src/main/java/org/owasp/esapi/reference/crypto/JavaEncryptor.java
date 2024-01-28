@@ -56,6 +56,7 @@ import org.owasp.esapi.crypto.SecurityProviderLoader;
 import org.owasp.esapi.errors.ConfigurationException;
 import org.owasp.esapi.errors.EncryptionException;
 import org.owasp.esapi.errors.IntegrityException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reference implementation of the {@code Encryptor} interface. This implementation
@@ -131,7 +132,7 @@ public final class JavaEncryptor implements Encryptor {
 
     // # of seconds that all failed decryption attempts will take. Used to
     // help prevent side-channel timing attacks.
-    private static int N_SECS = 2;
+    private static @RUntainted int N_SECS = 2;
 
     // Load the preferred JCE provider if one has been specified.
     static {
@@ -608,17 +609,17 @@ public final class JavaEncryptor implements Encryptor {
                 long now = System.nanoTime();
                 long elapsed = now - start;
                 final long NANOSECS_IN_SEC = 1000000000L; // nanosec is 10**-9 sec
-                long nSecs = N_SECS * NANOSECS_IN_SEC;  // N seconds in nano seconds
+                @RUntainted long nSecs = N_SECS * NANOSECS_IN_SEC;  // N seconds in nano seconds
                 if ( elapsed < nSecs ) {
                     // Want to sleep so total time taken is N seconds.
-                    long extraSleep = nSecs - elapsed;
+                    @RUntainted long extraSleep = nSecs - elapsed;
 
                     // 'extraSleep' is in nanoseconds. Need to convert to a millisec
                     // part and nanosec part. Nanosec is 10**-9, millsec is
                     // 10**-3, so divide by (10**-9 / 10**-3), or 10**6 to
                     // convert to from nanoseconds to milliseconds.
-                    long millis = extraSleep / 1000000L;
-                    long nanos  = (extraSleep - (millis * 1000000L));
+                    @RUntainted long millis = extraSleep / 1000000L;
+                    @RUntainted long nanos  = (extraSleep - (millis * 1000000L));
 
                     // N_SECS is hard-coded so assertion should be okay here.
                     assert nanos >= 0 && nanos <= Integer.MAX_VALUE :
@@ -759,7 +760,7 @@ public final class JavaEncryptor implements Encryptor {
      * @param expiration
      * @throws IntegrityException
      */
-    public String seal(String data, long expiration) throws IntegrityException {
+    public @RUntainted String seal(String data, long expiration) throws IntegrityException {
         if ( data == null ) {
             throw new IllegalArgumentException("Data to be sealed may not be null.");
         }
@@ -777,7 +778,7 @@ public final class JavaEncryptor implements Encryptor {
             // add integrity check; signature is already base64 encoded.
             String sig = this.sign( plaintext );
             CipherText ciphertext = this.encrypt( new PlainText(plaintext + ":" + sig) );
-            String sealedData = ESAPI.encoder().encodeForBase64(ciphertext.asPortableSerializedByteArray(), false);
+            @RUntainted String sealedData = ESAPI.encoder().encodeForBase64(ciphertext.asPortableSerializedByteArray(), false);
             return sealedData;
         } catch( EncryptionException e ) {
             throw new IntegrityException( e.getUserMessage(), e.getLogMessage(), e );

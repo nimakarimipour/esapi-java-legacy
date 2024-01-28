@@ -5,6 +5,7 @@ import static org.owasp.esapi.configuration.consts.EsapiConfigurationType.XML;
 import java.io.IOException;
 import org.owasp.esapi.configuration.consts.EsapiConfiguration;
 import org.owasp.esapi.errors.ConfigurationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Factory class that takes care of initialization of proper instance of EsapiPropertyLoader
@@ -16,7 +17,7 @@ public class EsapiPropertyLoaderFactory {
 
     public static AbstractPrioritizedPropertyLoader createPropertyLoader(EsapiConfiguration cfg)
             throws ConfigurationException, IOException {
-        String cfgPath = System.getProperty(cfg.getConfigName());
+        @RUntainted String cfgPath = System.getProperty(cfg.getConfigName());
         if ( cfgPath == null || cfgPath.equals("") ) {
             // TODO / FIXME:
             // This case was previously a warning, but it should NOT have been
