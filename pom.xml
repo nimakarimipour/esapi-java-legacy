@@ -156,7 +156,7 @@
         <dependency>
             <groupId>org.checkerframework</groupId>
             <artifactId>checker-qual</artifactId>
-            <version>3.40.0</version>
+            <version>${env.CF_VERSION}</version>
         </dependency>
         <!-- <dependency>
             <groupId>com.google.errorprone</groupId>
@@ -166,7 +166,7 @@
         <dependency>
             <groupId>edu.ucr.cs.riple.taint</groupId>
             <artifactId>ucrtainting-checker-qual</artifactId>
-            <version>0.1</version>
+            <version>${env.UCRT_VERSION}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -988,7 +988,7 @@
                                 <path>
                                     <groupId>edu.ucr.cs.riple.taint</groupId>
                                     <artifactId>ucrtainting-checker</artifactId>
-                                    <version>0.1</version>
+                                    <version>${env.UCRT_VERSION}</version>
                                 </path>
                                 <!-- <path>
                                     <groupId>edu.ucr.cs.riple.annotator</groupId>
@@ -1011,9 +1011,11 @@
                                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
                                 <arg>-nowarn</arg>
                                 <arg>-AannotatedPackages=org.owasp.esapi</arg>
-                                <arg>-AenableLibraryCheck</arg>
+                                <arg>-AenableLibraryCheck=${env.ANNOTATOR_LIBRARY}</arg>
+                                <arg>-AenablePolyTaintInference=${env.ANNOTATOR_POLY}</arg>
+                                <arg>-AenableTypeArgumentInference=${env.ANNOTATOR_TYPE_ARG}</arg>
                                 <arg>-AenableSerialization</arg>
-                                <arg>-AserializationConfigPath=/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/checker.xml</arg>
+                                <arg>-AserializationConfigPath=/Users/nima/Developer/esapi-java-legacy/annotator-out/checker.xml</arg>
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>-parameters</arg>
                                 <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/core/scanner.xml</arg> -->
@@ -1026,7 +1028,7 @@
                 <dependency>
                     <groupId>org.checkerframework</groupId>
                     <artifactId>checker</artifactId>
-                    <version>3.40.0</version>
+                    <version>${env.CF_VERSION}</version>
                 </dependency>
             </dependencies>
         </profile>
