@@ -29,6 +29,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.Authenticator;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
@@ -506,7 +507,7 @@ public class HTTPUtilitiesTest extends TestCase
         Map<String, String> empty = ESAPI.httpUtilities().decryptStateFromCookie(request);
         assertTrue( empty.isEmpty() );
 
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<@RUntainted String, @RUntainted String> map = new HashMap<@RUntainted String, @RUntainted String>();
         map.put( "one", "aspect" );
         map.put( "two", "ridiculous" );
         map.put( "test_hard", "&(@#*!^|;,." );

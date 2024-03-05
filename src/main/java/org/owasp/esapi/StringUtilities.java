@@ -15,6 +15,8 @@
  */
 package org.owasp.esapi;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
@@ -28,7 +30,7 @@ import java.util.regex.Pattern;
 public class StringUtilities {
 
     private static final Pattern p = Pattern.compile( "\\s");
-    public static String replaceLinearWhiteSpace( String input ) {
+    public static @RPolyTainted String replaceLinearWhiteSpace(@RPolyTainted String input ) {
         return p.matcher(input).replaceAll( " " );
     }
 

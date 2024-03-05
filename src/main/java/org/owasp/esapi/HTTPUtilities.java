@@ -24,6 +24,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.errors.AccessControlException;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.EncryptionException;
@@ -45,11 +47,11 @@ import org.owasp.esapi.errors.ValidationException;
 public interface HTTPUtilities
 {
     // All implied static final as this is an interface
-    String REMEMBER_TOKEN_COOKIE_NAME = "rtoken";
+    @RUntainted String REMEMBER_TOKEN_COOKIE_NAME = "rtoken";
     int MAX_COOKIE_LEN = 4096;            // From RFC 2109
     int MAX_COOKIE_PAIRS = 20;            // From RFC 2109
     String CSRF_TOKEN_NAME = "ctoken";
-    String ESAPI_STATE = "estate";
+    @RUntainted String ESAPI_STATE = "estate";
 
     int PARAMETER = 0;
     int HEADER = 1;
@@ -62,7 +64,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void addCookie(Cookie cookie);
+    void addCookie(@RUntainted Cookie cookie);
 
     /**
      * Add a cookie to the response after ensuring that there are no encoded or
@@ -72,7 +74,7 @@ public interface HTTPUtilities
      * @param response The HTTP response to add the cookie to
      * @param cookie The cookie to add
      */
-    void addCookie(HttpServletResponse response, Cookie cookie);
+    void addCookie(HttpServletResponse response, @RUntainted Cookie cookie);
 
     /**
      * Adds the current user's CSRF token (see User.getCSRFToken()) to the URL for purposes of preventing CSRF attacks.
@@ -88,7 +90,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void addHeader(String name, String value);
+    void addHeader(@RUntainted String name, @RUntainted String value);
 
     /**
      * Add a header to the response after ensuring that there are no encoded or
@@ -101,7 +103,7 @@ public interface HTTPUtilities
      * @param name
      * @param value
      */
-    void addHeader(HttpServletResponse response, String name, String value);
+    void addHeader(HttpServletResponse response, @RUntainted String name, @RUntainted String value);
 
     /**
      * Calls assertSecureRequest with the *current* request.
@@ -221,7 +223,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void encryptStateInCookie(Map<String, String> cleartext) throws EncryptionException;
+    void encryptStateInCookie(Map<@RUntainted String, @RUntainted String> cleartext) throws EncryptionException;
 
     /**
      * Stores a Map of data in an encrypted cookie. Generally the session is a better
@@ -234,7 +236,7 @@ public interface HTTPUtilities
      * @param cleartext
      * @throws EncryptionException
      */
-    void encryptStateInCookie(HttpServletResponse response, Map<String, String> cleartext) throws EncryptionException;
+    void encryptStateInCookie(HttpServletResponse response, Map<@RUntainted String, @RUntainted String> cleartext) throws EncryptionException;
 
     /**
      * Calls getCookie with the *current* response.
@@ -310,7 +312,7 @@ public interface HTTPUtilities
      * @return List of new File objects from upload
      * @throws ValidationException if the file fails validation
      */
-    List getFileUploads(HttpServletRequest request, File finalDir) throws ValidationException;
+    List getFileUploads(HttpServletRequest request, @RUntainted File finalDir) throws ValidationException;
 
 
     /**
@@ -396,7 +398,7 @@ public interface HTTPUtilities
      * @throws java.security.AccessControlException If anonymous users are not allowed and the user is
      *                                      not authenticated as per the ESAPI {@code Authenticator}.
      */
-    List getFileUploads(HttpServletRequest request, File destinationDir, List allowedExtensions) throws ValidationException;
+    List getFileUploads(HttpServletRequest request, @RUntainted File destinationDir, List allowedExtensions) throws ValidationException;
 
 
     /**
@@ -458,7 +460,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void killCookie(String name);
+    void killCookie(@RUntainted String name);
 
     /**
      * Kills the specified cookie by setting a new cookie that expires immediately. Note that this
@@ -468,7 +470,7 @@ public interface HTTPUtilities
      * @param name
      * @param response
      */
-    void killCookie(HttpServletRequest request, HttpServletResponse response, String name);
+    void killCookie(HttpServletRequest request, HttpServletResponse response, @RUntainted String name);
 
     /**
      * Calls logHTTPRequest with the *current* request and logger.
@@ -532,7 +534,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void sendRedirect(String location) throws AccessControlException, IOException;
+    void sendRedirect(@RUntainted String location) throws AccessControlException, IOException;
 
 
     /**
@@ -546,7 +548,7 @@ public interface HTTPUtilities
      * @throws AccessControlException
      * @throws IOException
      */
-    void sendRedirect(HttpServletResponse response, String location) throws AccessControlException, IOException;
+    void sendRedirect(HttpServletResponse response, @RUntainted String location) throws AccessControlException, IOException;
 
     /**
      * Calls setContentType with the *current* request and response.
@@ -587,7 +589,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void setHeader(String name, String value);
+    void setHeader(@RUntainted String name, @RUntainted String value);
 
     /**
      * Add a header to the response after ensuring that there are no encoded or
@@ -599,7 +601,7 @@ public interface HTTPUtilities
      * @param name
      * @param value
      */
-    void setHeader(HttpServletResponse response, String name, String value);
+    void setHeader(HttpServletResponse response, @RUntainted String name, @RUntainted String value);
 
 
     /**
@@ -649,12 +651,12 @@ public interface HTTPUtilities
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
     @Deprecated
-    String setRememberToken(String password, int maxAge, String domain, String path);
+    String setRememberToken(String password, int maxAge, @RUntainted String domain, @RUntainted String path);
 
     /**
      *
      */
-    String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, String domain, String path);
+    String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, @RUntainted String domain, @RUntainted String path);
 
 
     /**
@@ -684,7 +686,7 @@ public interface HTTPUtilities
      * @return encrypted "Remember Me" token stored as a String
      */
     @Deprecated
-    String setRememberToken(HttpServletRequest request, HttpServletResponse response, String password, int maxAge, String domain, String path);
+    String setRememberToken(HttpServletRequest request, HttpServletResponse response, String password, int maxAge, @RUntainted String domain, @RUntainted String path);
 
 
     /**

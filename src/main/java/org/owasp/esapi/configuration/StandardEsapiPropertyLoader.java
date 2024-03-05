@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.errors.ConfigurationException;
 
@@ -14,7 +17,7 @@ import org.owasp.esapi.errors.ConfigurationException;
  */
 public class StandardEsapiPropertyLoader extends AbstractPrioritizedPropertyLoader {
 
-    public StandardEsapiPropertyLoader(String filename, int priority) throws IOException {
+    public StandardEsapiPropertyLoader(@RUntainted String filename, int priority) throws IOException {
         super(filename, priority);
     }
 
@@ -22,7 +25,7 @@ public class StandardEsapiPropertyLoader extends AbstractPrioritizedPropertyLoad
      * {@inheritDoc}
      */
     @Override
-    public int getIntProp(String propertyName) throws ConfigurationException {
+    public @RPolyTainted int getIntProp(@RPolyTainted String propertyName) throws ConfigurationException {
         String property = properties.getProperty(propertyName);
         if (property == null) {
             throw new ConfigurationException("Property : " + propertyName + "not found in configuration");

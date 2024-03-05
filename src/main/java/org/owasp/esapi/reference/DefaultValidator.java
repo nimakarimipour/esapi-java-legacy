@@ -34,6 +34,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.Logger;
@@ -252,7 +254,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * for additional details.
      */
     @Override
-    public String getValidInput(String context, String input, String type, int maxLength, boolean allowNull) throws ValidationException {
+    public @RPolyTainted String getValidInput(@RPolyTainted String context, @RPolyTainted String input, @RPolyTainted String type, @RPolyTainted int maxLength, @RPolyTainted boolean allowNull) throws ValidationException {
         return getValidInput(context, input, type, maxLength, allowNull, true);
     }
 
@@ -267,7 +269,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * for additional details.
      */
     @Override
-    public String getValidInput(String context, String input, String type, int maxLength, boolean allowNull, boolean canonicalize) throws ValidationException {
+    public @RPolyTainted String getValidInput(@RPolyTainted String context, @RPolyTainted String input, @RPolyTainted String type, @RPolyTainted int maxLength, @RPolyTainted boolean allowNull, @RPolyTainted boolean canonicalize) throws ValidationException {
         StringValidationRule rvr = new StringValidationRule( type, encoder );
         Pattern p = ESAPI.securityConfiguration().getValidationPattern( type );
         if ( p != null ) {

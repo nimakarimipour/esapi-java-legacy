@@ -1,5 +1,7 @@
 package org.owasp.esapi;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.errors.ConfigurationException;
 
 import java.io.File;
@@ -160,7 +162,7 @@ public class SecurityConfigurationWrapper implements SecurityConfiguration
      * {@inheritDoc}
      */
     // @Override
-    public File getUploadDirectory()
+    public @RUntainted File getUploadDirectory()
     {
         return wrapped.getUploadDirectory();
     }
@@ -404,7 +406,7 @@ public class SecurityConfigurationWrapper implements SecurityConfiguration
      * {@inheritDoc}
      */
     // @Override
-    public File getResourceFile( String filename )
+    public @RUntainted File getResourceFile(@RUntainted String filename )
     {
         return wrapped.getResourceFile(filename);
     }
@@ -476,7 +478,7 @@ public class SecurityConfigurationWrapper implements SecurityConfiguration
      * {@inheritDoc}
      */
     // @Override
-    public String getResponseContentType()
+    public @RUntainted String getResponseContentType()
     {
         return wrapped.getResponseContentType();
     }
@@ -485,7 +487,7 @@ public class SecurityConfigurationWrapper implements SecurityConfiguration
      * {@inheritDoc}
      */
     // @Override
-    public String getHttpSessionIdName() {
+    public @RUntainted String getHttpSessionIdName() {
         return wrapped.getHttpSessionIdName();
     }
 
@@ -544,7 +546,7 @@ public class SecurityConfigurationWrapper implements SecurityConfiguration
     }
 
     @Override
-    public int getIntProp(String propertyName) throws ConfigurationException {
+    public @RPolyTainted int getIntProp(@RPolyTainted String propertyName) throws ConfigurationException {
         return wrapped.getIntProp(propertyName);
     }
 

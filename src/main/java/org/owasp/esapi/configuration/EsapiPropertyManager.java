@@ -1,5 +1,7 @@
 package org.owasp.esapi.configuration;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import static org.owasp.esapi.configuration.EsapiPropertyLoaderFactory.createPropertyLoader;
 import static org.owasp.esapi.reference.DefaultSecurityConfiguration.logToStdout;
 import java.io.IOException;
@@ -29,7 +31,7 @@ public class EsapiPropertyManager implements EsapiPropertyLoader {
      * {@inheritDoc}
      */
     @Override
-    public int getIntProp(String propertyName) throws ConfigurationException {
+    public @RPolyTainted int getIntProp(@RPolyTainted String propertyName) throws ConfigurationException {
         for (AbstractPrioritizedPropertyLoader loader : loaders) {
             try {
                 return loader.getIntProp(propertyName);

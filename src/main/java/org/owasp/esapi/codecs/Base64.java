@@ -1,5 +1,6 @@
 package org.owasp.esapi.codecs;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 
@@ -1027,7 +1028,7 @@ public class Base64
      *
      * @since 2.1
      */
-    public static byte[] decodeFromFile( String filename )
+    public static byte[] decodeFromFile(@RUntainted String filename )
     {
         byte[] decodedData = null;
         Base64.InputStream bis = null;
@@ -1082,7 +1083,7 @@ public class Base64
      *
      * @since 2.1
      */
-    public static String encodeFromFile( String filename )
+    public static String encodeFromFile(@RUntainted String filename )
     {
         String encodedData = null;
         Base64.InputStream bis = null;

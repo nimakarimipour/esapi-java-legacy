@@ -32,6 +32,8 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.Authenticator;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
@@ -98,7 +100,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * The file that contains the user db
      */
-    private File userDB = null;
+    private @RUntainted File userDB = null;
 
     /**
      * How frequently to check the user db for external modifications

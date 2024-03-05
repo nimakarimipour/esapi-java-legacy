@@ -17,6 +17,8 @@ package org.owasp.esapi.waf.configuration;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.waf.rules.Rule;
 
 /**
@@ -64,7 +66,7 @@ public class AppGuardianConfiguration {
     /*
      * Fail response settings.
      */
-    private String defaultErrorPage;
+    private @RUntainted String defaultErrorPage;
     private int defaultResponseCode;
 
     private boolean forceHttpOnlyFlagToSession = false;
@@ -95,11 +97,11 @@ public class AppGuardianConfiguration {
         cookieRules = new ArrayList<Rule>();
     }
 
-    public String getDefaultErrorPage() {
+    public @RUntainted String getDefaultErrorPage() {
         return defaultErrorPage;
     }
 
-    public void setDefaultErrorPage(String defaultErrorPage) {
+    public void setDefaultErrorPage(@RUntainted String defaultErrorPage) {
         this.defaultErrorPage = defaultErrorPage;
     }
 

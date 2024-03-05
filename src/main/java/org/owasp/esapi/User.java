@@ -23,6 +23,8 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 import javax.servlet.http.HttpSession;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.AuthenticationHostException;
 import org.owasp.esapi.errors.EncryptionException;
@@ -475,7 +477,7 @@ public interface User extends Principal, Serializable {
         /**
          * {@inheritDoc}
          */
-        public String getAccountName() {
+        public @RUntainted String getAccountName() {
             return "Anonymous";
         }
 

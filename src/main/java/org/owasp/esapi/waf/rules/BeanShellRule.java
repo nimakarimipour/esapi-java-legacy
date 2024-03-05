@@ -24,6 +24,8 @@ import java.io.IOException;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.waf.actions.Action;
 import org.owasp.esapi.waf.actions.DoNothingAction;
@@ -41,7 +43,7 @@ public class BeanShellRule extends Rule {
     private String script;
     private Pattern path;
 
-    public BeanShellRule(String fileLocation, String id, Pattern path) throws IOException, EvalError {
+    public BeanShellRule(@RUntainted String fileLocation, String id, Pattern path) throws IOException, EvalError {
         i = new Interpreter();
         i.set("logger", logger);
         this.script = getFileContents(ESAPI.securityConfiguration().getResourceFile(fileLocation));

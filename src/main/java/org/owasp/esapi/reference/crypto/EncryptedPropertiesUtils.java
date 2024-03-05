@@ -1,5 +1,7 @@
 package org.owasp.esapi.reference.crypto;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -127,7 +129,7 @@ public class EncryptedPropertiesUtils {
      * @return Either the loaded Properties object or a new one if the file could not be found.
      * @throws IOException
      */
-    public static Properties loadProperties(String inFile, Boolean inFileEncrypted) throws IOException {
+    public static Properties loadProperties(@RUntainted String inFile, Boolean inFileEncrypted) throws IOException {
 
         if (inFileEncrypted == null) inFileEncrypted = true;
 
@@ -180,7 +182,7 @@ public class EncryptedPropertiesUtils {
      * @param message A message to add to the comments in the stored file
      * @throws Exception
      */
-    public static void storeProperties(String outFile, Properties props, String message) throws Exception {
+    public static void storeProperties(@RUntainted String outFile, Properties props, String message) throws Exception {
         OutputStream out = null;
         try {
             out = new FileOutputStream(new File(outFile));

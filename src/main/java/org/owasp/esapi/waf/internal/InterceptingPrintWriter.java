@@ -15,6 +15,8 @@
  */
 package org.owasp.esapi.waf.internal;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
+
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.Locale;
@@ -159,23 +161,23 @@ public class InterceptingPrintWriter extends PrintWriter {
         super.setError();
     }
 
-    public void write(char[] buf, int off, int len) {
+    public void write(@RUntainted char[] buf, int off, int len) {
         super.write(buf, off, len);
     }
 
-    public void write(char[] buf) {
+    public void write(@RUntainted char[] buf) {
         super.write(buf);
     }
 
-    public void write(int c) {
+    public void write(@RUntainted int c) {
         super.write(c);
     }
 
-    public void write(String s, int off, int len) {
+    public void write(@RUntainted String s, int off, int len) {
         super.write(s, off, len);
     }
 
-    public void write(String s) {
+    public void write(@RUntainted String s) {
         super.write(s);
     }
 

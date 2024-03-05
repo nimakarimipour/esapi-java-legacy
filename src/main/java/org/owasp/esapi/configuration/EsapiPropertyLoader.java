@@ -1,5 +1,7 @@
 package org.owasp.esapi.configuration;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.errors.ConfigurationException;
 
 /**
@@ -15,7 +17,7 @@ public interface EsapiPropertyLoader {
      * @return property value.
      * @throws ConfigurationException when property does not exist in configuration or has incorrect type.
      */
-    public int getIntProp(String propertyName) throws ConfigurationException;
+    public @RPolyTainted int getIntProp(@RPolyTainted String propertyName) throws ConfigurationException;
 
     /**
      * Get any byte array type property from security configuration.

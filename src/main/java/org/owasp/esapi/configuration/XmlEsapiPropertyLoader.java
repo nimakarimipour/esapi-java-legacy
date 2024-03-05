@@ -12,6 +12,9 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.errors.ConfigurationException;
 import org.w3c.dom.Document;
@@ -27,7 +30,7 @@ import org.xml.sax.SAXException;
  */
 public class XmlEsapiPropertyLoader extends AbstractPrioritizedPropertyLoader {
 
-    public XmlEsapiPropertyLoader(String filename, int priority) throws IOException {
+    public XmlEsapiPropertyLoader(@RUntainted String filename, int priority) throws IOException {
         super(filename, priority);
     }
 
@@ -35,7 +38,7 @@ public class XmlEsapiPropertyLoader extends AbstractPrioritizedPropertyLoader {
      * {@inheritDoc}
      */
     @Override
-    public int getIntProp(String propertyName) throws ConfigurationException {
+    public @RPolyTainted int getIntProp(@RPolyTainted String propertyName) throws ConfigurationException {
         String property = properties.getProperty(propertyName);
         if (property == null) {
             throw new ConfigurationException("Property : " + propertyName + " not found in default configuration");
@@ -102,7 +105,7 @@ public class XmlEsapiPropertyLoader extends AbstractPrioritizedPropertyLoader {
      * @param file
      * @throws ConfigurationException if there is a problem loading the specified configuration file.
      */
-    protected void loadPropertiesFromFile(File file) throws ConfigurationException {
+    protected void loadPropertiesFromFile(@RUntainted File file) throws ConfigurationException {
         try ( InputStream configFile = new FileInputStream(file); ) {
             validateAgainstXSD(configFile);
 

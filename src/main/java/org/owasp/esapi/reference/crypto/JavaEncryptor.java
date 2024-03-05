@@ -43,6 +43,8 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.Encryptor;
@@ -131,7 +133,7 @@ public final class JavaEncryptor implements Encryptor {
 
     // # of seconds that all failed decryption attempts will take. Used to
     // help prevent side-channel timing attacks.
-    private static int N_SECS = 2;
+    private static @RUntainted int N_SECS = 2;
 
     // Load the preferred JCE provider if one has been specified.
     static {

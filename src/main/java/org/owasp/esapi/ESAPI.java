@@ -18,6 +18,8 @@ package org.owasp.esapi;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.util.ObjFactory;
 
 /**
@@ -168,13 +170,13 @@ public final class ESAPI {
         return ObjFactory.make( securityConfiguration().getRandomizerImplementation(), "Randomizer" );
     }
 
-    private static volatile SecurityConfiguration overrideConfig = null;
+    private static volatile @RUntainted SecurityConfiguration overrideConfig = null;
 
     /**
      * @return the current ESAPI SecurityConfiguration being used to manage the security configuration for
      * ESAPI for this application.
      */
-    public static SecurityConfiguration securityConfiguration() {
+    public static @RUntainted SecurityConfiguration securityConfiguration() {
         // copy the volatile into a non-volatile to prevent TOCTTOU race condition
         SecurityConfiguration override = overrideConfig;
         if ( override != null ) {
@@ -217,7 +219,7 @@ public final class ESAPI {
      *
      * @param config The new security configuration.
      */
-    public static void override( SecurityConfiguration config ) {
+    public static void override(@RUntainted SecurityConfiguration config ) {
         overrideConfig = config;
     }
 }

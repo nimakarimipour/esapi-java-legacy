@@ -32,6 +32,9 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.apache.commons.lang.text.StrTokenizer;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.PropNames;
@@ -361,7 +364,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * Absolute path to the customDirectory
      */    // DISCUSS: Implicit assumption here that there is no SecurityManager installed enforcing the
         //            prevention of reading system properties. Otherwise this will fail with SecurityException.
-    private static String customDirectory = System.getProperty("org.owasp.esapi.resources");
+    private static @RUntainted String customDirectory = System.getProperty("org.owasp.esapi.resources");
     /*
      * Relative path to the resourceDirectory. Relative to the classpath.
      * Specifically, ClassLoader.getResource(resourceDirectory + filename) will
@@ -701,7 +704,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public File getResourceFile(String filename) {
+    public @RUntainted File getResourceFile(@RUntainted String filename) {
         logSpecial("Attempting to load " + filename + " as resource file via file I/O.");
 
         if (filename == null) {
@@ -1034,7 +1037,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public String getCharacterEncoding() {
+    public @RUntainted String getCharacterEncoding() {
         return getESAPIProperty(CHARACTER_ENCODING, "UTF-8");
     }
 
@@ -1101,7 +1104,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public File getUploadDirectory() {
+    public @RUntainted File getUploadDirectory() {
         String dir = getESAPIProperty( UPLOAD_DIRECTORY, "UploadDir");
         return new File( dir );
     }
@@ -1204,14 +1207,14 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public String getResponseContentType() {
+    public @RUntainted String getResponseContentType() {
         return getESAPIProperty( RESPONSE_CONTENT_TYPE, "text/html; charset=UTF-8" );
     }
 
     /**
      * {@inheritDoc}
      */
-    public String getHttpSessionIdName() {
+    public @RUntainted String getHttpSessionIdName() {
         return getESAPIProperty( HTTP_SESSION_ID_NAME, "JSESSIONID" );
     }
 
@@ -1309,7 +1312,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
         return getESAPIProperty( ACCEPT_LENIENT_DATES, false);
     }
 
-    protected String getESAPIProperty( String key, String def ) {
+    protected @RUntainted String getESAPIProperty( String key, String def ) {
         String value = properties.getProperty(key);
         if ( value == null ) {
             logSpecial( "SecurityConfiguration for " + key + " not found in ESAPI.properties. Using default: " + def, null );
@@ -1388,7 +1391,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * 3.) In ESAPI.properties
      */
     @Override
-    public int getIntProp(String propertyName) throws ConfigurationException {
+    public @RPolyTainted int getIntProp(@RPolyTainted String propertyName) throws ConfigurationException {
         try {
             return esapiPropertyManager.getIntProp(propertyName);
         } catch (ConfigurationException ex) {
