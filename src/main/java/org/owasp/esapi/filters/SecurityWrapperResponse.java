@@ -429,7 +429,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param location
      * @throws IOException
      */
-    public void sendRedirect(String location) throws IOException {
+    public void sendRedirect(@RUntainted String location) throws IOException {
         if (!ESAPI.validator().isValidRedirectLocation("Redirect", location, false)) {
             logger.fatal(Logger.SECURITY_FAILURE, "Bad redirect location: " + location);
             throw new IOException("Redirect failed");

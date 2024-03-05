@@ -92,7 +92,7 @@ public class XmlEsapiPropertyLoader extends AbstractPrioritizedPropertyLoader {
      * {@inheritDoc}
      */
     @Override
-    public String getStringProp(String propertyName) throws ConfigurationException {
+    public @RPolyTainted String getStringProp(@RPolyTainted String propertyName) throws ConfigurationException {
         String property = properties.getProperty(propertyName);
         if (property == null) {
             throw new ConfigurationException("Property : " + propertyName + " not found in default configuration");

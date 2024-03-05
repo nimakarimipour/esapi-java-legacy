@@ -76,7 +76,7 @@ public class EsapiPropertyManager implements EsapiPropertyLoader {
      * {@inheritDoc}
      */
     @Override
-    public String getStringProp(String propertyName) throws ConfigurationException {
+    public @RPolyTainted String getStringProp(@RPolyTainted String propertyName) throws ConfigurationException {
         for (AbstractPrioritizedPropertyLoader loader : loaders) {
             try {
                 return loader.getStringProp(propertyName);

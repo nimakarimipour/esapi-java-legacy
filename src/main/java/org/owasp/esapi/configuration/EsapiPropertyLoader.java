@@ -42,6 +42,6 @@ public interface EsapiPropertyLoader {
      * @return property value.
      * @throws ConfigurationException when property does not exist in configuration.
      */
-    public String getStringProp(String propertyName) throws ConfigurationException;
+    public @RPolyTainted String getStringProp(@RPolyTainted String propertyName) throws ConfigurationException;
 
 }

@@ -1465,7 +1465,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * 3.) In ESAPI.properties
      */
     @Override
-    public String getStringProp(String propertyName) throws ConfigurationException {
+    public @RPolyTainted String getStringProp(@RPolyTainted String propertyName) throws ConfigurationException {
         try {
             return esapiPropertyManager.getStringProp(propertyName);
         } catch (ConfigurationException ex) {
