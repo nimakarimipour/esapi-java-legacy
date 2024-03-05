@@ -36,6 +36,7 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 
 import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Encoder;
 import org.owasp.esapi.Logger;
@@ -494,7 +495,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * This implementation does not throw {@link IntrusionException}.
      */
     @Override
-    public boolean isValidDirectoryPath(String context, String input, File parent, boolean allowNull) {
+    public boolean isValidDirectoryPath(String context, @RUntainted String input, File parent, boolean allowNull) {
         try {
             getValidDirectoryPath( context, input, parent, allowNull);
             return true;
@@ -511,7 +512,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * path (/private/etc), not the symlink (/etc).</p>
      */
     @Override
-    public boolean isValidDirectoryPath(String context, String input, File parent, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
+    public boolean isValidDirectoryPath(String context, @RUntainted String input, File parent, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
         try {
             getValidDirectoryPath( context, input, parent, allowNull);
             return true;
@@ -529,7 +530,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * path (/private/etc), not the symlink (/etc).</p>
      */
     @Override
-    public String getValidDirectoryPath(String context, String input, File parent, boolean allowNull) throws ValidationException, IntrusionException {
+    public String getValidDirectoryPath(String context, @RUntainted String input, File parent, boolean allowNull) throws ValidationException, IntrusionException {
         try {
             if (isEmpty(input)) {
                 if (allowNull) {
@@ -577,7 +578,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * path (/private/etc), not the symlink (/etc).</p>
      */
     @Override
-    public String getValidDirectoryPath(String context, String input, File parent, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
+    public String getValidDirectoryPath(String context, @RUntainted String input, File parent, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
 
         try {
             return getValidDirectoryPath(context, input, parent, allowNull);
@@ -592,7 +593,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * {@inheritDoc}
      */
     @Override
-    public boolean isValidFileName(String context, String input, boolean allowNull) throws IntrusionException {
+    public boolean isValidFileName(String context, @RUntainted String input, boolean allowNull) throws IntrusionException {
         return isValidFileName( context, input, ESAPI.securityConfiguration().getAllowedFileExtensions(), allowNull );
     }
 
@@ -600,7 +601,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * {@inheritDoc}
      */
     @Override
-    public boolean isValidFileName(String context, String input, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
+    public boolean isValidFileName(String context, @RUntainted String input, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
         return isValidFileName( context, input, ESAPI.securityConfiguration().getAllowedFileExtensions(), allowNull, errors );
     }
 
@@ -610,7 +611,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * This implementation does not throw {@link IntrusionException}.
      */
     @Override
-    public boolean isValidFileName(String context, String input, List<String> allowedExtensions, boolean allowNull) {
+    public boolean isValidFileName(String context, @RUntainted String input, List<String> allowedExtensions, boolean allowNull) {
         try {
             getValidFileName( context, input, allowedExtensions, allowNull);
             return true;
@@ -623,7 +624,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * {@inheritDoc}
      */
     @Override
-    public boolean isValidFileName(String context, String input, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
+    public boolean isValidFileName(String context, @RUntainted String input, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
         try {
             getValidFileName( context, input, allowedExtensions, allowNull);
             return true;
@@ -637,7 +638,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * {@inheritDoc}
      */
     @Override
-    public String getValidFileName(String context, String input, List<String> allowedExtensions, boolean allowNull) throws ValidationException, IntrusionException {
+    public String getValidFileName(String context, @RUntainted String input, List<String> allowedExtensions, boolean allowNull) throws ValidationException, IntrusionException {
         if ((allowedExtensions == null) || (allowedExtensions.isEmpty())) {
             throw new ValidationException( "Internal Error", "getValidFileName called with an empty or null list of allowed Extensions, therefore no files can be uploaded" );
         }
@@ -685,7 +686,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * {@inheritDoc}
      */
     @Override
-    public String getValidFileName(String context, String input, List<String> allowedParameters, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
+    public String getValidFileName(String context, @RUntainted String input, List<String> allowedParameters, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
         try {
             return getValidFileName(context, input, allowedParameters, allowNull);
         } catch (ValidationException e) {
@@ -922,7 +923,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * path (/private/etc), not the symlink (/etc).</p>
      */
     @Override
-    public boolean isValidFileUpload(String context, String directorypath, String filename, File parent, byte[] content, int maxBytes, boolean allowNull) throws IntrusionException {
+    public boolean isValidFileUpload(String context, @RUntainted String directorypath, @RUntainted String filename, File parent, byte[] content, int maxBytes, boolean allowNull) throws IntrusionException {
         return( isValidFileName( context, filename, allowNull ) &&
                 isValidDirectoryPath( context, directorypath, parent, allowNull ) &&
                 isValidFileContent( context, content, maxBytes, allowNull ) );
@@ -936,7 +937,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * path (/private/etc), not the symlink (/etc).</p>
      */
     @Override
-    public boolean isValidFileUpload(String context, String directorypath, String filename, File parent, byte[] content, int maxBytes, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
+    public boolean isValidFileUpload(String context, @RUntainted String directorypath, @RUntainted String filename, File parent, byte[] content, int maxBytes, boolean allowNull, ValidationErrorList errors) throws IntrusionException {
         return( isValidFileName( context, filename, allowNull, errors ) &&
                 isValidDirectoryPath( context, directorypath, parent, allowNull, errors ) &&
                 isValidFileContent( context, content, maxBytes, allowNull, errors ) );
@@ -946,7 +947,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * {@inheritDoc}
      */
     @Override
-    public void assertValidFileUpload(String context, String directorypath, String filename, File parent, byte[] content, int maxBytes, List<String> allowedExtensions, boolean allowNull) throws ValidationException, IntrusionException {
+    public void assertValidFileUpload(String context, @RUntainted String directorypath, @RUntainted String filename, File parent, byte[] content, int maxBytes, List<String> allowedExtensions, boolean allowNull) throws ValidationException, IntrusionException {
         getValidFileName( context, filename, allowedExtensions, allowNull );
         getValidDirectoryPath( context, directorypath, parent, allowNull );
         getValidFileContent( context, content, maxBytes, allowNull );
@@ -956,7 +957,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * {@inheritDoc}
      */
     @Override
-    public void assertValidFileUpload(String context, String filepath, String filename, File parent, byte[] content, int maxBytes, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errors)
+    public void assertValidFileUpload(String context, @RUntainted String filepath, @RUntainted String filename, File parent, byte[] content, int maxBytes, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errors)
         throws IntrusionException {
         try {
             assertValidFileUpload(context, filepath, filename, parent, content, maxBytes, allowedExtensions, allowNull);
