@@ -40,7 +40,7 @@ public class StringUtilities {
      * @param input
      * @return the stripped value
      */
-    public static String stripControls( String input ) {
+    public static @RPolyTainted String stripControls( @RPolyTainted String input ) {
         StringBuilder sb = new StringBuilder();
         for ( int i=0; i<input.length(); i++ ) {
             char c = input.charAt( i );

@@ -20,6 +20,9 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.SecurityConfiguration;
@@ -75,7 +78,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * doesn't allow the use of HttpOnly.
      * @param cookie
      */
-    public void addCookie(Cookie cookie) {
+    public void addCookie(@RUntainted Cookie cookie) {
         String name = cookie.getName();
         String value = cookie.getValue();
         int maxAge = cookie.getMaxAge();
@@ -121,7 +124,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
         throw new IntrusionException("Security error", "Attempt to add unsafe data to cookie (throw mode)");
     }
 
-    private String createCookieHeader(String name, String value, int maxAge, String domain, String path, boolean secure) {
+    private @RPolyTainted String createCookieHeader(@RPolyTainted String name, @RPolyTainted String value, @RPolyTainted int maxAge, @RPolyTainted String domain, @RPolyTainted String path, @RPolyTainted boolean secure) {
         // create the special cookie header instead of creating a Java cookie
         // Set-Cookie:<name>=<value>[; <name>=<value>][; expires=<date>][;
         // domain=<domain_name>][; path=<some_path>][; secure][;HttpOnly
@@ -150,7 +153,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param name
      * @param date
      */
-    public void addDateHeader(String name, long date) {
+    public void addDateHeader(@RUntainted String name, @RUntainted long date) {
         try {
             SecurityConfiguration sc = ESAPI.securityConfiguration();
             String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
@@ -170,7 +173,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param name
      * @param value
      */
-    public void addHeader(String name, String value) {
+    public void addHeader(@RUntainted String name, @RUntainted String value) {
         SecurityConfiguration sc = ESAPI.securityConfiguration();
         String strippedName = StringUtilities.stripControls(name);
         String strippedValue = StringUtilities.stripControls(value);
