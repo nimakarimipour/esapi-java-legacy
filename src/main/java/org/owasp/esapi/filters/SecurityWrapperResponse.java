@@ -205,7 +205,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * depending on how you have configured ESAPI defaults.
      * @param uri
      */
-    public void addReferer( String uri) {
+    public void addReferer( @RUntainted String uri) {
 
         // TODO: make stripping a global config
         String strippedValue = StringUtilities.stripControls(uri);
@@ -224,7 +224,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param name
      * @param value
      */
-    public void addIntHeader(String name, int value) {
+    public void addIntHeader(@RUntainted String name, @RUntainted int value) {
         try {
             SecurityConfiguration sc = ESAPI.securityConfiguration();
             String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
@@ -392,7 +392,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param sc -- http status code
      * @throws IOException
      */
-    public void sendError(int sc) throws IOException {
+    public void sendError(@RUntainted int sc) throws IOException {
         SecurityConfiguration config = ESAPI.securityConfiguration();
         if(config.getBooleanProp("HttpUtilities.OverwriteStatusCodes")){
             getHttpServletResponse().sendError(HttpServletResponse.SC_OK, getHTTPMessage(sc));
@@ -586,7 +586,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
     /**
      * returns a text message for the HTTP response code
      */
-    private String getHTTPMessage(int sc) {
+    private @RPolyTainted String getHTTPMessage(@RPolyTainted int sc) {
         return "HTTP error code: " + sc;
     }
 
