@@ -370,8 +370,8 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * Specifically, ClassLoader.getResource(resourceDirectory + filename) will
      * be used to load the file.
      */
-    private String resourceDirectory = ".esapi";    // For backward compatibility (vs. "esapi")
-    private final String resourceFile;
+    private @RUntainted String resourceDirectory = ".esapi";    // For backward compatibility (vs. "esapi")
+    private final @RUntainted String resourceFile;
     private EsapiPropertyManager esapiPropertyManager;
 
 
@@ -380,7 +380,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      *
      * @param resourceFile The name of the property file to load
      */
-    DefaultSecurityConfiguration(String resourceFile) {
+    DefaultSecurityConfiguration(@RUntainted String resourceFile) {
         this.resourceFile = resourceFile;
         // load security configuration
         try {
@@ -524,7 +524,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public void setResourceDirectory( String dir ) {
+    public void setResourceDirectory(@RUntainted String dir ) {
         resourceDirectory = dir;
         logSpecial( "Reset resource directory to: " + dir, null );
 
@@ -614,7 +614,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
 
         // if properties loaded properly above, get validation properties and merge them into the main properties
         if (properties != null) {
-            final Iterator<String> validationPropFileNames;
+            final Iterator<@RUntainted String> validationPropFileNames;
 
             //defaults to single-valued for backwards compatibility
             final boolean multivalued= getESAPIProperty(VALIDATION_PROPERTIES_MULTIVALUED, false);
@@ -685,7 +685,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * @throws IOException
      *             If the file cannot be found or opened for reading.
      */
-    public InputStream getResourceStream(String filename) throws IOException {
+    public InputStream getResourceStream(@RUntainted String filename) throws IOException {
         if (filename == null) {
             return null;
         }
@@ -1312,7 +1312,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
         return getESAPIProperty( ACCEPT_LENIENT_DATES, false);
     }
 
-    protected @RUntainted String getESAPIProperty( String key, String def ) {
+    protected @RPolyTainted String getESAPIProperty( String key, @RPolyTainted String def ) {
         String value = properties.getProperty(key);
         if ( value == null ) {
             logSpecial( "SecurityConfiguration for " + key + " not found in ESAPI.properties. Using default: " + def, null );

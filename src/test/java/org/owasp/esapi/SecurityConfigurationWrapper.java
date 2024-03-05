@@ -459,7 +459,7 @@ public class SecurityConfigurationWrapper implements SecurityConfiguration
      * {@inheritDoc}
      */
     // @Override
-    public InputStream getResourceStream( String filename ) throws IOException
+    public InputStream getResourceStream( @RUntainted String filename ) throws IOException
     {
         return wrapped.getResourceStream(filename);
     }
@@ -469,7 +469,7 @@ public class SecurityConfigurationWrapper implements SecurityConfiguration
      * {@inheritDoc}
      */
     // @Override
-    public void setResourceDirectory(String dir)
+    public void setResourceDirectory(@RUntainted String dir)
     {
         wrapped.setResourceDirectory(dir);
     }

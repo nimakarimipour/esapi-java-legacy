@@ -15,19 +15,19 @@ public enum EsapiConfiguration {
     /**
      * Key of system property pointing to path esapi to configuration file.
      */
-    String configName;
+    @RUntainted String configName;
 
     /**
      * Priority of configuration (higher numer - higher priority).
      */
     @RUntainted int priority;
 
-    EsapiConfiguration(String configName, @RUntainted int priority) {
+    EsapiConfiguration(@RUntainted String configName, @RUntainted int priority) {
         this.configName = configName;
         this.priority = priority;
     }
 
-    public String getConfigName() {
+    public @RUntainted String getConfigName() {
         return configName;
     }
 

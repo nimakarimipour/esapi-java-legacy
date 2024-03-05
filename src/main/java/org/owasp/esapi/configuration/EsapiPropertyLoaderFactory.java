@@ -1,5 +1,6 @@
 package org.owasp.esapi.configuration;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import static org.owasp.esapi.configuration.consts.EsapiConfigurationType.PROPERTIES;
 import static org.owasp.esapi.configuration.consts.EsapiConfigurationType.XML;
 import java.io.IOException;

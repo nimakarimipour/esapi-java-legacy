@@ -625,14 +625,14 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @return An {@code InputStream} to the specified file name in the resource directory.
      * @throws IOException If the specified file name cannot be found or opened for reading.
      */
-    InputStream getResourceStream( String filename ) throws IOException;
+    InputStream getResourceStream( @RUntainted String filename ) throws IOException;
 
     /**
      * Sets the ESAPI resource directory.
      *
      * @param dir The location of the resource directory.
      */
-    void setResourceDirectory(String dir);
+    void setResourceDirectory(@RUntainted String dir);
 
     /**
      * Gets the content type for responses used when setSafeContentType() is called.
