@@ -16,6 +16,7 @@
 package org.owasp.esapi.reference.validation;
 
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_ACTION;
 import static org.owasp.esapi.PropNames.VALIDATOR_HTML_VALIDATION_CONFIGURATION_FILE;
 import java.io.File;
@@ -91,7 +92,7 @@ public class HTMLValidationRule extends StringValidationRule {
         return resourceStream;
     }
 
-    /*package */ static Policy loadAntisamyPolicy(String antisamyPolicyFilename) throws IOException, PolicyException {
+    /*package */ static Policy loadAntisamyPolicy(@RUntainted String antisamyPolicyFilename) throws IOException, PolicyException {
         InputStream resourceStream = null;
         SecurityConfiguration secCfg = ESAPI.securityConfiguration();
 

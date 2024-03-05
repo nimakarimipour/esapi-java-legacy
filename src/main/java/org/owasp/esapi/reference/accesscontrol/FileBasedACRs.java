@@ -26,6 +26,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.User;
@@ -405,7 +407,7 @@ public class FileBasedACRs {
      * @return
      *         a hash map containing the ruleset
      */
-    private Map loadRules(String ruleset) {
+    private Map loadRules(@RUntainted String ruleset) {
         ruleset = "fbac-policies/" + ruleset;
         Map map = new HashMap();
         InputStream is = null;
@@ -461,7 +463,7 @@ public class FileBasedACRs {
      * @return
      *         a hash map containing the ruleset
      */
-    private Map loadDataRules(String ruleset) {
+    private Map loadDataRules(@RUntainted String ruleset) {
         Map map = new HashMap();
         InputStream is = null;
 

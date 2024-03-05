@@ -52,8 +52,8 @@ public class AppGuardianConfiguration {
     public static int DEFAULT_FAIL_ACTION = LOG;
 
     // TODO: use UTF-8
-    public static String DEFAULT_CHARACTER_ENCODING = "ISO-8859-1";
-    public static String DEFAULT_CONTENT_TYPE = "text/html; charset=" + DEFAULT_CHARACTER_ENCODING;
+    public static @RUntainted String DEFAULT_CHARACTER_ENCODING = "ISO-8859-1";
+    public static @RUntainted String DEFAULT_CONTENT_TYPE = "text/html; charset=" + DEFAULT_CHARACTER_ENCODING;
 
     /*
      * The JavaScript to redirect users to the default error page. Have
