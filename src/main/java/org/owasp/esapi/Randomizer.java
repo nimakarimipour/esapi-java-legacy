@@ -15,6 +15,7 @@
  */
 package org.owasp.esapi;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.errors.EncryptionException;
 
 /**
@@ -74,7 +75,7 @@ public interface Randomizer {
      * @return
      *         the random integer
      */
-    int getRandomInteger(int min, int max);
+    @RUntainted int getRandomInteger(@RUntainted int min, @RUntainted int max);
 
 
     /**

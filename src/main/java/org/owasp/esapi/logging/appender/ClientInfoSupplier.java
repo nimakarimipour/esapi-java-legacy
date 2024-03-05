@@ -20,6 +20,8 @@ package org.owasp.esapi.logging.appender;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.User;
 
@@ -32,7 +34,7 @@ public class ClientInfoSupplier // implements Supplier<String>
     /** Default Last Host string if the Authenticated user is null.*/
     private static final String DEFAULT_LAST_HOST = "#UNKNOWN_HOST#";
     /** Session Attribute containing the ESAPI Session id. */
-    private static final String ESAPI_SESSION_ATTR = "ESAPI_SESSION";
+    private static final @RUntainted String ESAPI_SESSION_ATTR = "ESAPI_SESSION";
     /**
      * Minimum value for generating a random session value if one is not defined.
      */

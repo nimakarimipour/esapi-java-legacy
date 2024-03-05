@@ -93,7 +93,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
         return instance;
     }
 
-    private Properties properties = null;
+    private @RUntainted Properties properties = null;
     private String cipherXformFromESAPIProp = null;    // New in ESAPI 2.0
     private String cipherXformCurrent = null;          // New in ESAPI 2.0
 
@@ -401,7 +401,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      *
      * @param properties
      */
-    public DefaultSecurityConfiguration(Properties properties) {
+    public DefaultSecurityConfiguration(@RUntainted Properties properties) {
         resourceFile = DEFAULT_RESOURCE_FILE;
         try {
             this.esapiPropertyManager = new EsapiPropertyManager();
@@ -578,7 +578,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     }
 
 
-    private Properties loadPropertiesFromStream( InputStream is, String name ) throws IOException {
+    private @RUntainted Properties loadPropertiesFromStream( InputStream is, String name ) throws IOException {
         Properties config = new Properties();
         try {
             config.load(is);
@@ -783,7 +783,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      *
      * @param fileName The properties file filename.
      */
-    private Properties loadConfigurationFromClasspath(String fileName) throws IllegalArgumentException {
+    private @RUntainted Properties loadConfigurationFromClasspath(String fileName) throws IllegalArgumentException {
         Properties result = null;
         InputStream in = null;
 
@@ -1083,7 +1083,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public String getRandomAlgorithm() {
+    public @RUntainted String getRandomAlgorithm() {
         return getESAPIProperty(RANDOM_ALGORITHM, "SHA1PRNG");
     }
 
@@ -1312,7 +1312,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
         return getESAPIProperty( ACCEPT_LENIENT_DATES, false);
     }
 
-    protected @RPolyTainted String getESAPIProperty( String key, @RPolyTainted String def ) {
+    protected @RPolyTainted String getESAPIProperty(@RPolyTainted String key, @RPolyTainted String def ) {
         String value = properties.getProperty(key);
         if ( value == null ) {
             logSpecial( "SecurityConfiguration for " + key + " not found in ESAPI.properties. Using default: " + def, null );

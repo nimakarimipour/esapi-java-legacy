@@ -370,7 +370,7 @@ public class SecurityConfigurationWrapper implements SecurityConfiguration
      * {@inheritDoc}
      */
     // @Override
-    public String getRandomAlgorithm()
+    public @RUntainted String getRandomAlgorithm()
     {
         return wrapped.getRandomAlgorithm();
     }

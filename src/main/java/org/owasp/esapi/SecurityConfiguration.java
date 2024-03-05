@@ -534,7 +534,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @deprecated Use SecurityConfiguration.getStringProp("appropriate_esapi_prop_name") instead.
      */
     @Deprecated
-    String getRandomAlgorithm();
+    @RUntainted String getRandomAlgorithm();
 
     /**
      * Gets the number of login attempts allowed before the user's account is locked. If this
