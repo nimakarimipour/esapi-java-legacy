@@ -466,7 +466,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * Same as HttpServletResponse, no security changes required.
      * @param type
      */
-    public void setContentType(String type) {
+    public void setContentType(@RUntainted String type) {
         getHttpServletResponse().setContentType(type);
     }
 
@@ -476,7 +476,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param name
      * @param date
      */
-    public void setDateHeader(String name, long date) {
+    public void setDateHeader(@RUntainted String name, @RUntainted long date) {
         try {
             SecurityConfiguration sc = ESAPI.securityConfiguration();
             String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
