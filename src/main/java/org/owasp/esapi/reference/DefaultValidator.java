@@ -255,7 +255,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * for additional details.
      */
     @Override
-    public @RPolyTainted String getValidInput(@RPolyTainted String context, @RPolyTainted String input, @RPolyTainted String type, @RPolyTainted int maxLength, @RPolyTainted boolean allowNull) throws ValidationException {
+    public @RUntainted String getValidInput( String context, String input, String type, int maxLength, boolean allowNull) throws ValidationException {
         return getValidInput(context, input, type, maxLength, allowNull, true);
     }
 
@@ -270,7 +270,7 @@ public class DefaultValidator implements org.owasp.esapi.Validator {
      * for additional details.
      */
     @Override
-    public @RPolyTainted String getValidInput(@RPolyTainted String context, @RPolyTainted String input, @RPolyTainted String type, @RPolyTainted int maxLength, @RPolyTainted boolean allowNull, @RPolyTainted boolean canonicalize) throws ValidationException {
+    public @RUntainted String getValidInput(String context, String input, String type, int maxLength, boolean allowNull, boolean canonicalize) throws ValidationException {
         StringValidationRule rvr = new StringValidationRule( type, encoder );
         Pattern p = ESAPI.securityConfiguration().getValidationPattern( type );
         if ( p != null ) {

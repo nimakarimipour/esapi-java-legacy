@@ -110,7 +110,7 @@ public interface Validator {
      * @throws ValidationException Input is invalid.
      * @throws IntrusionException Input likely indicates an attack.
      */
-    @RPolyTainted String getValidInput(@RPolyTainted String context, @RPolyTainted String input, @RPolyTainted String type, @RPolyTainted int maxLength, @RPolyTainted boolean allowNull) throws ValidationException, IntrusionException;
+    @RUntainted String getValidInput( String context, String input, String type, int maxLength, boolean allowNull) throws ValidationException, IntrusionException;
 
     /**
      * Returns validated {@code input} as a String with optional canonicalization.
@@ -138,7 +138,7 @@ public interface Validator {
      * @throws ValidationException Input is invalid.
      * @throws IntrusionException Input likely indicates an attack.
      */
-    @RPolyTainted String getValidInput(@RPolyTainted String context, @RPolyTainted String input, @RPolyTainted String type, @RPolyTainted int maxLength, @RPolyTainted boolean allowNull, @RPolyTainted boolean canonicalize) throws ValidationException, IntrusionException;
+    @RUntainted String getValidInput( String context, String input, String type, int maxLength, boolean allowNull, boolean canonicalize) throws ValidationException, IntrusionException;
 
     /**
      * Returns canonicalized validated {@code input} as a String,
