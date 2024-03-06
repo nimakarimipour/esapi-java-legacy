@@ -495,7 +495,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param name
      * @param value
      */
-    public void setHeader(String name, String value) {
+    public void setHeader(@RUntainted String name, @RUntainted String value) {
         SecurityConfiguration sc = ESAPI.securityConfiguration();
         String strippedName = StringUtilities.stripControls(name);
         String strippedValue = StringUtilities.stripControls(value);
@@ -527,7 +527,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param name
      * @param value
      */
-    public void setIntHeader(String name, int value) {
+    public void setIntHeader(@RUntainted String name, int value) {
         try {
             SecurityConfiguration sc = ESAPI.securityConfiguration();
             String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);

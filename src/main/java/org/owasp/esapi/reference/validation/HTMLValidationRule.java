@@ -53,7 +53,7 @@ public class HTMLValidationRule extends StringValidationRule {
     /** OWASP AntiSamy markup verification policy */
     private static Policy antiSamyPolicy = null;
     private static final Logger LOGGER = ESAPI.getLogger( "HTMLValidationRule" );
-    private static final String ANTISAMYPOLICY_FILENAME = "antisamy-esapi.xml";
+    private static final @RUntainted String ANTISAMYPOLICY_FILENAME = "antisamy-esapi.xml";
 
     /*package */ static InputStream getResourceStreamFromClassLoader(String contextDescription, ClassLoader classLoader, String fileName, List<String> searchPaths) {
         InputStream result = null;
@@ -104,7 +104,7 @@ public class HTMLValidationRule extends StringValidationRule {
         return resourceStream == null ? null : Policy.getInstance(resourceStream);
     }
 
-    /*package */ static String resolveAntisamyFilename() {
+    /*package */ static @RUntainted String resolveAntisamyFilename() {
         String antisamyPolicyFilename = ANTISAMYPOLICY_FILENAME;
         try {
             antisamyPolicyFilename = ESAPI.securityConfiguration().getStringProp( VALIDATOR_HTML_VALIDATION_CONFIGURATION_FILE );
