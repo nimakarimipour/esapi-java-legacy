@@ -1122,7 +1122,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /* Helper method to encrypt using new Encryptor encryption methods and
      * return the serialized ciphertext as a hex-encoded string.
      */
-    private String encryptString(String plaintext) throws EncryptionException {
+    private @RUntainted String encryptString(String plaintext) throws EncryptionException {
         PlainText pt = new PlainText(plaintext);
         CipherText ct = ESAPI.encryptor().encrypt(pt);
         byte[] serializedCiphertext = ct.asPortableSerializedByteArray();
