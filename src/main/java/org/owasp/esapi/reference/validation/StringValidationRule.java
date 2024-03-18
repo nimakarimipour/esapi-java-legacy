@@ -26,6 +26,7 @@ import org.owasp.esapi.Logger;
 import org.owasp.esapi.StringUtilities;
 import org.owasp.esapi.errors.ValidationException;
 import org.owasp.esapi.util.NullSafe;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
 
 
 /**

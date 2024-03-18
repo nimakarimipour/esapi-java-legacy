@@ -56,6 +56,8 @@ import org.owasp.esapi.errors.IntegrityException;
 import org.owasp.esapi.errors.IntrusionException;
 import org.owasp.esapi.errors.ValidationException;
 import org.owasp.esapi.errors.ValidationUploadException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
 
 /**
  * Reference implementation of the HTTPUtilities interface. This implementation
@@ -102,7 +104,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      */
     private class ThreadLocalRequest extends InheritableThreadLocal<HttpServletRequest> {
 
-        public HttpServletRequest getRequest() {
+        public @RUntainted HttpServletRequest getRequest() {
             return super.get();
         }
 
@@ -199,7 +201,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      * cookie interface which doesn't allow the use of HttpOnly. Configure the
      * HttpOnly and Secure settings in ESAPI.properties.
      */
-    public void addCookie( Cookie cookie ) {
+    public void addCookie( @RUntainted Cookie cookie ) {
         addCookie( getCurrentResponse(), cookie );
     }
 
@@ -209,7 +211,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      * cookie interface which doesn't allow the use of HttpOnly. Configure the
      * HttpOnly and Secure settings in ESAPI.properties.
      */
-    public void addCookie(HttpServletResponse response, Cookie cookie) {
+    public void addCookie(HttpServletResponse response, @RUntainted Cookie cookie) {
         String name = cookie.getName();
         String value = cookie.getValue();
         int maxAge = cookie.getMaxAge();
@@ -357,7 +359,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
         user.removeSession( oldSession );
 
         // copy back the session content
-      for (Map.Entry<String, Object> stringObjectEntry : temp.entrySet())
+      for (Map.Entry<@RUntainted String, @RUntainted Object> stringObjectEntry : temp.entrySet())
       {
          newSession.setAttribute(stringObjectEntry.getKey(), stringObjectEntry.getValue());
         }
@@ -521,7 +523,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /**
      * {@inheritDoc}
      */
-    public HttpServletRequest getCurrentRequest() {
+    public @RUntainted HttpServletRequest getCurrentRequest() {
         return currentRequest.getRequest();
     }
 
@@ -543,21 +545,21 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /**
      * {@inheritDoc}
      */
-    public List<File> getFileUploads(HttpServletRequest request) throws ValidationException {
+    public List<File> getFileUploads(@RUntainted HttpServletRequest request) throws ValidationException {
         return getFileUploads(request, ESAPI.securityConfiguration().getUploadDirectory(), ESAPI.securityConfiguration().getAllowedFileExtensions());
     }
 
     /**
      * {@inheritDoc}
      */
-    public List<File> getFileUploads(HttpServletRequest request, File finalDir ) throws ValidationException {
+    public List<File> getFileUploads(@RUntainted HttpServletRequest request, @RUntainted File finalDir ) throws ValidationException {
         return getFileUploads(request, finalDir, ESAPI.securityConfiguration().getAllowedFileExtensions());
     }
 
     /**
      * {@inheritDoc}
      */
-    public List<File> getFileUploads(HttpServletRequest request, File finalDir, List allowedExtensions) throws ValidationException {
+    public List<File> getFileUploads(@RUntainted HttpServletRequest request, @RUntainted File finalDir, List allowedExtensions) throws ValidationException {
         File tempDir = ESAPI.securityConfiguration().getUploadTempDirectory();
         if ( !tempDir.exists() ) {
             if ( !tempDir.mkdirs() ) throw new ValidationUploadException( "Upload failed", "Could not create temp directory: " + tempDir.getAbsolutePath() );
@@ -604,9 +606,9 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
             // Create a progress listener
             ProgressListener progressListener = new ProgressListener() {
                 private long megaBytes = -1;
-                private long progress = 0;
+                private @RUntainted long progress = 0;
 
-                public void update(long pBytesRead, long pContentLength, int pItems) {
+                public void update(@RUntainted long pBytesRead, @RUntainted long pContentLength, int pItems) {
                     if (pItems == 0)
                         return;
                     long mBytes = pBytesRead / 1000000;
@@ -622,12 +624,12 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
             };
             upload.setProgressListener(progressListener);
 
-            List<FileItem> items = upload.parseRequest(request);
+            List<@RUntainted FileItem> items = upload.parseRequest(request);
             for (FileItem item : items)
             {
                 if (!item.isFormField() && item.getName() != null && !(item.getName().equals("")))
                 {
-                    String[] fparts = item.getName().split("[\\/\\\\]");
+                    @RUntainted String[] fparts = item.getName().split("[\\/\\\\]");
                     String filename = fparts[fparts.length - 1];
 
                     if (!ESAPI.validator().isValidFileName("upload", filename, allowedExtensions, false))
@@ -759,7 +761,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      * @param response
      * @param name
      */
-    public void killCookie(HttpServletRequest request, HttpServletResponse response, String name) {
+    public void killCookie(HttpServletRequest request, HttpServletResponse response, @RUntainted String name) {
         String path = "/";
         String domain="";
         Cookie cookie = getFirstCookie(request, name);
@@ -778,7 +780,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /**
      * {@inheritDoc}
      */
-    public void killCookie( String name ) {
+    public void killCookie( @RUntainted String name ) {
         killCookie( getCurrentRequest(), getCurrentResponse(), name );
     }
 
@@ -886,7 +888,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      *
      * This implementation checks against the list of safe redirect locations defined in ESAPI.properties.
      */
-    public void sendRedirect(HttpServletResponse response, String location) throws AccessControlException, IOException {
+    public void sendRedirect(HttpServletResponse response, @RUntainted String location) throws AccessControlException, IOException {
         if (!ESAPI.validator().isValidRedirectLocation("Redirect", location, false)) {
             logger.fatal(Logger.SECURITY_FAILURE, "Bad redirect location: " + location);
             throw new AccessControlException("Redirect failed", "Bad redirect location: " + location);
@@ -897,7 +899,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /**
      * {@inheritDoc}
      */
-    public void sendRedirect( String location )  throws AccessControlException,IOException {
+    public void sendRedirect( @RUntainted String location )  throws AccessControlException,IOException {
         sendRedirect( getCurrentResponse(), location);
     }
 
@@ -982,7 +984,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      * @param request
      * @param response
      */
-    public String setRememberToken( HttpServletRequest request, HttpServletResponse response, String password, int maxAge, String domain, String path ) {
+    public String setRememberToken( HttpServletRequest request, HttpServletResponse response, String password, int maxAge, @RUntainted String domain, @RUntainted String path ) {
         User user = ESAPI.authenticator().getCurrentUser();
         try {
             killCookie(request, response, REMEMBER_TOKEN_COOKIE_NAME );
@@ -1013,7 +1015,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     }
 
 
-    public String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, String domain, String path){
+    public String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, @RUntainted String domain, @RUntainted String path){
         String rval = "";
         User user = ESAPI.authenticator().getCurrentUser();
 
@@ -1049,7 +1051,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /**
      * {@inheritDoc}
      */
-    public String setRememberToken( String password, int maxAge, String domain, String path ) {
+    public String setRememberToken( String password, int maxAge, @RUntainted String domain, @RUntainted String path ) {
         return setRememberToken( getCurrentRequest(), getCurrentResponse(), password, maxAge, domain, path );
     }
 
@@ -1120,7 +1122,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /* Helper method to encrypt using new Encryptor encryption methods and
      * return the serialized ciphertext as a hex-encoded string.
      */
-    private String encryptString(String plaintext) throws EncryptionException {
+    private @RUntainted String encryptString(String plaintext) throws EncryptionException {
         PlainText pt = new PlainText(plaintext);
         CipherText ct = ESAPI.encryptor().encrypt(pt);
         byte[] serializedCiphertext = ct.asPortableSerializedByteArray();

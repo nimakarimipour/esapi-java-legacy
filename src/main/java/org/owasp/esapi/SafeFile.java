@@ -20,6 +20,7 @@ import java.net.URI;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Extension to java.io.File to prevent against null byte injections and
@@ -34,25 +35,25 @@ public class SafeFile extends File {
     private static final Pattern FILE_BLACKLIST_PAT = Pattern.compile("([\\\\/:*?<>|^])");
     private static final Pattern DIR_BLACKLIST_PAT = Pattern.compile("([*?<>|^])");
 
-    public SafeFile(String path) throws ValidationException {
+    public SafeFile(@RUntainted String path) throws ValidationException {
         super(path);
         doDirCheck(this.getParent());
         doFileCheck(this.getName());
     }
 
-    public SafeFile(String parent, String child) throws ValidationException {
+    public SafeFile(@RUntainted String parent, @RUntainted String child) throws ValidationException {
         super(parent, child);
         doDirCheck(this.getParent());
         doFileCheck(this.getName());
     }
 
-    public SafeFile(File parent, String child) throws ValidationException {
+    public SafeFile(@RUntainted File parent, @RUntainted String child) throws ValidationException {
         super(parent, child);
         doDirCheck(this.getParent());
         doFileCheck(this.getName());
     }
 
-    public SafeFile(URI uri) throws ValidationException {
+    public SafeFile(@RUntainted URI uri) throws ValidationException {
         super(uri);
         doDirCheck(this.getParent());
         doFileCheck(this.getName());

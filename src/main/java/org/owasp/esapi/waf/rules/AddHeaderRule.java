@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.owasp.esapi.waf.actions.Action;
 import org.owasp.esapi.waf.actions.DoNothingAction;
 import org.owasp.esapi.waf.internal.InterceptingHTTPServletResponse;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This is the Rule subclass executed for &lt;add-header&gt; rules.
@@ -30,12 +31,12 @@ import org.owasp.esapi.waf.internal.InterceptingHTTPServletResponse;
  */
 public class AddHeaderRule extends Rule {
 
-    private String header;
+    private @RUntainted String header;
     private String value;
     private Pattern path;
     private List<Object> exceptions;
 
-    public AddHeaderRule(String id, String header, String value, Pattern path, List<Object> exceptions) {
+    public AddHeaderRule(String id, @RUntainted String header, String value, Pattern path, List<Object> exceptions) {
         setId(id);
         this.header = header;
         this.value = value;
