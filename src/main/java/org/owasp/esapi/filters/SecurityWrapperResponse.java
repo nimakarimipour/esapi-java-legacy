@@ -173,7 +173,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param name
      * @param value
      */
-    public void addHeader(@RUntainted String name, @RUntainted String value) {
+    public void addHeader(String name, String value) {
         SecurityConfiguration sc = ESAPI.securityConfiguration();
         String strippedName = StringUtilities.stripControls(name);
         String strippedValue = StringUtilities.stripControls(value);
