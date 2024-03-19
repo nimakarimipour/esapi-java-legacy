@@ -16,6 +16,7 @@
 package org.owasp.esapi;
 
 import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import java.util.Arrays;
 import java.util.regex.Pattern;
@@ -60,7 +61,7 @@ public class StringUtilities {
      * @param list the char[]s to union
      * @return the union of the char[]s
      */
-    public static char[] union(char[]... list) {
+    public static @RUntainted char[] union(@RUntainted char[]... list) {
         StringBuilder sb = new StringBuilder();
 
         for (char[] characters : list) {
@@ -70,7 +71,7 @@ public class StringUtilities {
             }
         }
 
-        char[] toReturn = new char[sb.length()];
+        @RUntainted char[] toReturn = new char[sb.length()];
         sb.getChars(0, sb.length(), toReturn, 0);
         Arrays.sort(toReturn);
         return toReturn;

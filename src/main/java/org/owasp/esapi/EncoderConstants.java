@@ -1,6 +1,8 @@
 package org.owasp.esapi;
 
 import java.util.Set;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.util.CollectionsUtil;
 
 /**
@@ -22,7 +24,7 @@ public class EncoderConstants {
     /**
      * a-b
      */
-    public final static char[] CHAR_LOWERS = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+    public final static @RUntainted char[] CHAR_LOWERS = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
     public final static Set<Character> LOWERS;
     static {
         LOWERS = CollectionsUtil.arrayToSet(CHAR_PASSWORD_SPECIALS);
@@ -31,7 +33,7 @@ public class EncoderConstants {
     /**
      * A-Z
      */
-    public final static char[] CHAR_UPPERS = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+    public final static @RUntainted char[] CHAR_UPPERS = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
     public final static Set<Character> UPPERS;
     static {
         UPPERS = CollectionsUtil.arrayToSet(CHAR_UPPERS);
