@@ -172,7 +172,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * Retrieves the temp directory to use when uploading files, as specified in ESAPI.properties.
      * @return the temp directory
      */
-    File getUploadTempDirectory();
+    @RUntainted File getUploadTempDirectory();
 
     /**
      * Gets the key length to use in cryptographic operations declared in the ESAPI properties file.

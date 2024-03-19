@@ -761,7 +761,7 @@ public final class JavaEncryptor implements Encryptor {
      * @param expiration
      * @throws IntegrityException
      */
-    public String seal(String data, long expiration) throws IntegrityException {
+    public @RUntainted String seal(String data, long expiration) throws IntegrityException {
         if ( data == null ) {
             throw new IllegalArgumentException("Data to be sealed may not be null.");
         }

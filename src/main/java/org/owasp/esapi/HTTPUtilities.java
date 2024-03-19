@@ -274,7 +274,7 @@ public interface HTTPUtilities
      *
      * @return the current request
      */
-    HttpServletRequest getCurrentRequest();
+    @RUntainted HttpServletRequest getCurrentRequest();
 
     /**
      * Retrieves the current HttpServletResponse
@@ -301,7 +301,7 @@ public interface HTTPUtilities
      * @return List of new File objects from upload
      * @throws ValidationException if the file fails validation
      */
-    List getFileUploads(HttpServletRequest request) throws ValidationException;
+    List getFileUploads(@RUntainted HttpServletRequest request) throws ValidationException;
 
     /**
      * Call {@code getFileUploads} with the specified request, specified upload directory, and default allowed file extensions
@@ -312,7 +312,7 @@ public interface HTTPUtilities
      * @return List of new File objects from upload
      * @throws ValidationException if the file fails validation
      */
-    List getFileUploads(HttpServletRequest request, @RUntainted File finalDir) throws ValidationException;
+    List getFileUploads(@RUntainted HttpServletRequest request, @RUntainted File finalDir) throws ValidationException;
 
 
     /**
@@ -398,7 +398,7 @@ public interface HTTPUtilities
      * @throws java.security.AccessControlException If anonymous users are not allowed and the user is
      *                                      not authenticated as per the ESAPI {@code Authenticator}.
      */
-    List getFileUploads(HttpServletRequest request, @RUntainted File destinationDir, List allowedExtensions) throws ValidationException;
+    List getFileUploads(@RUntainted HttpServletRequest request, @RUntainted File destinationDir, List allowedExtensions) throws ValidationException;
 
 
     /**

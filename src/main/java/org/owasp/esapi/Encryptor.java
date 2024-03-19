@@ -17,6 +17,8 @@
 package org.owasp.esapi;
 
 import javax.crypto.SecretKey;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.owasp.esapi.crypto.CipherText;
 import org.owasp.esapi.crypto.PlainText;
 import org.owasp.esapi.errors.EncryptionException;
@@ -260,7 +262,7 @@ public interface Encryptor {
      *
      * @throws IntegrityException
      */
-    String seal(String data, long timestamp) throws IntegrityException;
+    @RUntainted String seal(String data, long timestamp) throws IntegrityException;
 
     /**
      * Unseals data (created with the seal method) and throws an exception

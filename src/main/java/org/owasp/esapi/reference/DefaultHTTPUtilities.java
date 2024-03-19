@@ -104,7 +104,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
      */
     private class ThreadLocalRequest extends InheritableThreadLocal<HttpServletRequest> {
 
-        public HttpServletRequest getRequest() {
+        public @RUntainted HttpServletRequest getRequest() {
             return super.get();
         }
 
@@ -523,7 +523,7 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /**
      * {@inheritDoc}
      */
-    public HttpServletRequest getCurrentRequest() {
+    public @RUntainted HttpServletRequest getCurrentRequest() {
         return currentRequest.getRequest();
     }
 
@@ -545,21 +545,21 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
     /**
      * {@inheritDoc}
      */
-    public List<File> getFileUploads(HttpServletRequest request) throws ValidationException {
+    public List<File> getFileUploads(@RUntainted HttpServletRequest request) throws ValidationException {
         return getFileUploads(request, ESAPI.securityConfiguration().getUploadDirectory(), ESAPI.securityConfiguration().getAllowedFileExtensions());
     }
 
     /**
      * {@inheritDoc}
      */
-    public List<File> getFileUploads(HttpServletRequest request, @RUntainted File finalDir ) throws ValidationException {
+    public List<File> getFileUploads(@RUntainted HttpServletRequest request, @RUntainted File finalDir ) throws ValidationException {
         return getFileUploads(request, finalDir, ESAPI.securityConfiguration().getAllowedFileExtensions());
     }
 
     /**
      * {@inheritDoc}
      */
-    public List<File> getFileUploads(HttpServletRequest request, @RUntainted File finalDir, List allowedExtensions) throws ValidationException {
+    public List<File> getFileUploads(@RUntainted HttpServletRequest request, @RUntainted File finalDir, List allowedExtensions) throws ValidationException {
         File tempDir = ESAPI.securityConfiguration().getUploadTempDirectory();
         if ( !tempDir.exists() ) {
             if ( !tempDir.mkdirs() ) throw new ValidationUploadException( "Upload failed", "Could not create temp directory: " + tempDir.getAbsolutePath() );
@@ -624,12 +624,12 @@ public class DefaultHTTPUtilities implements org.owasp.esapi.HTTPUtilities {
             };
             upload.setProgressListener(progressListener);
 
-            List<FileItem> items = upload.parseRequest(request);
+            List<@RUntainted FileItem> items = upload.parseRequest(request);
             for (FileItem item : items)
             {
                 if (!item.isFormField() && item.getName() != null && !(item.getName().equals("")))
                 {
-                    String[] fparts = item.getName().split("[\\/\\\\]");
+                    @RUntainted String[] fparts = item.getName().split("[\\/\\\\]");
                     String filename = fparts[fparts.length - 1];
 
                     if (!ESAPI.validator().isValidFileName("upload", filename, allowedExtensions, false))
