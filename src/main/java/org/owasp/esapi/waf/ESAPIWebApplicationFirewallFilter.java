@@ -91,7 +91,7 @@ public class ESAPIWebApplicationFirewallFilter implements Filter {
 	 * @throws FileNotFoundException
 	 *             if the policy file cannot be located
 	 */
-	public void setConfiguration(@RUntainted String policyFilePath, String webRootDir) throws FileNotFoundException {
+	public void setConfiguration(@RUntainted String policyFilePath, @RUntainted String webRootDir) throws FileNotFoundException {
 
 		FileInputStream inputStream = null;
 

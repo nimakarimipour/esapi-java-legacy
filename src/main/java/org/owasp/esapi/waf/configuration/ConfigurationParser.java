@@ -22,6 +22,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Element;
@@ -76,7 +78,7 @@ public class ConfigurationParser {
         "before-response"
     };
 
-    public static AppGuardianConfiguration readConfigurationFile(InputStream stream, String webRootDir) throws ConfigurationException {
+    public static AppGuardianConfiguration readConfigurationFile(@RUntainted InputStream stream, @RUntainted String webRootDir) throws ConfigurationException {
 
         AppGuardianConfiguration config = new AppGuardianConfiguration();
 
