@@ -2,6 +2,7 @@ package org.owasp.esapi.codecs;
 
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 // CHECKME: Version at http://iharder.net/base64 is up to v2.3.3. Some semantic changes
 // starting with v2.3. Should we upgrade and then add ESAPI logging or stay at 2.2.2 base?
@@ -1027,7 +1028,7 @@ public class Base64
      *
      * @since 2.1
      */
-    public static byte[] decodeFromFile( String filename )
+    public static byte[] decodeFromFile( @RUntainted String filename )
     {
         byte[] decodedData = null;
         Base64.InputStream bis = null;
@@ -1082,7 +1083,7 @@ public class Base64
      *
      * @since 2.1
      */
-    public static String encodeFromFile( String filename )
+    public static String encodeFromFile( @RUntainted String filename )
     {
         String encodedData = null;
         Base64.InputStream bis = null;
