@@ -45,6 +45,7 @@ import org.owasp.esapi.waf.rules.ReplaceContentRule;
 import org.owasp.esapi.waf.rules.RestrictContentTypeRule;
 import org.owasp.esapi.waf.rules.RestrictUserAgentRule;
 import org.owasp.esapi.waf.rules.SimpleVirtualPatchRule;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  *
@@ -76,7 +77,7 @@ public class ConfigurationParser {
         "before-response"
     };
 
-    public static AppGuardianConfiguration readConfigurationFile(InputStream stream, String webRootDir) throws ConfigurationException {
+    public static AppGuardianConfiguration readConfigurationFile(@RUntainted InputStream stream, @RUntainted String webRootDir) throws ConfigurationException {
 
         AppGuardianConfiguration config = new AppGuardianConfiguration();
 
