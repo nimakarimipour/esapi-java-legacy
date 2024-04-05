@@ -27,6 +27,7 @@ import org.owasp.esapi.StringUtilities;
 import org.owasp.esapi.ValidationErrorList;
 import org.owasp.esapi.errors.IntrusionException;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This response wrapper simply overrides unsafe methods in the
@@ -75,7 +76,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * doesn't allow the use of HttpOnly.
      * @param cookie
      */
-    public void addCookie(Cookie cookie) {
+    public void addCookie(@RUntainted Cookie cookie) {
         String name = cookie.getName();
         String value = cookie.getValue();
         int maxAge = cookie.getMaxAge();
@@ -389,7 +390,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param sc -- http status code
      * @throws IOException
      */
-    public void sendError(int sc) throws IOException {
+    public void sendError(@RUntainted int sc) throws IOException {
         SecurityConfiguration config = ESAPI.securityConfiguration();
         if(config.getBooleanProp("HttpUtilities.OverwriteStatusCodes")){
             getHttpServletResponse().sendError(HttpServletResponse.SC_OK, getHTTPMessage(sc));
@@ -426,7 +427,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param location
      * @throws IOException
      */
-    public void sendRedirect(String location) throws IOException {
+    public void sendRedirect(@RUntainted String location) throws IOException {
         if (!ESAPI.validator().isValidRedirectLocation("Redirect", location, false)) {
             logger.fatal(Logger.SECURITY_FAILURE, "Bad redirect location: " + location);
             throw new IOException("Redirect failed");
@@ -463,7 +464,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * Same as HttpServletResponse, no security changes required.
      * @param type
      */
-    public void setContentType(String type) {
+    public void setContentType(@RUntainted String type) {
         getHttpServletResponse().setContentType(type);
     }
 
@@ -583,7 +584,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
     /**
      * returns a text message for the HTTP response code
      */
-    private String getHTTPMessage(int sc) {
+    private @RUntainted String getHTTPMessage(@RUntainted int sc) {
         return "HTTP error code: " + sc;
     }
 

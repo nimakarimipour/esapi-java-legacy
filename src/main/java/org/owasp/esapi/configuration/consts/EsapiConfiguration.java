@@ -1,4 +1,5 @@
 package org.owasp.esapi.configuration.consts;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Enum used for initialization of esapi configuration files.
@@ -13,19 +14,19 @@ public enum EsapiConfiguration {
     /**
      * Key of system property pointing to path esapi to configuration file.
      */
-    String configName;
+    @RUntainted String configName;
 
     /**
      * Priority of configuration (higher numer - higher priority).
      */
     int priority;
 
-    EsapiConfiguration(String configName, int priority) {
+    EsapiConfiguration(@RUntainted String configName, int priority) {
         this.configName = configName;
         this.priority = priority;
     }
 
-    public String getConfigName() {
+    public @RUntainted String getConfigName() {
         return configName;
     }
 
