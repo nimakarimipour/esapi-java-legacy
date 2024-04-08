@@ -23,6 +23,7 @@ import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.Randomizer;
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reference implementation of the Randomizer interface. This implementation builds on the JCE provider to provide a

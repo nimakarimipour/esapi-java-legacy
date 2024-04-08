@@ -13,6 +13,7 @@ import org.owasp.esapi.errors.AuthenticationCredentialsException;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.AuthenticationLoginException;
 import org.owasp.esapi.errors.EnterpriseSecurityException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 /**
  * A partial implementation of the Authenticator interface.
  * This class should not implement any methods that would be meant
@@ -37,9 +38,9 @@ public abstract class AbstractAuthenticator implements org.owasp.esapi.Authentic
      */
     private final ThreadLocalUser currentUser = new ThreadLocalUser();
 
-    private class ThreadLocalUser extends InheritableThreadLocal<User> {
+    private class ThreadLocalUser extends InheritableThreadLocal<@RUntainted User> {
 
-        public User initialValue() {
+        public @RUntainted User initialValue() {
             return User.ANONYMOUS;
         }
 
@@ -47,7 +48,7 @@ public abstract class AbstractAuthenticator implements org.owasp.esapi.Authentic
             return super.get();
         }
 
-        public void setUser(User newUser) {
+        public void setUser(@RUntainted User newUser) {
             super.set(newUser);
         }
     }
@@ -80,7 +81,7 @@ public abstract class AbstractAuthenticator implements org.owasp.esapi.Authentic
      * Returns the currently logged user as set by the setCurrentUser() methods. Must not log in this method because the
      * logger calls getCurrentUser() and this could cause a loop.
      */
-    public User getCurrentUser() {
+    public @RUntainted User getCurrentUser() {
         User user = currentUser.get();
         if (user == null) {
             user = User.ANONYMOUS;
@@ -93,7 +94,7 @@ public abstract class AbstractAuthenticator implements org.owasp.esapi.Authentic
      *
      * @return the user from session or null if no user is found in the session
      */
-    protected User getUserFromSession() {
+    protected @RUntainted User getUserFromSession() {
         HTTPUtilities httpUtils = ESAPI.httpUtilities();
         HttpServletRequest req = httpUtils.getCurrentRequest();
         HttpSession session = req.getSession(false);
@@ -110,7 +111,7 @@ public abstract class AbstractAuthenticator implements org.owasp.esapi.Authentic
      *         is missing, token is corrupt, token is expired, account name does not match
      *         and existing account, or hashed password does not match user's hashed password.
      */
-    protected DefaultUser getUserFromRememberToken() {
+    protected @RUntainted DefaultUser getUserFromRememberToken() {
         try {
             HTTPUtilities utils =ESAPI.httpUtilities();
             String token = utils.getCookie(ESAPI.currentRequest(), HTTPUtilities.REMEMBER_TOKEN_COOKIE_NAME);
@@ -153,7 +154,7 @@ public abstract class AbstractAuthenticator implements org.owasp.esapi.Authentic
      * @return The user that successfully authenticated
      * @throws AuthenticationException if the submitted credentials are invalid.
      */
-    private User loginWithUsernameAndPassword(HttpServletRequest request) throws AuthenticationException {
+    private @RUntainted User loginWithUsernameAndPassword(HttpServletRequest request) throws AuthenticationException {
 
         String username = request.getParameter(ESAPI.securityConfiguration().getUsernameParameterName());
         String password = request.getParameter(ESAPI.securityConfiguration().getPasswordParameterName());
@@ -291,7 +292,7 @@ public abstract class AbstractAuthenticator implements org.owasp.esapi.Authentic
     /**
      * {@inheritDoc}
      */
-    public void setCurrentUser(User user) {
+    public void setCurrentUser(@RUntainted User user) {
         currentUser.setUser(user);
     }
 

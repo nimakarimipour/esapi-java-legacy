@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Abstrace class that supports two "levels" of priorities for ESAPI properties.
@@ -29,12 +30,12 @@ import java.util.Properties;
 public abstract class AbstractPrioritizedPropertyLoader implements EsapiPropertyLoader,
         Comparable<AbstractPrioritizedPropertyLoader> {
 
-    protected final String filename;
+    protected final @RUntainted String filename;
     protected Properties properties;
 
     private final int priority;
 
-    public AbstractPrioritizedPropertyLoader(String filename, int priority) throws IOException {
+    public AbstractPrioritizedPropertyLoader(@RUntainted String filename, int priority) throws IOException {
         this.priority = priority;
         this.filename = filename;
         initProperties();
@@ -84,7 +85,7 @@ public abstract class AbstractPrioritizedPropertyLoader implements EsapiProperty
      * Method that loads the data from configuration file to properties object.
      * @param file
      */
-    protected abstract void loadPropertiesFromFile(File file);
+    protected abstract void loadPropertiesFromFile(@RUntainted File file);
 
     /**
      * Used to log errors to the console during the loading of the properties file itself. Can't use

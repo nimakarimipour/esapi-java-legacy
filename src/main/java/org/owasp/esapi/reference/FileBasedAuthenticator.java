@@ -43,6 +43,7 @@ import org.owasp.esapi.errors.AuthenticationAccountsException;
 import org.owasp.esapi.errors.AuthenticationCredentialsException;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reference implementation of the Authenticator interface. This reference implementation is intended to be
@@ -98,7 +99,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * The file that contains the user db
      */
-    private File userDB = null;
+    private @RUntainted File userDB = null;
 
     /**
      * How frequently to check the user db for external modifications
@@ -399,7 +400,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * {@inheritDoc}
      */
-    public synchronized User getUser(String accountName) {
+    public synchronized @RUntainted User getUser(String accountName) {
         if (accountName == null) {
             return User.ANONYMOUS;
         }

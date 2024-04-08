@@ -8,6 +8,7 @@
  * Copyright (c) 2009 - The OWASP Foundation
  */
 package org.owasp.esapi.codecs;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /** Encode and decode to/from hexadecimal strings to byte arrays. */
 public class Hex {
@@ -18,7 +19,7 @@ public class Hex {
      * @param leading0x        If true, return with leading "0x".
      * @return                Hexadecimal representation of specified bytes.
      */
-    public static String toHex(byte[] b, boolean leading0x) {
+    public static @RUntainted String toHex(byte[] b, boolean leading0x) {
         StringBuffer hexString = new StringBuffer();
         if ( leading0x ) {
             hexString.append("0x");
@@ -42,7 +43,7 @@ public class Hex {
      * @param leading0x        If true, return with leading "0x".
      * @return                Hexadecimal representation of specified bytes.
      */
-    public static String encode(byte[] b, boolean leading0x) {
+    public static @RUntainted String encode(byte[] b, boolean leading0x) {
         return toHex(b, leading0x);
     }
 

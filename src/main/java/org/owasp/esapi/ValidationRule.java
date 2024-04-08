@@ -2,6 +2,7 @@ package org.owasp.esapi;
 
 import java.util.Set;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * A ValidationRule performs syntax and possibly semantic validation of a single piece of data from an untrusted source.
