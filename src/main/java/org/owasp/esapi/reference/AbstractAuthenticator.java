@@ -13,6 +13,7 @@ import org.owasp.esapi.errors.AuthenticationCredentialsException;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.AuthenticationLoginException;
 import org.owasp.esapi.errors.EnterpriseSecurityException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 /**
  * A partial implementation of the Authenticator interface.
  * This class should not implement any methods that would be meant

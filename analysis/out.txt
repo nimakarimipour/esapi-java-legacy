@@ -1,24 +1,129 @@
-Exception in thread "main" java.lang.RuntimeException: Error happened while loading content of file: /home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/0/nonnull_elements.tsv
-	at edu.ucr.cs.riple.core.metadata.Registry.lambda$new$0(Registry.java:88)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at edu.ucr.cs.riple.core.metadata.Registry.<init>(Registry.java:83)
-	at edu.ucr.cs.riple.core.metadata.index.NonnullStore.<init>(NonnullStore.java:41)
-	at edu.ucr.cs.riple.core.module.ModuleInfo.<init>(ModuleInfo.java:91)
-	at edu.ucr.cs.riple.core.module.ModuleInfo.<init>(ModuleInfo.java:73)
-	at edu.ucr.cs.riple.core.Context.<init>(Context.java:82)
-	at edu.ucr.cs.riple.core.Annotator.<init>(Annotator.java:59)
-	at edu.ucr.cs.riple.core.Main.main(Main.java:45)
-Caused by: java.nio.file.NoSuchFileException: /home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/0/nonnull_elements.tsv
-	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
-	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
-	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
-	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
-	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
-	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
-	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
-	at java.base/java.nio.file.Files.newInputStream(Files.java:156)
-	at java.base/java.nio.file.Files.newBufferedReader(Files.java:2839)
-	at edu.ucr.cs.riple.core.metadata.Registry.populateContent(Registry.java:109)
-	at edu.ucr.cs.riple.core.metadata.Registry.lambda$new$0(Registry.java:86)
-	... 8 more
-['java', '-jar', '/home/nima/.m2/repository/edu/ucr/cs/riple/annotator/annotator-core/1.3.9-LOGISIM-SNAPSHOT/annotator-core-1.3.9-LOGISIM-SNAPSHOT.jar', '-d', '/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/', '-bc', 'cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh', '-cp', '/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out//paths.tsv', '-i', 'edu.ucr.Initializer', '-n', 'edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted', '-cn', 'UCRTaint', '--depth', '10', '-ch', '-dc']
+['java', '-jar', '/home/nima/.m2/repository/edu/ucr/cs/riple/annotator/annotator-core/1.3.9-TAINT-SNAPSHOT/annotator-core-1.3.9-TAINT-SNAPSHOT.jar', '-d', '/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out', '-bc', 'cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh', '-cp', '/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/paths.tsv', '-i', 'edu.ucr.Initializer', '-n', 'edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted', '-cn', 'UCRTaint', '--depth', '20', '-ch']
+Annotator extended search version 2
+Preprocessing...
+Max Depth level: 20, chain: true
+Triggered Errors in this iteration: 79
+Analyzing at level 1, Scheduling for: 6 builds for: 71 fixes
+Processing  16% [===================>                                                                                                   ] 1/6 (0:00:00 / 0:00:00) 
+[1AProcessing  33% [=======================================>                                                                               ] 2/6 (0:00:14 / 0:00:28) [1B[1AProcessing  50% [===========================================================>                                                           ] 3/6 (0:00:26 / 0:00:26) [1B[1AProcessing  66% [===============================================================================>                                       ] 4/6 (0:00:38 / 0:00:19) [1B[1AProcessing  83% [===================================================================================================>                   ] 5/6 (0:00:51 / 0:00:10) [1B[1AProcessing 100% [=======================================================================================================================] 6/6 (0:01:03 / 0:00:00) [1BAnalyzing at level 2, Scheduling for: 2 builds for: 12 fixes
+Processing  50% [===========================================================>                                                           ] 1/2 (0:00:00 / 0:00:00) 
+[1AProcessing 100% [=======================================================================================================================] 2/2 (0:00:13 / 0:00:00) [1BAnalyzing at level 3, Scheduling for: 2 builds for: 7 fixes
+Processing  50% [===========================================================>                                                           ] 1/2 (0:00:00 / 0:00:00) 
+[1AProcessing 100% [=======================================================================================================================] 2/2 (0:00:14 / 0:00:00) [1BAnalyzing at level 4, Scheduling for: 2 builds for: 5 fixes
+Processing  50% [===========================================================>                                                           ] 1/2 (0:00:00 / 0:00:00) 
+[1AProcessing 100% [=======================================================================================================================] 2/2 (0:00:13 / 0:00:00) [1BAnalyzing at level 5, Scheduling for: 1 builds for: 3 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 6, Scheduling for: 1 builds for: 2 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 7, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 8, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Triggered Errors in this iteration: 43
+Analyzing at level 1, Scheduling for: 4 builds for: 35 fixes
+Processing  25% [=============================>                                                                                         ] 1/4 (0:00:00 / 0:00:00) 
+[1AProcessing  50% [===========================================================>                                                           ] 2/4 (0:00:14 / 0:00:14) [1B[1AProcessing  75% [=========================================================================================>                             ] 3/4 (0:00:26 / 0:00:08) [1B[1AProcessing 100% [=======================================================================================================================] 4/4 (0:00:39 / 0:00:00) [1BAnalyzing at level 2, Scheduling for: 2 builds for: 6 fixes
+Processing  50% [===========================================================>                                                           ] 1/2 (0:00:00 / 0:00:00) 
+[1AProcessing 100% [=======================================================================================================================] 2/2 (0:00:13 / 0:00:00) [1BAnalyzing at level 3, Scheduling for: 2 builds for: 4 fixes
+Processing  50% [===========================================================>                                                           ] 1/2 (0:00:00 / 0:00:00) 
+[1AProcessing 100% [=======================================================================================================================] 2/2 (0:00:14 / 0:00:00) [1BAnalyzing at level 4, Scheduling for: 2 builds for: 3 fixes
+Processing  50% [===========================================================>                                                           ] 1/2 (0:00:00 / 0:00:00) 
+[1AProcessing 100% [=======================================================================================================================] 2/2 (0:00:12 / 0:00:00) [1BAnalyzing at level 5, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Triggered Errors in this iteration: 28
+Analyzing at level 1, Scheduling for: 3 builds for: 15 fixes
+Processing  33% [=======================================>                                                                               ] 1/3 (0:00:00 / 0:00:00) 
+[1AProcessing  66% [===============================================================================>                                       ] 2/3 (0:00:13 / 0:00:06) [1B[1AProcessing 100% [=======================================================================================================================] 3/3 (0:00:25 / 0:00:00) [1BAnalyzing at level 2, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 3, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 4, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 5, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 6, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 7, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Triggered Errors in this iteration: 23
+Analyzing at level 1, Scheduling for: 3 builds for: 9 fixes
+Processing  33% [=======================================>                                                                               ] 1/3 (0:00:00 / 0:00:00) 
+[1AProcessing  66% [===============================================================================>                                       ] 2/3 (0:00:13 / 0:00:06) [1B[1AProcessing 100% [=======================================================================================================================] 3/3 (0:00:25 / 0:00:00) [1BAnalyzing at level 2, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 3, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 4, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 5, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 6, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 7, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 8, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 9, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 10, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 11, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 12, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 13, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 14, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 15, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 16, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Triggered Errors in this iteration: 20
+Analyzing at level 1, Scheduling for: 2 builds for: 4 fixes
+Processing  50% [===========================================================>                                                           ] 1/2 (0:00:00 / 0:00:00) 
+[1AProcessing 100% [=======================================================================================================================] 2/2 (0:00:13 / 0:00:00) [1BTriggered Errors in this iteration: 17
+Analyzing at level 1, Scheduling for: 1 builds for: 2 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Triggered Errors in this iteration: 17
+Analyzing at level 1, Scheduling for: 1 builds for: 2 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Triggered Errors in this iteration: 15
+Doing additional search...
+Setting Chain from true to true
+Triggered Errors in this iteration: 15
+Analyzing at level 1, Scheduling for: 1 builds for: 2 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 2, Scheduling for: 1 builds for: 2 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 3, Scheduling for: 1 builds for: 2 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 4, Scheduling for: 1 builds for: 2 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 5, Scheduling for: 1 builds for: 2 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 6, Scheduling for: 1 builds for: 2 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 7, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 8, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 9, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 10, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 11, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 12, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 13, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 14, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 15, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Analyzing at level 16, Scheduling for: 1 builds for: 1 fixes
+Processing 100% [=======================================================================================================================] 1/1 (0:00:00 / 0:00:00) 
+Doing final search...
+
+Finished annotating.
+Cleaning up...
