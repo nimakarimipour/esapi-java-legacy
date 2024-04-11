@@ -26,6 +26,7 @@ import javax.servlet.http.HttpSession;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.AuthenticationHostException;
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The User interface represents an application user or user account. There is quite a lot of information that an

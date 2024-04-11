@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 /**
@@ -165,7 +166,7 @@ public interface Authenticator {
      * @throws AuthenticationException
      *         if user creation fails due to any of the qualifications listed in this method's description
      */
-    User createUser(String accountName, String password1, String password2) throws AuthenticationException;
+    User createUser(@RUntainted String accountName, String password1, String password2) throws AuthenticationException;
 
     /**
      * Generate a strong password. Implementations should use a large character set that does not
@@ -233,7 +234,7 @@ public interface Authenticator {
      * @return
      *         the matching User object, or the Anonymous User if no match exists
      */
-    User getUser(String accountName);
+    @RUntainted User getUser(String accountName);
 
     /**
      * Gets a collection containing all the existing user names.
@@ -258,7 +259,7 @@ public interface Authenticator {
      * @param user
      *          the user to set as the current user
      */
-    void setCurrentUser(User user);
+    void setCurrentUser(@RUntainted User user);
 
     /**
      * Returns a string representation of the hashed password, using the

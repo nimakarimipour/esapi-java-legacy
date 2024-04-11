@@ -16,6 +16,7 @@
 package org.owasp.esapi;
 
 import org.owasp.esapi.errors.IntrusionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 /**
@@ -58,6 +59,6 @@ public interface IntrusionDetector {
      * @throws IntrusionException
      *         the intrusion exception
      */
-    void addEvent(String eventName, String logMessage) throws IntrusionException;
+    void addEvent(@RUntainted String eventName, String logMessage) throws IntrusionException;
 
 }
