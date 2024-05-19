@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.regex.Pattern;
 import org.owasp.esapi.configuration.EsapiPropertyLoader;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The {@code SecurityConfiguration} interface stores all configuration information
@@ -121,7 +122,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @param typeName
      * @return the validation pattern
      */
-    Pattern getValidationPattern( String typeName );
+    Pattern getValidationPattern( @RUntainted String typeName );
 
     /**
      * Determines whether ESAPI will accept "lenient" dates when attempt
@@ -164,7 +165,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * Retrieves the upload directory as specified in the ESAPI.properties file.
      * @return the upload directory
      */
-    File getUploadDirectory();
+    @RUntainted File getUploadDirectory();
 
     /**
      * Retrieves the temp directory to use when uploading files, as specified in ESAPI.properties.
@@ -532,7 +533,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @deprecated Use SecurityConfiguration.getStringProp("appropriate_esapi_prop_name") instead.
      */
     @Deprecated
-    String getRandomAlgorithm();
+    @RUntainted String getRandomAlgorithm();
 
     /**
      * Gets the number of login attempts allowed before the user's account is locked. If this
@@ -571,7 +572,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      *
      * @return the Quota that has been configured for the specified type of event
      */
-    Threshold getQuota(String eventName);
+    Threshold getQuota(@RUntainted String eventName);
 
     /**
      * Gets a file from the resource directory
@@ -579,7 +580,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @param filename The file name resource.
      * @return A {@code File} object representing the specified file name or null if not found.
      */
-    File getResourceFile( String filename );
+    @RUntainted File getResourceFile( @RUntainted String filename );
 
     /**
      * Returns true if session cookies are required to have HttpOnly flag set.
@@ -623,14 +624,14 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @return An {@code InputStream} to the specified file name in the resource directory.
      * @throws IOException If the specified file name cannot be found or opened for reading.
      */
-    InputStream getResourceStream( String filename ) throws IOException;
+    InputStream getResourceStream( @RUntainted String filename ) throws IOException;
 
     /**
      * Sets the ESAPI resource directory.
      *
      * @param dir The location of the resource directory.
      */
-    void setResourceDirectory(String dir);
+    void setResourceDirectory(@RUntainted String dir);
 
     /**
      * Gets the content type for responses used when setSafeContentType() is called.
@@ -642,7 +643,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @deprecated Use SecurityConfiguration.getStringProp("appropriate_esapi_prop_name") instead.
      */
     @Deprecated
-    String getResponseContentType();
+    @RUntainted String getResponseContentType();
 
     /**
      * This method returns the configured name of the session identifier,
@@ -652,7 +653,7 @@ public interface SecurityConfiguration extends EsapiPropertyLoader {
      * @deprecated Use SecurityConfiguration.getStringProp("appropriate_esapi_prop_name") instead.
      */
     @Deprecated
-    String getHttpSessionIdName();
+    @RUntainted String getHttpSessionIdName();
 
     /**
      * Gets the length of the time to live window for remember me tokens (in milliseconds).
