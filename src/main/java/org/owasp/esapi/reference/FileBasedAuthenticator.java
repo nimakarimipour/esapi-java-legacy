@@ -43,6 +43,7 @@ import org.owasp.esapi.errors.AuthenticationAccountsException;
 import org.owasp.esapi.errors.AuthenticationCredentialsException;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reference implementation of the Authenticator interface. This reference implementation is intended to be
@@ -98,7 +99,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * The file that contains the user db
      */
-    private File userDB = null;
+    private @RUntainted File userDB = null;
 
     /**
      * How frequently to check the user db for external modifications
@@ -243,7 +244,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * The user map.
      */
-    private Map<Long, User> userMap = new HashMap<Long, User>();
+    private Map<Long, @RUntainted User> userMap = new HashMap<Long, @RUntainted User>();
 
     // Map<User, List<String>>, where the strings are password hashes, with the current hash in entry 0
     private Map<User, List<String>> passwordMap = new Hashtable<User, List<String>>();
@@ -399,12 +400,12 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * {@inheritDoc}
      */
-    public synchronized User getUser(String accountName) {
+    public synchronized @RUntainted User getUser(String accountName) {
         if (accountName == null) {
             return User.ANONYMOUS;
         }
         loadUsersIfNecessary();
-        for (User u : userMap.values()) {
+        for (@RUntainted User u : userMap.values()) {
             if (u.getAccountName().equalsIgnoreCase(accountName)) {
                 return u;
             }

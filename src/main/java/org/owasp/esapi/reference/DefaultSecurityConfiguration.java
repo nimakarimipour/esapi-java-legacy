@@ -39,6 +39,7 @@ import org.owasp.esapi.PropNames.DefaultSearchPath;
 import org.owasp.esapi.SecurityConfiguration;
 import org.owasp.esapi.configuration.EsapiPropertyManager;
 import org.owasp.esapi.errors.ConfigurationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The reference {@code SecurityConfiguration} manages all the settings used by the ESAPI in a single place. In this reference
@@ -90,7 +91,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
         return instance;
     }
 
-    private Properties properties = null;
+    private @RUntainted Properties properties = null;
     private String cipherXformFromESAPIProp = null;    // New in ESAPI 2.0
     private String cipherXformCurrent = null;          // New in ESAPI 2.0
 
@@ -361,13 +362,13 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * Absolute path to the customDirectory
      */    // DISCUSS: Implicit assumption here that there is no SecurityManager installed enforcing the
         //            prevention of reading system properties. Otherwise this will fail with SecurityException.
-    private static String customDirectory = System.getProperty("org.owasp.esapi.resources");
+    private static @RUntainted String customDirectory = System.getProperty("org.owasp.esapi.resources");
     /*
      * Relative path to the resourceDirectory. Relative to the classpath.
      * Specifically, ClassLoader.getResource(resourceDirectory + filename) will
      * be used to load the file.
      */
-    private String resourceDirectory = ".esapi";    // For backward compatibility (vs. "esapi")
+    private @RUntainted String resourceDirectory = ".esapi";    // For backward compatibility (vs. "esapi")
     private final String resourceFile;
     private EsapiPropertyManager esapiPropertyManager;
 
@@ -398,7 +399,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      *
      * @param properties
      */
-    public DefaultSecurityConfiguration(Properties properties) {
+    public DefaultSecurityConfiguration(@RUntainted Properties properties) {
         resourceFile = DEFAULT_RESOURCE_FILE;
         try {
             this.esapiPropertyManager = new EsapiPropertyManager();
@@ -521,7 +522,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public void setResourceDirectory( String dir ) {
+    public void setResourceDirectory( @RUntainted String dir ) {
         resourceDirectory = dir;
         logSpecial( "Reset resource directory to: " + dir, null );
 
@@ -575,7 +576,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     }
 
 
-    private Properties loadPropertiesFromStream( InputStream is, String name ) throws IOException {
+    private @RUntainted Properties loadPropertiesFromStream( InputStream is, String name ) throws IOException {
         Properties config = new Properties();
         try {
             config.load(is);
@@ -682,7 +683,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * @throws IOException
      *             If the file cannot be found or opened for reading.
      */
-    public InputStream getResourceStream(String filename) throws IOException {
+    public InputStream getResourceStream(@RUntainted String filename) throws IOException {
         if (filename == null) {
             return null;
         }
@@ -701,7 +702,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public File getResourceFile(String filename) {
+    public File getResourceFile(@RUntainted String filename) {
         logSpecial("Attempting to load " + filename + " as resource file via file I/O.");
 
         if (filename == null) {
@@ -723,14 +724,14 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
 
         // if not found, then try the programmatically set resource directory
         // (this defaults to SystemResource directory/resourceFile
-        URL fileUrl = ClassLoader.getSystemResource(resourceDirectory + "/" + filename);
+        @RUntainted URL fileUrl = ClassLoader.getSystemResource(resourceDirectory + "/" + filename);
         if ( fileUrl == null ) {
             fileUrl = ClassLoader.getSystemResource("esapi/" + filename);
         }
 
         if (fileUrl != null) {
             try {
-                String fileLocation = fileUrl.toURI().getPath();
+                @RUntainted String fileLocation = fileUrl.toURI().getPath();
                 f = new File(fileLocation);
                 if (f.exists()) {
                     logSpecial("Found in SystemResource Directory/resourceDirectory: " + f.getAbsolutePath());
@@ -780,7 +781,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      *
      * @param fileName The properties file filename.
      */
-    private Properties loadConfigurationFromClasspath(String fileName) throws IllegalArgumentException {
+    private @RUntainted Properties loadConfigurationFromClasspath(String fileName) throws IllegalArgumentException {
         Properties result = null;
         InputStream in = null;
 
@@ -1080,7 +1081,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public String getRandomAlgorithm() {
+    public @RUntainted String getRandomAlgorithm() {
         return getESAPIProperty(RANDOM_ALGORITHM, "SHA1PRNG");
     }
 
@@ -1101,8 +1102,8 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public File getUploadDirectory() {
-        String dir = getESAPIProperty( UPLOAD_DIRECTORY, "UploadDir");
+    public @RUntainted File getUploadDirectory() {
+        @RUntainted String dir = getESAPIProperty( UPLOAD_DIRECTORY, "UploadDir");
         return new File( dir );
     }
 
@@ -1110,7 +1111,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * {@inheritDoc}
      */
     public File getUploadTempDirectory() {
-        String dir = getESAPIProperty(UPLOAD_TEMP_DIRECTORY,
+        @RUntainted String dir = getESAPIProperty(UPLOAD_TEMP_DIRECTORY,
                                       System.getProperty("java.io.tmpdir","UploadTempDir")
                                      );
         return new File( dir );
@@ -1204,14 +1205,14 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public String getResponseContentType() {
+    public @RUntainted String getResponseContentType() {
         return getESAPIProperty( RESPONSE_CONTENT_TYPE, "text/html; charset=UTF-8" );
     }
 
     /**
      * {@inheritDoc}
      */
-    public String getHttpSessionIdName() {
+    public @RUntainted String getHttpSessionIdName() {
         return getESAPIProperty( HTTP_SESSION_ID_NAME, "JSESSIONID" );
     }
 
@@ -1270,7 +1271,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * by the Executor.
      */
     public File getWorkingDirectory() {
-        String dir = getESAPIProperty( WORKING_DIRECTORY, System.getProperty( "user.dir") );
+        @RUntainted String dir = getESAPIProperty( WORKING_DIRECTORY, System.getProperty( "user.dir") );
         if ( dir != null ) {
             return new File( dir );
         }
@@ -1309,7 +1310,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
         return getESAPIProperty( ACCEPT_LENIENT_DATES, false);
     }
 
-    protected String getESAPIProperty( String key, String def ) {
+    protected @RUntainted String getESAPIProperty( String key, String def ) {
         String value = properties.getProperty(key);
         if ( value == null ) {
             logSpecial( "SecurityConfiguration for " + key + " not found in ESAPI.properties. Using default: " + def, null );
@@ -1462,11 +1463,11 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * 3.) In ESAPI.properties
      */
     @Override
-    public String getStringProp(String propertyName) throws ConfigurationException {
+    public @RUntainted String getStringProp(@RUntainted String propertyName) throws ConfigurationException {
         try {
             return esapiPropertyManager.getStringProp(propertyName);
         } catch (ConfigurationException ex) {
-            String property = properties.getProperty( propertyName );
+            @RUntainted String property = properties.getProperty( propertyName );
             if ( property == null ) {
                 throw new ConfigurationException( "SecurityConfiguration for " + propertyName + " not found in ESAPI.properties");
             }

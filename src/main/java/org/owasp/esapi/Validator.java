@@ -25,6 +25,7 @@ import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import org.owasp.esapi.errors.IntrusionException;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 /**
@@ -107,7 +108,7 @@ public interface Validator {
      * @throws ValidationException Input is invalid.
      * @throws IntrusionException Input likely indicates an attack.
      */
-    String getValidInput(String context, String input, String type, int maxLength, boolean allowNull) throws ValidationException, IntrusionException;
+    @RUntainted String getValidInput(String context, String input, String type, int maxLength, boolean allowNull) throws ValidationException, IntrusionException;
 
     /**
      * Returns validated {@code input} as a String with optional canonicalization.
@@ -334,7 +335,7 @@ public interface Validator {
      *
      * @throws IntrusionException Input likely indicates an attack.
      */
-    boolean isValidDirectoryPath(String context, String input, File parent, boolean allowNull) throws IntrusionException;
+    boolean isValidDirectoryPath(String context, @RUntainted String input, File parent, boolean allowNull) throws IntrusionException;
 
     /**
      * Returns true if {@code input} is valid,
@@ -345,7 +346,7 @@ public interface Validator {
      *
      * @throws IntrusionException Input likely indicates an attack.
      */
-    boolean isValidDirectoryPath(String context, String input, File parent, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
+    boolean isValidDirectoryPath(String context, @RUntainted String input, File parent, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
 
     /**
      * Returns a canonicalized and validated directory path as a String, provided that the input
@@ -368,7 +369,7 @@ public interface Validator {
      * @throws ValidationException Input is invalid.
      * @throws IntrusionException Input likely indicates an attack.
      */
-    String getValidDirectoryPath(String context, String input, File parent, boolean allowNull) throws ValidationException, IntrusionException;
+    String getValidDirectoryPath(String context, @RUntainted String input, File parent, boolean allowNull) throws ValidationException, IntrusionException;
 
     /**
      * Returns a canonicalized and validated directory path as a String, provided that the input
@@ -379,7 +380,7 @@ public interface Validator {
      *
      * @throws IntrusionException Input likely indicates an attack.
      */
-    String getValidDirectoryPath(String context, String input, File parent, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
+    String getValidDirectoryPath(String context, @RUntainted String input, File parent, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
 
     /**
      * Returns true if {@code input} is valid.
@@ -393,7 +394,7 @@ public interface Validator {
      * @see ESAPI#securityConfiguration()
      * @see SecurityConfiguration#getAllowedFileExtensions()
      */
-    boolean isValidFileName(String context, String input, boolean allowNull) throws IntrusionException;
+    boolean isValidFileName(String context, @RUntainted String input, boolean allowNull) throws IntrusionException;
 
     /**
      * Returns true if {@code input} is valid,
@@ -408,7 +409,7 @@ public interface Validator {
      * @see ESAPI#securityConfiguration()
      * @see SecurityConfiguration#getAllowedFileExtensions()
      */
-    boolean isValidFileName(String context, String input, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
+    boolean isValidFileName(String context, @RUntainted String input, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
 
     /**
      * Returns true if {@code input} is valid.
@@ -421,7 +422,7 @@ public interface Validator {
      * @see ESAPI#securityConfiguration()
      * @see SecurityConfiguration#getAllowedFileExtensions()
      */
-    boolean isValidFileName(String context, String input, List<String> allowedExtensions, boolean allowNull) throws IntrusionException;
+    boolean isValidFileName(String context, @RUntainted String input, List<String> allowedExtensions, boolean allowNull) throws IntrusionException;
 
     /**
      * Returns true if {@code input} is valid,
@@ -435,7 +436,7 @@ public interface Validator {
      * @see ESAPI#securityConfiguration()
      * @see SecurityConfiguration#getAllowedFileExtensions()
      */
-    boolean isValidFileName(String context, String input, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
+    boolean isValidFileName(String context, @RUntainted String input, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
 
     /**
      * Returns a canonicalized and validated file name as a String.
@@ -460,7 +461,7 @@ public interface Validator {
      * @throws ValidationException Input is invalid.
      * @throws IntrusionException Input likely indicates an attack.
      */
-    String getValidFileName(String context, String input, List<String> allowedExtensions, boolean allowNull) throws ValidationException, IntrusionException;
+    String getValidFileName(String context, @RUntainted String input, List<String> allowedExtensions, boolean allowNull) throws ValidationException, IntrusionException;
 
     /**
      * Returns a canonicalized and validated file name as a String,
@@ -471,7 +472,7 @@ public interface Validator {
      *
      * @throws IntrusionException Input likely indicates an attack.
      */
-    String getValidFileName(String context, String input, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
+    String getValidFileName(String context, @RUntainted String input, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
 
     /**
      * Returns true if {@code input} is valid.
@@ -709,7 +710,7 @@ public interface Validator {
      *
      * @throws IntrusionException Input likely indicates an attack.
      */
-    boolean isValidFileUpload(String context, String filepath, String filename, File parent, byte[] content, int maxBytes, boolean allowNull) throws IntrusionException;
+    boolean isValidFileUpload(String context, @RUntainted String filepath, @RUntainted String filename, File parent, byte[] content, int maxBytes, boolean allowNull) throws IntrusionException;
 
     /**
      * Returns true if {@code filepath}, {@code filename}, and {@code content} of a file are valid,
@@ -722,7 +723,7 @@ public interface Validator {
      *
      * @throws IntrusionException Input likely indicates an attack.
      */
-    boolean isValidFileUpload(String context, String filepath, String filename, File parent, byte[] content, int maxBytes, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
+    boolean isValidFileUpload(String context, @RUntainted String filepath, @RUntainted String filename, File parent, byte[] content, int maxBytes, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
 
     /**
      * Validates the {@code filepath}, {@code filename}, and {@code content} of a file.
@@ -747,7 +748,7 @@ public interface Validator {
      * @throws ValidationException Input is invalid.
      * @throws IntrusionException Input likely indicates an attack.
      */
-    void assertValidFileUpload(String context, String filepath, String filename, File parent, byte[] content, int maxBytes, List<String> allowedExtensions, boolean allowNull) throws ValidationException, IntrusionException;
+    void assertValidFileUpload(String context, @RUntainted String filepath, @RUntainted String filename, File parent, byte[] content, int maxBytes, List<String> allowedExtensions, boolean allowNull) throws ValidationException, IntrusionException;
 
     /**
      * Validates the {@code filepath}, {@code filename}, and {@code content} of a file,
@@ -758,7 +759,7 @@ public interface Validator {
      *
      * @throws IntrusionException Input likely indicates an attack.
      */
-    void assertValidFileUpload(String context, String filepath, String filename, File parent, byte[] content, int maxBytes, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
+    void assertValidFileUpload(String context, @RUntainted String filepath, @RUntainted String filename, File parent, byte[] content, int maxBytes, List<String> allowedExtensions, boolean allowNull, ValidationErrorList errorList) throws IntrusionException;
 
     /**
      * Returns true if {@code input} is valid.

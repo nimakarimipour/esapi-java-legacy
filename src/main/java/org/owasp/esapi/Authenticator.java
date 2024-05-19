@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 /**
@@ -233,7 +234,7 @@ public interface Authenticator {
      * @return
      *         the matching User object, or the Anonymous User if no match exists
      */
-    User getUser(String accountName);
+    @RUntainted User getUser(String accountName);
 
     /**
      * Gets a collection containing all the existing user names.

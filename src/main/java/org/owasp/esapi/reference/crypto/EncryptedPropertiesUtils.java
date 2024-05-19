@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.Properties;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Command line utilities for reading, writing and creating encrypted properties files.
@@ -44,7 +45,7 @@ public class EncryptedPropertiesUtils {
     public static void main(String[] args) throws Exception {
 
         //command line options
-        String inFile = null;
+        @RUntainted String inFile = null;
         String outFile = null;
         boolean inFileEncrypted = true;
         boolean verbose = false;
@@ -127,7 +128,7 @@ public class EncryptedPropertiesUtils {
      * @return Either the loaded Properties object or a new one if the file could not be found.
      * @throws IOException
      */
-    public static Properties loadProperties(String inFile, Boolean inFileEncrypted) throws IOException {
+    public static Properties loadProperties(@RUntainted String inFile, Boolean inFileEncrypted) throws IOException {
 
         if (inFileEncrypted == null) inFileEncrypted = true;
 
@@ -180,7 +181,7 @@ public class EncryptedPropertiesUtils {
      * @param message A message to add to the comments in the stored file
      * @throws Exception
      */
-    public static void storeProperties(String outFile, Properties props, String message) throws Exception {
+    public static void storeProperties(@RUntainted String outFile, Properties props, String message) throws Exception {
         OutputStream out = null;
         try {
             out = new FileOutputStream(new File(outFile));

@@ -27,6 +27,7 @@ import org.owasp.esapi.StringUtilities;
 import org.owasp.esapi.ValidationErrorList;
 import org.owasp.esapi.errors.IntrusionException;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This response wrapper simply overrides unsafe methods in the
@@ -75,7 +76,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * doesn't allow the use of HttpOnly.
      * @param cookie
      */
-    public void addCookie(Cookie cookie) {
+    public void addCookie(@RUntainted Cookie cookie) {
         String name = cookie.getName();
         String value = cookie.getValue();
         int maxAge = cookie.getMaxAge();
@@ -153,7 +154,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
     public void addDateHeader(String name, long date) {
         try {
             SecurityConfiguration sc = ESAPI.securityConfiguration();
-            String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
+            @RUntainted String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
             getHttpServletResponse().addDateHeader(safeName, date);
         } catch (ValidationException e) {
             logger.warning(Logger.SECURITY_FAILURE, "Attempt to set invalid date header name denied", e);
@@ -174,8 +175,8 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
         SecurityConfiguration sc = ESAPI.securityConfiguration();
         String strippedName = StringUtilities.stripControls(name);
         String strippedValue = StringUtilities.stripControls(value);
-        String safeName = null;
-        String safeValue = null;
+        @RUntainted String safeName = null;
+        @RUntainted String safeValue = null;
         try {
             safeName = ESAPI.validator().getValidInput("addHeader", strippedName, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
         } catch (ValidationException e) {
@@ -205,9 +206,9 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
     public void addReferer( String uri) {
 
         // TODO: make stripping a global config
-        String strippedValue = StringUtilities.stripControls(uri);
+        @RUntainted String strippedValue = StringUtilities.stripControls(uri);
         boolean isValidURI = ESAPI.validator().isValidURI("refererHeader", strippedValue, false);
-        String safeValue = "";
+        @RUntainted String safeValue = "";
         if(isValidURI) {
             safeValue = strippedValue;
         }
@@ -224,7 +225,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
     public void addIntHeader(String name, int value) {
         try {
             SecurityConfiguration sc = ESAPI.securityConfiguration();
-            String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
+            @RUntainted String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
             getHttpServletResponse().addIntHeader(safeName, value);
         } catch (ValidationException e) {
             logger.warning(Logger.SECURITY_FAILURE, "Attempt to set invalid int header name denied", e);
@@ -426,7 +427,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * @param location
      * @throws IOException
      */
-    public void sendRedirect(String location) throws IOException {
+    public void sendRedirect(@RUntainted String location) throws IOException {
         if (!ESAPI.validator().isValidRedirectLocation("Redirect", location, false)) {
             logger.fatal(Logger.SECURITY_FAILURE, "Bad redirect location: " + location);
             throw new IOException("Redirect failed");
@@ -463,7 +464,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
      * Same as HttpServletResponse, no security changes required.
      * @param type
      */
-    public void setContentType(String type) {
+    public void setContentType(@RUntainted String type) {
         getHttpServletResponse().setContentType(type);
     }
 
@@ -476,7 +477,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
     public void setDateHeader(String name, long date) {
         try {
             SecurityConfiguration sc = ESAPI.securityConfiguration();
-            String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
+            @RUntainted String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
             getHttpServletResponse().setDateHeader(safeName, date);
         } catch (ValidationException e) {
             logger.warning(Logger.SECURITY_FAILURE, "Attempt to set invalid date header name denied", e);
@@ -496,7 +497,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
         SecurityConfiguration sc = ESAPI.securityConfiguration();
         String strippedName = StringUtilities.stripControls(name);
         String strippedValue = StringUtilities.stripControls(value);
-        String safeName = null;
+        @RUntainted String safeName = null;
         String safeValue = null;
         try {
             safeName = ESAPI.validator().getValidInput("setHeader", strippedName, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
@@ -527,7 +528,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
     public void setIntHeader(String name, int value) {
         try {
             SecurityConfiguration sc = ESAPI.securityConfiguration();
-            String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
+            @RUntainted String safeName = ESAPI.validator().getValidInput("safeSetDateHeader", name, "HTTPHeaderName", sc.getIntProp("HttpUtilities.MaxHeaderNameSize"), false);
             getHttpServletResponse().setIntHeader(safeName, value);
         } catch (ValidationException e) {
             logger.warning(Logger.SECURITY_FAILURE, "Attempt to set invalid int header name denied", e);
@@ -583,7 +584,7 @@ public class SecurityWrapperResponse extends HttpServletResponseWrapper implemen
     /**
      * returns a text message for the HTTP response code
      */
-    private String getHTTPMessage(int sc) {
+    private @RUntainted String getHTTPMessage(@RUntainted int sc) {
         return "HTTP error code: " + sc;
     }
 

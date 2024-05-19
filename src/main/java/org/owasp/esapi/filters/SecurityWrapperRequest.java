@@ -36,6 +36,7 @@ import org.owasp.esapi.Logger;
 import org.owasp.esapi.SecurityConfiguration;
 import org.owasp.esapi.errors.AccessControlException;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 // TODO: Parameterize these various lengths in calls to ESAPI.validator().getValidInput()
 // so that they can be placed in ESAPI.properties file (or other property file,
@@ -737,7 +738,7 @@ public class SecurityWrapperRequest extends HttpServletRequestWrapper implements
         if ( sc.getBooleanProp("HttpUtilities.ForceHttpOnlySession") ) {
             if (session.getAttribute("HTTP_ONLY") == null) {
                 session.setAttribute("HTTP_ONLY", "set");
-                Cookie cookie = new Cookie( sc.getStringProp("HttpUtilities.HttpSessionIdName"), session.getId() );
+                @RUntainted Cookie cookie = new Cookie( sc.getStringProp("HttpUtilities.HttpSessionIdName"), session.getId() );
                 cookie.setMaxAge(-1); // session cookie
                 cookie.setPath( getHttpServletRequest().getContextPath() );
                 cookie.setSecure( sc.getBooleanProp("HttpUtilities.ForceSecureCookies") );

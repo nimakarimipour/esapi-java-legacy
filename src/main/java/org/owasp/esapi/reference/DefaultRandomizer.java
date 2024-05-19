@@ -23,6 +23,7 @@ import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.Randomizer;
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reference implementation of the Randomizer interface. This implementation builds on the JCE provider to provide a
@@ -47,13 +48,13 @@ public class DefaultRandomizer implements org.owasp.esapi.Randomizer {
     }
 
     /** The sr. */
-    private SecureRandom secureRandom = null;
+    private @RUntainted SecureRandom secureRandom = null;
 
     /** The logger. */
     private final Logger logger = ESAPI.getLogger("Randomizer");
 
     private DefaultRandomizer() {
-        String algorithm = ESAPI.securityConfiguration().getRandomAlgorithm();
+        @RUntainted String algorithm = ESAPI.securityConfiguration().getRandomAlgorithm();
         try {
             secureRandom = SecureRandom.getInstance(algorithm);
         } catch (NoSuchAlgorithmException e) {
@@ -86,7 +87,7 @@ public class DefaultRandomizer implements org.owasp.esapi.Randomizer {
     /**
      * {@inheritDoc}
      */
-    public int getRandomInteger(int min, int max) {
+    public @RUntainted int getRandomInteger(@RUntainted int min, @RUntainted int max) {
         return secureRandom.nextInt(max - min) + min;
     }
 
