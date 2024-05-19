@@ -28,6 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
 import org.owasp.esapi.errors.AuthenticationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  *
@@ -61,7 +62,7 @@ public class ESAPIFilter implements Filter {
      * @param filterConfig
      *            configuration object
      */
-    public void init(FilterConfig filterConfig) {
+    public void init(@RUntainted FilterConfig filterConfig) {
         String path = filterConfig.getInitParameter("resourceDirectory");
         if ( path != null ) {
             ESAPI.securityConfiguration().setResourceDirectory( path );

@@ -43,6 +43,7 @@ import org.owasp.esapi.errors.AuthenticationAccountsException;
 import org.owasp.esapi.errors.AuthenticationCredentialsException;
 import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.EncryptionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reference implementation of the Authenticator interface. This reference implementation is intended to be
@@ -98,7 +99,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * The file that contains the user db
      */
-    private File userDB = null;
+    private @RUntainted File userDB = null;
 
     /**
      * How frequently to check the user db for external modifications
@@ -243,7 +244,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * The user map.
      */
-    private Map<Long, User> userMap = new HashMap<Long, User>();
+    private Map<Long, @RUntainted User> userMap = new HashMap<Long, @RUntainted User>();
 
     // Map<User, List<String>>, where the strings are password hashes, with the current hash in entry 0
     private Map<User, List<String>> passwordMap = new Hashtable<User, List<String>>();
@@ -261,7 +262,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * {@inheritDoc}
      */
-    public synchronized User createUser(String accountName, String password1, String password2) throws AuthenticationException {
+    public synchronized User createUser(@RUntainted String accountName, String password1, String password2) throws AuthenticationException {
         loadUsersIfNecessary();
         if (accountName == null) {
             throw new AuthenticationAccountsException("Account creation failed", "Attempt to create user with null accountName");
@@ -399,7 +400,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
     /**
      * {@inheritDoc}
      */
-    public synchronized User getUser(String accountName) {
+    public synchronized @RUntainted User getUser(String accountName) {
         if (accountName == null) {
             return User.ANONYMOUS;
         }
@@ -498,7 +499,7 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
 
             BufferedReader reader = null;
             try {
-                HashMap<Long, User> map = new HashMap<Long, User>();
+                HashMap<Long, @RUntainted User> map = new HashMap<Long, @RUntainted User>();
                 reader = new BufferedReader(new FileReader(userDB));
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -536,8 +537,8 @@ public class FileBasedAuthenticator extends AbstractAuthenticator {
      * @return the newly created User
      * @throws AuthenticationException
      */
-    private DefaultUser createUser(String line) throws AuthenticationException {
-        String[] parts = line.split(" *\\| *");
+    private @RUntainted DefaultUser createUser(@RUntainted String line) throws AuthenticationException {
+        @RUntainted String[] parts = line.split(" *\\| *");
         String accountIdString = parts[0];
         long accountId = Long.parseLong(accountIdString);
         String accountName = parts[1];
