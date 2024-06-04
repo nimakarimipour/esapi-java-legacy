@@ -29,6 +29,7 @@ import org.owasp.esapi.errors.AuthenticationException;
 import org.owasp.esapi.errors.EncryptionException;
 import org.owasp.esapi.errors.IntrusionException;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The HTTPUtilities interface is a collection of methods that provide additional security related to HTTP requests,
@@ -62,7 +63,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void addCookie(Cookie cookie);
+    void addCookie(@RUntainted Cookie cookie);
 
     /**
      * Add a cookie to the response after ensuring that there are no encoded or
@@ -72,7 +73,7 @@ public interface HTTPUtilities
      * @param response The HTTP response to add the cookie to
      * @param cookie The cookie to add
      */
-    void addCookie(HttpServletResponse response, Cookie cookie);
+    void addCookie(HttpServletResponse response, @RUntainted Cookie cookie);
 
     /**
      * Adds the current user's CSRF token (see User.getCSRFToken()) to the URL for purposes of preventing CSRF attacks.
@@ -299,7 +300,7 @@ public interface HTTPUtilities
      * @return List of new File objects from upload
      * @throws ValidationException if the file fails validation
      */
-    List getFileUploads(HttpServletRequest request) throws ValidationException;
+    List getFileUploads(@RUntainted HttpServletRequest request) throws ValidationException;
 
     /**
      * Call {@code getFileUploads} with the specified request, specified upload directory, and default allowed file extensions
@@ -310,7 +311,7 @@ public interface HTTPUtilities
      * @return List of new File objects from upload
      * @throws ValidationException if the file fails validation
      */
-    List getFileUploads(HttpServletRequest request, File finalDir) throws ValidationException;
+    List getFileUploads(@RUntainted HttpServletRequest request, @RUntainted File finalDir) throws ValidationException;
 
 
     /**
@@ -396,7 +397,7 @@ public interface HTTPUtilities
      * @throws java.security.AccessControlException If anonymous users are not allowed and the user is
      *                                      not authenticated as per the ESAPI {@code Authenticator}.
      */
-    List getFileUploads(HttpServletRequest request, File destinationDir, List allowedExtensions) throws ValidationException;
+    List getFileUploads(@RUntainted HttpServletRequest request, @RUntainted File destinationDir, List allowedExtensions) throws ValidationException;
 
 
     /**
@@ -458,7 +459,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void killCookie(String name);
+    void killCookie(@RUntainted String name);
 
     /**
      * Kills the specified cookie by setting a new cookie that expires immediately. Note that this
@@ -468,7 +469,7 @@ public interface HTTPUtilities
      * @param name
      * @param response
      */
-    void killCookie(HttpServletRequest request, HttpServletResponse response, String name);
+    void killCookie(HttpServletRequest request, HttpServletResponse response, @RUntainted String name);
 
     /**
      * Calls logHTTPRequest with the *current* request and logger.
@@ -532,7 +533,7 @@ public interface HTTPUtilities
      *
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
-    void sendRedirect(String location) throws AccessControlException, IOException;
+    void sendRedirect(@RUntainted String location) throws AccessControlException, IOException;
 
 
     /**
@@ -546,7 +547,7 @@ public interface HTTPUtilities
      * @throws AccessControlException
      * @throws IOException
      */
-    void sendRedirect(HttpServletResponse response, String location) throws AccessControlException, IOException;
+    void sendRedirect(HttpServletResponse response, @RUntainted String location) throws AccessControlException, IOException;
 
     /**
      * Calls setContentType with the *current* request and response.
@@ -649,12 +650,12 @@ public interface HTTPUtilities
      * @see HTTPUtilities#setCurrentHTTP(HttpServletRequest, HttpServletResponse)
      */
     @Deprecated
-    String setRememberToken(String password, int maxAge, String domain, String path);
+    String setRememberToken(String password, int maxAge, @RUntainted String domain, @RUntainted String path);
 
     /**
      *
      */
-    String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, String domain, String path);
+    String setRememberToken(HttpServletRequest request, HttpServletResponse response, int maxAge, @RUntainted String domain, @RUntainted String path);
 
 
     /**
@@ -684,7 +685,7 @@ public interface HTTPUtilities
      * @return encrypted "Remember Me" token stored as a String
      */
     @Deprecated
-    String setRememberToken(HttpServletRequest request, HttpServletResponse response, String password, int maxAge, String domain, String path);
+    String setRememberToken(HttpServletRequest request, HttpServletResponse response, String password, int maxAge, @RUntainted String domain, @RUntainted String path);
 
 
     /**
