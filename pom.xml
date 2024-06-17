@@ -988,7 +988,7 @@
                                 <path>
                                     <groupId>edu.ucr.cs.riple.taint</groupId>
                                     <artifactId>ucrtainting-checker</artifactId>
-                                    <version>${env.UCRT_VERSION}</version>
+                                    <version>0.3-SNAPSHOT</version>
                                 </path>
                                 <!-- <path>
                                     <groupId>edu.ucr.cs.riple.annotator</groupId>
@@ -1011,10 +1011,9 @@
                                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
                                 <arg>-nowarn</arg>
                                 <arg>-AannotatedPackages=org.owasp.esapi</arg>
-                                <arg>-AenableLibraryCheck=${env.ANNOTATOR_LIBRARY}</arg>
-                                <arg>-AenablePolyTaintInference=${env.ANNOTATOR_POLY}</arg>
-                                <arg>-AenableTypeArgumentInference=${env.ANNOTATOR_TYPE_ARG}</arg>
-                                <arg>-AenableSerialization</arg>
+                                <arg>-AenableLibraryCheck=true</arg>
+                                <arg>-AenablePolyTaintInference=true</arg>
+                                <arg>-AenableTypeArgumentInference=true</arg>
                                 <arg>-AserializationConfigPath=/Users/nima/Developer/esapi-java-legacy/annotator-out/checker.xml</arg>
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>-parameters</arg>
