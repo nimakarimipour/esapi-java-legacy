@@ -1,0 +1,123 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< org.owasp.esapi:esapi >------------------------
+[INFO] Building ESAPI 2.5.3.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-maven) @ esapi ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ esapi ---
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ esapi ---
+[WARNING]  Parameter 'compilerArguments' is deprecated: use compilerArgs instead.
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 207 source files with javac [forked debug target 1.8] to target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/filters/SecurityWrapperRequest.java:[401,33] [cast.unsafe] cast from "@RTainted Object" to "@RTainted String @RUntainted []" cannot be statically verified
+[WARNING] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/accesscontrol/DynaBeanACRParameter.java:[144,15] [cast.unsafe] cast from "@RTainted Object" to "@RTainted String @RUntainted []" cannot be statically verified
+[INFO] 2 warnings 
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR]  Unannotated Code Handling: true, Poly: true, Type Argument: true, Validation: false, Side Effect: false
+/Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/FileBasedAuthenticator.java:[155,50] error: [argument] incompatible argument for parameter arg1 of Map.put.
+  found   : @RTainted DefaultUser
+  required: @RUntainted User, index: 1
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/crypto/EncryptedPropertiesUtils.java:[82,42] error: [argument] incompatible argument for parameter inFile of EncryptedPropertiesUtils.loadProperties.
+  found   : @RTainted String
+  required: @RUntainted String, index: 2
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/crypto/EncryptedPropertiesUtils.java:[107,24] error: [argument] incompatible argument for parameter outFile of EncryptedPropertiesUtils.storeProperties.
+  found   : @RTainted String
+  required: @RUntainted String, index: 3
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/waf/rules/EnforceHTTPSRule.java:[81,85] error: [argument] incompatible argument for parameter s of RedirectAction.setRedirectURL.
+  found   : @RTainted String
+  required: @RUntainted String, index: 4
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/filters/SecurityWrapperRequest.java:[743,70] error: [argument] incompatible argument for parameter uri of Cookie.setPath.
+  found   : @RTainted String
+  required: @RUntainted String, index: 5
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/filters/SecurityWrapperRequest.java:[747,54] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+  found   : @RTainted Cookie
+  required: @RUntainted Cookie, index: 6
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[350,21] error: [argument] incompatible argument for parameter arg0 of Map.put.
+  found   : @RTainted String
+  required: @RUntainted String, index: 7
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[350,27] error: [argument] incompatible argument for parameter arg1 of Map.put.
+  found   : @RTainted Object
+  required: @RUntainted Object, index: 8
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[750,60] error: [argument] incompatible argument for parameter name of DefaultHTTPUtilities.killCookie.
+  found   : @RTainted String
+  required: @RUntainted String, index: 9
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[773,49] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 10
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[774,45] error: [argument] incompatible argument for parameter uri of Cookie.setPath.
+  found   : @RTainted String
+  required: @RUntainted String, index: 11
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultValidator.java:[283,27] error: [return] incompatible types in return.
+  type of expression: @RTainted String
+  method return type: @RUntainted String, index: 12
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/crypto/DefaultEncryptedProperties.java:[175,30] error: [argument] incompatible argument for parameter pathname of File constructor.
+  found   : @RTainted String
+  required: @RUntainted String, index: 13
+[INFO] 13 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  29.729 s
+[INFO] Finished at: 2024-06-16T21:08:11-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project esapi: Compilation failure: Compilation failure: 
+[ERROR]  Unannotated Code Handling: true, Poly: true, Type Argument: true, Validation: false, Side Effect: false
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/FileBasedAuthenticator.java:[155,50] error: [argument] incompatible argument for parameter arg1 of Map.put.
+[ERROR]   found   : @RTainted DefaultUser
+[ERROR]   required: @RUntainted User, index: 1
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/crypto/EncryptedPropertiesUtils.java:[82,42] error: [argument] incompatible argument for parameter inFile of EncryptedPropertiesUtils.loadProperties.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 2
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/crypto/EncryptedPropertiesUtils.java:[107,24] error: [argument] incompatible argument for parameter outFile of EncryptedPropertiesUtils.storeProperties.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 3
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/waf/rules/EnforceHTTPSRule.java:[81,85] error: [argument] incompatible argument for parameter s of RedirectAction.setRedirectURL.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 4
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/filters/SecurityWrapperRequest.java:[743,70] error: [argument] incompatible argument for parameter uri of Cookie.setPath.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 5
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/filters/SecurityWrapperRequest.java:[747,54] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+[ERROR]   found   : @RTainted Cookie
+[ERROR]   required: @RUntainted Cookie, index: 6
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[350,21] error: [argument] incompatible argument for parameter arg0 of Map.put.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 7
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[350,27] error: [argument] incompatible argument for parameter arg1 of Map.put.
+[ERROR]   found   : @RTainted Object
+[ERROR]   required: @RUntainted Object, index: 8
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[750,60] error: [argument] incompatible argument for parameter name of DefaultHTTPUtilities.killCookie.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 9
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[773,49] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 10
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultHTTPUtilities.java:[774,45] error: [argument] incompatible argument for parameter uri of Cookie.setPath.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 11
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/DefaultValidator.java:[283,27] error: [return] incompatible types in return.
+[ERROR]   type of expression: @RTainted String
+[ERROR]   method return type: @RUntainted String, index: 12
+[ERROR] /Users/nima/Developer/esapi-java-legacy/src/main/java/org/owasp/esapi/reference/crypto/DefaultEncryptedProperties.java:[175,30] error: [argument] incompatible argument for parameter pathname of File constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 13
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
