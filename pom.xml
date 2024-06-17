@@ -156,7 +156,7 @@
         <dependency>
             <groupId>org.checkerframework</groupId>
             <artifactId>checker-qual</artifactId>
-            <version>${env.CF_VERSION}</version>
+            <version>3.42.0</version>
         </dependency>
         <!-- <dependency>
             <groupId>com.google.errorprone</groupId>
@@ -1026,7 +1026,7 @@
                 <dependency>
                     <groupId>org.checkerframework</groupId>
                     <artifactId>checker</artifactId>
-                    <version>${env.CF_VERSION}</version>
+                    <version>3.42.0</version>
                 </dependency>
             </dependencies>
         </profile>
