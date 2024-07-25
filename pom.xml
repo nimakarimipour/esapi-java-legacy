@@ -1015,10 +1015,10 @@
                                 <arg>-AenablePolyTaintInference=${env.ANNOTATOR_POLY}</arg>
                                 <arg>-AenableTypeArgumentInference=${env.ANNOTATOR_TYPE_ARG}</arg>
                                 <arg>-AenableSerialization</arg>
-                                <arg>-AserializationConfigPath=/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/checker.xml</arg>
+                                <arg>-AserializationConfigPath=/home/kdas006/annotation_dataset/esapi-java-legacy/annotator-out/checker.xml</arg>
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>-parameters</arg>
-                                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/nima/Developer/taint-benchmarks/esapi-java-legacy/annotator-out/core/scanner.xml</arg> -->
+                                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/kdas006/annotation_dataset/esapi-java-legacy/annotator-out/core/scanner.xml</arg> -->
                             </compilerArgs>
                         </configuration>
                     </plugin>
