@@ -25,6 +25,7 @@ import org.owasp.esapi.SecurityConfiguration.Threshold;
 import org.owasp.esapi.User;
 import org.owasp.esapi.errors.EnterpriseSecurityException;
 import org.owasp.esapi.errors.IntrusionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reference implementation of the IntrusionDetector interface. This
@@ -91,7 +92,7 @@ public class DefaultIntrusionDetector implements org.owasp.esapi.IntrusionDetect
     /**
      * {@inheritDoc}
      */
-    public void addEvent(String eventName, String logMessage) throws IntrusionException {
+    public void addEvent(@RUntainted String eventName, String logMessage) throws IntrusionException {
         if (ESAPI.securityConfiguration().getDisableIntrusionDetection()) return;
 
         logger.warning( Logger.SECURITY_FAILURE, "Security event " + eventName + " received : " + logMessage );
@@ -146,7 +147,7 @@ public class DefaultIntrusionDetector implements org.owasp.esapi.IntrusionDetect
      * @param eventName
      *             The name of the event that occurred.
      */
-    private void addSecurityEvent(User user, String eventName) {
+    private void addSecurityEvent(User user, @RUntainted String eventName) {
         if (ESAPI.securityConfiguration().getDisableIntrusionDetection()) return;
 
         if ( user.isAnonymous() ) return;
