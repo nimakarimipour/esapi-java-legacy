@@ -36,6 +36,7 @@ import org.owasp.esapi.Logger;
 import org.owasp.esapi.SecurityConfiguration;
 import org.owasp.esapi.errors.AccessControlException;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 // TODO: Parameterize these various lengths in calls to ESAPI.validator().getValidInput()
 // so that they can be placed in ESAPI.properties file (or other property file,
@@ -370,7 +371,7 @@ public class SecurityWrapperRequest extends HttpServletRequestWrapper implements
      * @param regexName The name of the regex mapped from ESAPI.properties
      * @return The "scrubbed" parameter value.
      */
-    public String getParameter(String name, boolean allowNull, int maxLength, String regexName) {
+    public String getParameter(String name, boolean allowNull, int maxLength, @RUntainted String regexName) {
         String orig = getHttpServletRequest().getParameter(name);
         String clean = null;
         try {
