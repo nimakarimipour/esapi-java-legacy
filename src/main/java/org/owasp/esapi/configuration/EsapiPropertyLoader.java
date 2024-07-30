@@ -1,6 +1,7 @@
 package org.owasp.esapi.configuration;
 
 import org.owasp.esapi.errors.ConfigurationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Generic interface for loading security configuration properties.

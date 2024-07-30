@@ -39,6 +39,7 @@ import org.owasp.esapi.PropNames.DefaultSearchPath;
 import org.owasp.esapi.SecurityConfiguration;
 import org.owasp.esapi.configuration.EsapiPropertyManager;
 import org.owasp.esapi.errors.ConfigurationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The reference {@code SecurityConfiguration} manages all the settings used by the ESAPI in a single place. In this reference
@@ -356,19 +357,19 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /*
      * Absolute path to the user.home. No longer includes the ESAPI portion as it used to.
      */
-    private static final String userHome = System.getProperty("user.home" );
+    private static final @RUntainted String userHome = System.getProperty("user.home" );
     /*
      * Absolute path to the customDirectory
      */    // DISCUSS: Implicit assumption here that there is no SecurityManager installed enforcing the
         //            prevention of reading system properties. Otherwise this will fail with SecurityException.
-    private static String customDirectory = System.getProperty("org.owasp.esapi.resources");
+    private static @RUntainted String customDirectory = System.getProperty("org.owasp.esapi.resources");
     /*
      * Relative path to the resourceDirectory. Relative to the classpath.
      * Specifically, ClassLoader.getResource(resourceDirectory + filename) will
      * be used to load the file.
      */
     private String resourceDirectory = ".esapi";    // For backward compatibility (vs. "esapi")
-    private final String resourceFile;
+    private final @RUntainted String resourceFile;
     private EsapiPropertyManager esapiPropertyManager;
 
 
@@ -377,7 +378,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      *
      * @param resourceFile The name of the property file to load
      */
-    DefaultSecurityConfiguration(String resourceFile) {
+    DefaultSecurityConfiguration(@RUntainted String resourceFile) {
         this.resourceFile = resourceFile;
         // load security configuration
         try {
@@ -611,7 +612,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
 
         // if properties loaded properly above, get validation properties and merge them into the main properties
         if (properties != null) {
-            final Iterator<String> validationPropFileNames;
+            final Iterator<@RUntainted String> validationPropFileNames;
 
             //defaults to single-valued for backwards compatibility
             final boolean multivalued= getESAPIProperty(VALIDATION_PROPERTIES_MULTIVALUED, false);
@@ -682,7 +683,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
      * @throws IOException
      *             If the file cannot be found or opened for reading.
      */
-    public InputStream getResourceStream(String filename) throws IOException {
+    public InputStream getResourceStream(@RUntainted String filename) throws IOException {
         if (filename == null) {
             return null;
         }
@@ -701,7 +702,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public File getResourceFile(String filename) {
+    public @RUntainted File getResourceFile(@RUntainted String filename) {
         logSpecial("Attempting to load " + filename + " as resource file via file I/O.");
 
         if (filename == null) {
@@ -1101,7 +1102,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public File getUploadDirectory() {
+    public @RUntainted File getUploadDirectory() {
         String dir = getESAPIProperty( UPLOAD_DIRECTORY, "UploadDir");
         return new File( dir );
     }
@@ -1204,14 +1205,14 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
     /**
      * {@inheritDoc}
      */
-    public String getResponseContentType() {
+    public @RUntainted String getResponseContentType() {
         return getESAPIProperty( RESPONSE_CONTENT_TYPE, "text/html; charset=UTF-8" );
     }
 
     /**
      * {@inheritDoc}
      */
-    public String getHttpSessionIdName() {
+    public @RUntainted String getHttpSessionIdName() {
         return getESAPIProperty( HTTP_SESSION_ID_NAME, "JSESSIONID" );
     }
 
@@ -1309,7 +1310,7 @@ public class DefaultSecurityConfiguration implements SecurityConfiguration {
         return getESAPIProperty( ACCEPT_LENIENT_DATES, false);
     }
 
-    protected String getESAPIProperty( String key, String def ) {
+    protected @RUntainted String getESAPIProperty( String key, @RUntainted String def ) {
         String value = properties.getProperty(key);
         if ( value == null ) {
             logSpecial( "SecurityConfiguration for " + key + " not found in ESAPI.properties. Using default: " + def, null );
