@@ -25,7 +25,7 @@
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
-[ERROR]  Unannotated Code Handling: true, Poly: true, Type Argument: true, Validation: false, Side Effect: false
+[ERROR]  Unannotated Code Handling: true, Poly: false, Type Argument: true, Validation: false, Side Effect: false
 Local Variable Optimization: true
 /home/nima/Developer/taint-benchmarks/esapi-java-legacy/src/main/java/org/owasp/esapi/waf/internal/InterceptingPrintWriter.java:[163,20] error: [argument] incompatible argument for parameter buf of PrintWriter.write.
   found   : @RTainted char @RUntainted []
@@ -272,11 +272,11 @@ Local Variable Optimization: true
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  15.786 s
-[INFO] Finished at: 2024-07-30T00:32:22-07:00
+[INFO] Total time:  24.273 s
+[INFO] Finished at: 2024-07-30T00:35:22-07:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project esapi: Compilation failure: Compilation failure: 
-[ERROR]  Unannotated Code Handling: true, Poly: true, Type Argument: true, Validation: false, Side Effect: false
+[ERROR]  Unannotated Code Handling: true, Poly: false, Type Argument: true, Validation: false, Side Effect: false
 [ERROR] Local Variable Optimization: true
 [ERROR] /home/nima/Developer/taint-benchmarks/esapi-java-legacy/src/main/java/org/owasp/esapi/waf/internal/InterceptingPrintWriter.java:[163,20] error: [argument] incompatible argument for parameter buf of PrintWriter.write.
 [ERROR]   found   : @RTainted char @RUntainted []

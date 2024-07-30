@@ -16,6 +16,7 @@
  *
  */
 package org.owasp.esapi;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 /**

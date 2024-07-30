@@ -31,6 +31,7 @@ import org.owasp.esapi.Logger;
 import org.owasp.esapi.User;
 import org.owasp.esapi.errors.AccessControlException;
 import org.owasp.esapi.errors.IntrusionException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 // CHECKME: If this exists for backward compatibility, should this
 //          class be deprecated??? If so, mark it using annotation.
@@ -405,7 +406,7 @@ public class FileBasedACRs {
      * @return
      *         a hash map containing the ruleset
      */
-    private Map loadRules(String ruleset) {
+    private Map loadRules(@RUntainted String ruleset) {
         ruleset = "fbac-policies/" + ruleset;
         Map map = new HashMap();
         InputStream is = null;
@@ -461,7 +462,7 @@ public class FileBasedACRs {
      * @return
      *         a hash map containing the ruleset
      */
-    private Map loadDataRules(String ruleset) {
+    private Map loadDataRules(@RUntainted String ruleset) {
         Map map = new HashMap();
         InputStream is = null;
 
