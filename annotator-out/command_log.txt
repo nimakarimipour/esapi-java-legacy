@@ -512,3 +512,143 @@
 
 2024-07-27T12:21:28.343981:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
 
+2024-07-30T00:02:15.695605:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:02:41.280126:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:03:03.869145:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:03:31.759994:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:03:55.204744:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:04:18.217546:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:04:48.162516:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:05:11.669894:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:05:36.576815:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:06:03.572999:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:06:32.598849:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:06:57.022273:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:07:20.723338:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:07:49.166527:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:08:13.705841:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:08:39.410743:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:09:05.545407:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:09:33.426421:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:09:56.590376:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:10:20.593882:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:10:48.833972:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:11:14.220383:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:11:37.326386:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:12:05.525733:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:12:29.227251:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:12:54.835430:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:13:19.459656:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:13:49.359337:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:14:12.469628:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:14:36.151327:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:15:05.574292:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:15:26.639494:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:15:44.800237:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:16:04.218246:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:16:24.131757:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:16:41.004586:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:16:58.423223:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:17:20.573750:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:17:38.654820:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:17:55.268788:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:18:13.272454:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:18:34.318490:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:18:52.726207:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:19:10.023782:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:19:30.956288:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:19:48.161268:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:20:05.823663:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:20:25.774718:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:20:51.586098:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:21:08.985457:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:21:26.478247:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:21:48.588146:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:22:07.127742:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:22:24.353834:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:22:41.474474:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:23:02.782731:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:23:21.232220:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:23:38.793794:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:24:00.005305:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:24:18.109114:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:24:34.336072:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:24:52.313367:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:25:14.470493:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:25:32.123676:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:25:49.635055:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:26:07.558348:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:26:28.540719:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:26:47.213052:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:27:05.568562:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+
+2024-07-30T00:27:27.908939:cd /home/nima/Developer/taint-benchmarks/esapi-java-legacy && ./annotator-command.sh
+

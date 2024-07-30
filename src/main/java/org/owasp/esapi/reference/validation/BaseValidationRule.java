@@ -23,6 +23,7 @@ import org.owasp.esapi.Encoder;
 import org.owasp.esapi.ValidationErrorList;
 import org.owasp.esapi.ValidationRule;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 /**
