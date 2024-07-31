@@ -16,6 +16,7 @@
  *
  */
 package org.owasp.esapi;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 /**
@@ -166,7 +167,7 @@ public final class PropNames {
     public static final String DEFAULT_VALIDATOR_IMPLEMENTATION                                                 = "org.owasp.esapi.reference.DefaultValidator";
 
     /** The name of the ESAPI property file */
-    public static final String DEFAULT_RESOURCE_FILE                                                            = "ESAPI.properties";
+    public static final @RUntainted String DEFAULT_RESOURCE_FILE                                                            = "ESAPI.properties";
 
     //
     // Private CTOR to prevent creation of PropName objects. We wouldn't need

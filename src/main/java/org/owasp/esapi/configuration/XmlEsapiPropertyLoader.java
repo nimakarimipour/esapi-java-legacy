@@ -19,6 +19,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Loader capable of loading single security configuration property from xml configuration file.
@@ -27,7 +28,7 @@ import org.xml.sax.SAXException;
  */
 public class XmlEsapiPropertyLoader extends AbstractPrioritizedPropertyLoader {
 
-    public XmlEsapiPropertyLoader(String filename, int priority) throws IOException {
+    public XmlEsapiPropertyLoader(@RUntainted String filename, int priority) throws IOException {
         super(filename, priority);
     }
 
@@ -102,7 +103,7 @@ public class XmlEsapiPropertyLoader extends AbstractPrioritizedPropertyLoader {
      * @param file
      * @throws ConfigurationException if there is a problem loading the specified configuration file.
      */
-    protected void loadPropertiesFromFile(File file) throws ConfigurationException {
+    protected void loadPropertiesFromFile(@RUntainted File file) throws ConfigurationException {
         try ( InputStream configFile = new FileInputStream(file); ) {
             validateAgainstXSD(configFile);
 

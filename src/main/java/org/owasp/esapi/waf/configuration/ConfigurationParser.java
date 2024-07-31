@@ -45,6 +45,7 @@ import org.owasp.esapi.waf.rules.ReplaceContentRule;
 import org.owasp.esapi.waf.rules.RestrictContentTypeRule;
 import org.owasp.esapi.waf.rules.RestrictUserAgentRule;
 import org.owasp.esapi.waf.rules.SimpleVirtualPatchRule;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  *

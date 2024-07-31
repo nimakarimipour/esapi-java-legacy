@@ -56,6 +56,7 @@ import org.owasp.esapi.crypto.SecurityProviderLoader;
 import org.owasp.esapi.errors.ConfigurationException;
 import org.owasp.esapi.errors.EncryptionException;
 import org.owasp.esapi.errors.IntegrityException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reference implementation of the {@code Encryptor} interface. This implementation

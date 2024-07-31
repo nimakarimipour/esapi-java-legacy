@@ -21,6 +21,7 @@ import org.owasp.esapi.Encoder;
 import org.owasp.esapi.EncoderConstants;
 import org.owasp.esapi.StringUtilities;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * A validator performs syntax and possibly semantic validation of Credit Card

@@ -988,7 +988,7 @@
                                 <path>
                                     <groupId>edu.ucr.cs.riple.taint</groupId>
                                     <artifactId>ucrtainting-checker</artifactId>
-                                    <version>0.3-SNAPSHOT</version>
+                                    <version>0.3-ENHANCE-OFF-SNAPSHOT</version>
                                 </path>
                                 <!-- <path>
                                     <groupId>edu.ucr.cs.riple.annotator</groupId>

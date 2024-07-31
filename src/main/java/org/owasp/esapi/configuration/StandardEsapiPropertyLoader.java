@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.errors.ConfigurationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Loader capable of loading single security configuration property from standard java properties configuration file.
@@ -14,7 +15,7 @@ import org.owasp.esapi.errors.ConfigurationException;
  */
 public class StandardEsapiPropertyLoader extends AbstractPrioritizedPropertyLoader {
 
-    public StandardEsapiPropertyLoader(String filename, int priority) throws IOException {
+    public StandardEsapiPropertyLoader(@RUntainted String filename, int priority) throws IOException {
         super(filename, priority);
     }
 

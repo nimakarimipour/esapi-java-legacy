@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.TreeSet;
 import org.owasp.esapi.configuration.consts.EsapiConfiguration;
 import org.owasp.esapi.errors.ConfigurationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Manager used for loading security configuration properties. Does all the logic to obtain the correct property from
