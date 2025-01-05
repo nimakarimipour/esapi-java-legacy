@@ -1,0 +1,7 @@
+Timing execution of annotator.py on branch gcp-anno-ecoop for project esapi-java-legacy
+Annotator extended search version 3
+Preprocessing...
+Max Depth level: 15, chain: true
+Triggered Errors in this iteration: 80
+Analyzing at level 1, Scheduling for: 6 builds for: 73 fixes
+Processing  16% [==================================================>                                                                                                                                                                                                                                                          ] 1/6 (0:00:00 / 0:00:00) 
