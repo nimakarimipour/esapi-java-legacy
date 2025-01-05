@@ -4,3 +4,287 @@
 
 2025-01-04T18:22:06.779773:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
 
+2025-01-04T18:25:14.614419:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:25:36.016189:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:25:56.180123:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:26:16.532462:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:26:36.560625:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:26:56.391838:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:27:16.124815:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:27:36.226087:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:27:56.221859:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:28:16.406960:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:28:36.154859:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:28:56.197469:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:29:16.367172:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:29:36.220484:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:29:56.216686:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:30:16.340761:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:30:36.106563:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:30:56.042434:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:31:16.373244:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:31:36.693820:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:31:56.872881:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:32:16.890631:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:32:36.863528:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:32:57.247877:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:33:17.143016:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:33:37.432436:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:33:57.246441:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:34:17.445453:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:34:37.692277:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:34:57.649263:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:35:17.801721:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:35:37.615947:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:35:57.854042:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:36:18.111481:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:36:38.569132:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:36:58.605123:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:37:18.743159:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:37:38.939558:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:37:59.197975:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:38:19.379197:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:38:39.434407:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:38:59.515162:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:39:19.934652:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:39:40.033404:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:39:59.926971:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:40:19.819824:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:40:39.883404:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:40:59.825295:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:41:19.939428:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:41:40.140085:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:42:00.425870:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:42:20.173743:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:42:40.427273:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:43:00.460448:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:43:20.616424:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:43:41.337283:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:44:01.711107:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:44:21.554398:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:44:42.146288:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:45:02.524471:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:45:22.999939:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:45:42.960351:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:46:02.959647:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:46:22.986394:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:46:43.486851:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:47:03.402140:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:47:23.254295:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:47:43.232490:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:48:03.340614:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:48:23.815092:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:48:43.790043:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:49:03.966508:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:49:24.279023:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:49:44.485260:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:50:04.921499:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:50:25.286214:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:50:45.741018:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:51:05.838067:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:51:26.049042:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:51:45.922923:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:52:05.909012:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:52:25.769699:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:52:45.948958:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:53:05.897961:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:53:25.733349:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:53:45.716429:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:54:05.955568:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:54:26.364651:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:54:46.843427:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:55:07.285395:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:55:27.455061:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:55:48.236201:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:56:08.709079:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:56:29.148205:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:56:49.639653:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:57:09.459506:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:57:29.524652:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:57:49.756630:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:58:10.029503:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:58:29.854842:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:58:49.965286:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:59:10.223974:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:59:30.380462:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T18:59:50.966403:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:00:11.183324:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:00:31.407773:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:00:51.957168:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:01:12.308136:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:01:32.988004:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:01:53.530834:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:02:13.859344:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:02:34.025691:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:02:53.742579:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:03:13.834806:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:03:34.300033:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:03:54.327968:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:04:14.339349:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:04:34.757137:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:04:55.125430:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:05:15.369358:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:05:36.033117:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:05:56.567764:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:06:17.194854:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:06:37.712063:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:06:57.992707:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:07:18.558644:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:07:39.128780:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:07:59.106748:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:08:19.026237:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:08:39.002304:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:08:58.999433:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:09:19.209090:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:09:39.337810:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:09:59.746361:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:10:20.095809:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:10:40.270027:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:11:00.258188:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:11:20.592294:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:11:40.819434:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:12:00.880985:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:12:21.410835:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
+2025-01-04T19:12:41.727087:cd /home/kdas006/annotation_dataset/esapi-java-legacy && ./annotator-command.sh
+
