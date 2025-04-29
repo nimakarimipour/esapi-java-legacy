@@ -27,6 +27,7 @@ import org.owasp.esapi.StringUtilities;
 import org.owasp.esapi.ValidationErrorList;
 import org.owasp.esapi.errors.IntrusionException;
 import org.owasp.esapi.errors.ValidationException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This response wrapper simply overrides unsafe methods in the
